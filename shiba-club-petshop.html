@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شیبا کلاب | پت‌شاپ تخصصی سگ‌های کوچولو</title>
+<meta name="description" content="شیبا کلاب؛ پت‌شاپی که به افتخار شیبا، دختر کوچولوی شیه‌تزو تریر خانواده‌مون ساخته شده. غذا، اسباب‌بازی، اکسسوری و لوازم بهداشتی برای سگ‌های کوچک.">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#CDA23C; --gold-deep:#B8862A; --gold-pale:#F0DBA0; --white:#FFFDF9; --cream:#FBF2E1;
+    --blush:#F7DCE0; --text:#6B5A45; --text-dark:#4A3D2E; --line:rgba(184,134,42,.28);
+    --shadow:0 16px 36px rgba(184,134,42,.18); --radius:26px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream); color:var(--text); font-family:'Vazirmatn',sans-serif; line-height:1.9; font-size:16px;}
+  img,svg{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer; border:none; background:none;}
+  h1,h2,h3,h4{font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:700; color:var(--text-dark); line-height:1.5; margin:0 0 16px;}
+  .num{direction:ltr; unicode-bidi:isolate;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 24px;}
+  .view{display:none;} .view.active{display:block; animation:fadeIn .45s ease;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+  @keyframes bob{0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);}}
+  @keyframes wagTiny{0%,100%{transform:rotate(-4deg);} 50%{transform:rotate(4deg);}}
+
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700; color:var(--gold-deep); background:var(--gold-pale); padding:6px 16px; border-radius:30px; margin-bottom:16px;}
+  .center{text-align:center; justify-content:center; margin-left:auto; margin-right:auto;}
+
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:15px 30px; border-radius:40px; font-family:'Baloo Bhaijaan 2',sans-serif; font-size:15px; font-weight:600; transition:.25s;}
+  .btn-solid{background:var(--gold); color:#fff; box-shadow:0 10px 24px rgba(184,134,42,.35);}
+  .btn-solid:hover{background:var(--gold-deep); transform:translateY(-2px);}
+  .btn-outline{border:2px solid var(--gold); color:var(--gold-deep);}
+  .btn-outline:hover{background:var(--gold-pale);}
+  .btn-block{width:100%; justify-content:center;}
+  .btn:disabled{opacity:.4; cursor:not-allowed;}
+
+  /* NAV */
+  header.nav{position:sticky; top:0; z-index:200; background:rgba(255,253,249,.92); backdrop-filter:blur(8px); border-bottom:2px solid var(--gold-pale);}
+  .nav-inner{max-width:1160px; margin:0 auto; padding:12px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;}
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand .mascot{width:46px; height:46px;}
+  .brand-text b{display:block; font-family:'Baloo Bhaijaan 2',sans-serif; font-size:17px; color:var(--text-dark);}
+  .brand-text span{display:block; font-size:10.5px; color:var(--gold-deep); font-weight:600;}
+  nav.links{display:flex; align-items:center; gap:2px; flex-wrap:wrap;}
+  nav.links button{color:var(--text); font-size:14px; font-weight:600; padding:10px 14px; border-radius:30px; transition:.2s;}
+  nav.links button:hover{background:var(--gold-pale); color:var(--gold-deep);}
+  nav.links button.active{background:var(--gold); color:#fff;}
+  .cart-btn{position:relative;}
+  .cart-badge{position:absolute; top:2px; left:4px; background:var(--text-dark); color:#fff; font-size:10px; width:16px; height:16px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700;}
+  .hamburger{display:none; color:var(--text-dark); font-size:22px;}
+
+  /* HERO */
+  .hero{position:relative; padding:70px 0 60px; overflow:hidden;}
+  .paw-bg{position:absolute; inset:0; opacity:.5; pointer-events:none;
+    background-image: radial-gradient(circle, var(--gold-pale) 2px, transparent 2.5px);
+    background-size: 46px 46px;
+  }
+  .hero-grid{position:relative; display:grid; grid-template-columns:1.05fr .95fr; gap:50px; align-items:center;}
+  .hero-grid h1{font-size:40px; margin-bottom:18px;}
+  .hero-grid h1 span{color:var(--gold-deep);}
+  .hero-grid p{color:var(--text); font-size:16px; max-width:470px; margin-bottom:30px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .hero-visual{display:flex; justify-content:center; align-items:center;}
+  .mascot-hero{width:280px; animation:bob 3.4s ease-in-out infinite;}
+
+  .section{padding:70px 0;}
+  .section.alt{background:#fff;}
+  .section-head{max-width:620px; margin:0 auto 42px; text-align:center;}
+  .section-head p{color:var(--text); font-size:15px;}
+
+  /* SHOP */
+  .filter-bar{display:flex; gap:9px; justify-content:center; flex-wrap:wrap; margin-bottom:36px;}
+  .filter-bar button{padding:10px 22px; border:2px solid var(--gold-pale); border-radius:30px; font-size:13px; font-weight:700; font-family:'Baloo Bhaijaan 2',sans-serif; color:var(--text-dark);}
+  .filter-bar button.active{background:var(--gold); border-color:var(--gold); color:#fff;}
+  .grid-products{display:grid; grid-template-columns:repeat(3, 1fr); gap:26px;}
+  .card{background:#fff; border-radius:var(--radius); overflow:hidden; transition:.3s; box-shadow:0 8px 20px rgba(184,134,42,.08); cursor:pointer; position:relative;}
+  .card:hover{transform:translateY(-6px) rotate(-.5deg); box-shadow:var(--shadow);}
+  .card .badge{position:absolute; top:14px; right:14px; background:var(--blush); color:#a35a68; font-size:11px; font-weight:700; padding:5px 12px; border-radius:20px; z-index:2;}
+  .card .thumb{aspect-ratio:1/1; background:linear-gradient(160deg, var(--gold-pale), var(--cream)); display:flex; align-items:center; justify-content:center; padding:20px;}
+  .card .body{padding:20px 22px 24px;}
+  .card .cat{font-size:11px; font-weight:700; color:var(--gold-deep); display:block; margin-bottom:6px;}
+  .card h3{font-size:17px; margin-bottom:8px; font-family:'Baloo Bhaijaan 2',sans-serif;}
+  .card .desc{font-size:13px; color:var(--text); margin-bottom:16px; min-height:36px;}
+  .card .foot{display:flex; align-items:center; justify-content:space-between;}
+  .price{font-family:'Baloo Bhaijaan 2',sans-serif; font-size:16px; color:var(--text-dark);}
+  .price small{font-size:10.5px; color:#9a8a72; font-weight:400;}
+  .add-btn{background:var(--gold-pale); color:var(--gold-deep); padding:9px 16px; border-radius:30px; font-size:12.5px; font-weight:700; font-family:'Baloo Bhaijaan 2',sans-serif;}
+  .add-btn:hover{background:var(--gold); color:#fff;}
+
+  /* ABOUT / STORY */
+  .story-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:50px; align-items:center;}
+  .story-mascot{background:var(--gold-pale); border-radius:34px; padding:34px; display:flex; align-items:center; justify-content:center;}
+  .story-mascot svg{width:220px;}
+  .traits-row{display:flex; gap:16px; flex-wrap:wrap; margin-top:28px;}
+  .trait-chip{background:var(--cream); border:2px solid var(--gold-pale); border-radius:20px; padding:14px 18px; font-size:13px; font-weight:600; color:var(--text-dark); display:flex; align-items:center; gap:8px;}
+
+  /* CART */
+  .cart-layout{display:grid; grid-template-columns:1.6fr 1fr; gap:26px; align-items:start;}
+  .panel{background:#fff; border-radius:var(--radius); padding:28px; box-shadow:0 8px 20px rgba(184,134,42,.08);}
+  .cart-item{display:flex; align-items:center; gap:14px; padding:16px 0; border-bottom:1px dashed var(--gold-pale);}
+  .cart-item .ic{width:48px; height:48px; flex:none; background:var(--gold-pale); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px;}
+  .cart-item .info{flex:1;} .cart-item .info h4{font-family:'Baloo Bhaijaan 2',sans-serif; font-size:14.5px; margin-bottom:3px;}
+  .cart-item .info span{font-size:12px; color:#9a8a72;}
+  .qty-control{display:flex; align-items:center; gap:8px; border:2px solid var(--gold-pale); border-radius:30px; padding:3px 6px;}
+  .qty-control button{width:24px; height:24px; border-radius:50%; background:var(--cream); font-size:14px; display:flex; align-items:center; justify-content:center;}
+  .remove-link{color:#c77; font-size:12px; margin-right:8px; font-weight:600;}
+  .cart-summary{position:sticky; top:90px;}
+  .summary-row{display:flex; justify-content:space-between; font-size:14px; color:var(--text); margin-bottom:12px;}
+  .summary-row.total{color:var(--text-dark); font-size:19px; font-weight:700; border-top:1px dashed var(--gold-pale); padding-top:14px; font-family:'Baloo Bhaijaan 2',sans-serif;}
+  .empty-state{text-align:center; padding:50px 20px; color:#9a8a72;}
+
+  /* CONTACT */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  .form-shell{background:#fff; border-radius:var(--radius); padding:36px; box-shadow:0 8px 20px rgba(184,134,42,.08);}
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-size:13px; font-weight:700; margin-bottom:7px; color:var(--text-dark);}
+  .field input, .field textarea{width:100%; border:2px solid var(--gold-pale); border-radius:14px; padding:12px 16px; font-family:inherit; font-size:14px; background:var(--cream);}
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--gold);}
+  .hp-field{position:absolute; left:-9999px;}
+  .contact-info-box{background:var(--gold); color:#fff; border-radius:var(--radius); padding:36px;}
+  .contact-info-box h3{color:#fff;}
+  .contact-info-box .row{margin-bottom:16px; font-size:14px; display:flex; gap:8px;}
+  .success-panel{display:none; margin-top:16px; padding:18px; background:var(--gold-pale); border-radius:16px; color:var(--gold-deep); font-weight:600; font-size:14px;}
+  .success-panel.show{display:block;}
+  .note-box{border:1.5px dashed var(--gold-pale); border-radius:14px; padding:12px 16px; font-size:12px; color:#9a8a72; margin-top:14px;}
+
+  /* FOOTER */
+  footer{background:var(--text-dark); color:var(--gold-pale); padding:46px 0 24px; margin-top:20px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:32px;}
+  .footer-grid h5{font-family:'Baloo Bhaijaan 2',sans-serif; color:#fff; font-size:14px; margin-bottom:14px;}
+  .footer-grid p, .footer-grid a{font-size:13px; display:block; margin-bottom:9px; color:var(--gold-pale);}
+  .footer-bottom{border-top:1px solid rgba(240,219,160,.2); padding-top:18px; text-align:center; font-size:12px; color:#c9b98f;}
+
+  @media(max-width:900px){
+    .hero-grid, .story-grid, .contact-grid, .cart-layout{grid-template-columns:1fr;}
+    .hero-visual{order:-1;}
+    .grid-products{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr;}
+    nav.links{position:fixed; top:69px; right:0; left:0; background:#fff; flex-direction:column; padding:10px 20px; display:none; border-top:1px solid var(--gold-pale);}
+    nav.links.open{display:flex;}
+    nav.links button{text-align:right; padding:12px 14px;}
+    .hamburger{display:block;}
+    .hero-grid h1{font-size:28px;}
+  }
+  @media(max-width:560px){
+    .grid-products{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){*{animation:none !important; transition-duration:.001ms !important;}}
+  :focus-visible{outline:2px solid var(--gold-deep); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<!-- reusable mascot SVG (cute Shih Tzu face, gold & white, with a little bow for "she's a girl") -->
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#" onclick="go('home'); return false;">
+      <svg class="mascot" viewBox="0 0 100 100">
+        <circle cx="50" cy="55" r="34" fill="#FFFDF9" stroke="#CDA23C" stroke-width="2"/>
+        <path d="M22 40 Q8 20 20 15 Q34 12 34 34 Z" fill="#CDA23C"/>
+        <path d="M78 40 Q92 20 80 15 Q66 12 66 34 Z" fill="#CDA23C"/>
+        <path d="M30 48 Q50 34 70 48 Q66 66 50 70 Q34 66 30 48 Z" fill="#F0DBA0"/>
+        <circle cx="42" cy="55" r="3.2" fill="#4A3D2E"/>
+        <circle cx="58" cy="55" r="3.2" fill="#4A3D2E"/>
+        <ellipse cx="50" cy="63" rx="3.4" ry="2.6" fill="#4A3D2E"/>
+        <circle cx="34" cy="62" r="4" fill="#F7DCE0" opacity=".8"/>
+        <circle cx="66" cy="62" r="4" fill="#F7DCE0" opacity=".8"/>
+        <path d="M42 22 Q50 14 58 22 Q54 28 50 26 Q46 28 42 22 Z" fill="#CDA23C"/>
+        <circle cx="50" cy="20" r="3" fill="#F7DCE0"/>
+      </svg>
+      <div class="brand-text"><b>شیبا کلاب</b><span>SHIBA CLUB · PET SHOP</span></div>
+    </a>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav class="links" id="navLinks">
+      <button data-view="home" onclick="go('home')">خانه</button>
+      <button data-view="about" onclick="go('about')">داستان شیبا</button>
+      <button data-view="shop" onclick="go('shop')">فروشگاه</button>
+      <button data-view="contact" onclick="go('contact')">تماس با ما</button>
+      <button data-view="cart" class="cart-btn" onclick="go('cart')">سبد خرید<span class="cart-badge" id="cartBadge">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section class="view active" id="view-home">
+    <div class="hero">
+      <div class="paw-bg"></div>
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">🐾 به افتخار شیبای کوچولو</div>
+          <h1>هر چی سگت <span>دوست داره</span>، اینجاست</h1>
+          <p>شیبا کلاب با الهام از شیبا، دختر کوچولوی شیه‌تزو تریرِ خانواده‌مون ساخته شده؛ غذا، اسباب‌بازی، اکسسوری و لوازم بهداشتی که با عشق برای سگ‌های کوچولو انتخاب شدن.</p>
+          <div class="hero-actions">
+            <button class="btn btn-solid" onclick="go('shop')">🛍️ مشاهده فروشگاه</button>
+            <button class="btn btn-outline" onclick="go('about')">داستان شیبا رو بخون</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <svg class="mascot-hero" viewBox="0 0 220 220">
+            <ellipse cx="110" cy="190" rx="55" ry="10" fill="#F0DBA0" opacity=".5"/>
+            <circle cx="110" cy="110" r="72" fill="#FFFDF9" stroke="#CDA23C" stroke-width="3"/>
+            <path d="M52 78 Q20 30 46 22 Q76 16 74 62 Z" fill="#CDA23C"/>
+            <path d="M168 78 Q200 30 174 22 Q144 16 146 62 Z" fill="#CDA23C"/>
+            <path d="M64 98 Q110 68 156 98 Q148 140 110 148 Q72 140 64 98 Z" fill="#F0DBA0"/>
+            <circle cx="90" cy="112" r="6.5" fill="#4A3D2E"/>
+            <circle cx="130" cy="112" r="6.5" fill="#4A3D2E"/>
+            <circle cx="88" cy="109" r="2" fill="#fff"/>
+            <circle cx="128" cy="109" r="2" fill="#fff"/>
+            <ellipse cx="110" cy="128" rx="7" ry="5.4" fill="#4A3D2E"/>
+            <path d="M104 133 Q110 140 116 133" stroke="#4A3D2E" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <circle cx="72" cy="126" r="9" fill="#F7DCE0" opacity=".85"/>
+            <circle cx="148" cy="126" r="9" fill="#F7DCE0" opacity=".85"/>
+            <path d="M92 44 Q110 26 128 44 Q120 58 110 52 Q100 58 92 44 Z" fill="#CDA23C"/>
+            <circle cx="110" cy="38" r="6" fill="#F7DCE0" stroke="#e8b9c2" stroke-width="1"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">منتخب فروشگاه</div>
+        <h2>محبوب‌ترین‌های شیبا کلاب</h2>
+        <p>چیزهایی که شیبای ما هم عاشقشونه 🐾</p>
+      </div>
+      <div class="grid-products" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT / STORY -->
+  <section class="view" id="view-about">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">داستان ما</div>
+        <h2>شیبا، دختری که همه‌چیز از او شروع شد</h2>
+      </div>
+      <div class="story-grid">
+        <div class="story-mascot">
+          <svg viewBox="0 0 220 220">
+            <circle cx="110" cy="110" r="72" fill="#FFFDF9" stroke="#CDA23C" stroke-width="3"/>
+            <path d="M52 78 Q20 30 46 22 Q76 16 74 62 Z" fill="#CDA23C"/>
+            <path d="M168 78 Q200 30 174 22 Q144 16 146 62 Z" fill="#CDA23C"/>
+            <path d="M64 98 Q110 68 156 98 Q148 140 110 148 Q72 140 64 98 Z" fill="#F0DBA0"/>
+            <circle cx="90" cy="112" r="6.5" fill="#4A3D2E"/>
+            <circle cx="130" cy="112" r="6.5" fill="#4A3D2E"/>
+            <ellipse cx="110" cy="128" rx="7" ry="5.4" fill="#4A3D2E"/>
+            <circle cx="72" cy="126" r="9" fill="#F7DCE0" opacity=".85"/>
+            <circle cx="148" cy="126" r="9" fill="#F7DCE0" opacity=".85"/>
+            <path d="M92 44 Q110 26 128 44 Q120 58 110 52 Q100 58 92 44 Z" fill="#CDA23C"/>
+            <circle cx="110" cy="38" r="6" fill="#F7DCE0" stroke="#e8b9c2" stroke-width="1"/>
+          </svg>
+        </div>
+        <div>
+          <p style="font-size:15.5px;">شیبا، سگ کوچولوی نژاد شیه‌تزو تریر خانواده‌مونه؛ پرانرژی، بازیگوش و کمی لجباز—درست مثل خیلی از سگ‌های کوچولوی خونگی. از وقتی شیبا اومد توی زندگی‌مون، فهمیدیم پیدا کردن وسایل باکیفیت و مناسب سگ‌های کوچک‌جثه، همیشه راحت نیست.</p>
+          <p style="font-size:15.5px; margin-top:14px;">به همین خاطر «شیبا کلاب» رو ساختیم؛ پت‌شاپی که هر محصولش رو با همون دقتی انتخاب می‌کنیم که برای خود شیبا انتخاب می‌کردیم. غذا، اسباب‌بازی، اکسسوری و لوازم بهداشتی که هم امن باشه، هم کیوت.</p>
+          <div class="traits-row">
+            <div class="trait-chip">🐕 مخصوص سگ‌های کوچک نژاد</div>
+            <div class="trait-chip">🎀 انتخاب‌شده با عشق</div>
+            <div class="trait-chip">✅ کیفیت تضمینی</div>
+            <div class="trait-chip">🐾 ارسال به سراسر کشور</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section class="view" id="view-shop">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">فروشگاه</div>
+        <h2>هرچی سگ کوچولوت لازم داره</h2>
+        <p>از غذا تا اسباب‌بازی و اکسسوری کیوت 🐾</p>
+      </div>
+      <div class="filter-bar">
+        <button class="active" data-cat="all" onclick="filterCat('all', this)">همه</button>
+        <button data-cat="غذا" onclick="filterCat('غذا', this)">🍖 غذا</button>
+        <button data-cat="اسباب‌بازی" onclick="filterCat('اسباب‌بازی', this)">🎾 اسباب‌بازی</button>
+        <button data-cat="اکسسوری" onclick="filterCat('اکسسوری', this)">🎀 اکسسوری</button>
+        <button data-cat="بهداشت" onclick="filterCat('بهداشت', this)">🛁 بهداشت</button>
+      </div>
+      <div class="grid-products" id="shopGrid"></div>
+    </div>
+  </section>
+
+  <!-- CART -->
+  <section class="view" id="view-cart">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">سبد خرید</div>
+        <h2>سبد خرید شما 🛒</h2>
+      </div>
+      <div class="cart-layout">
+        <div id="cartItemsBox" class="panel"></div>
+        <div class="cart-summary panel">
+          <h4 style="font-family:'Baloo Bhaijaan 2',sans-serif; margin-bottom:16px;">خلاصه سفارش</h4>
+          <div class="summary-row"><span>جمع کالاها</span><span class="num" id="sumSubtotal">۰ تومان</span></div>
+          <div class="summary-row"><span>هزینه ارسال</span><span class="num" id="sumShip">۰ تومان</span></div>
+          <div class="summary-row total"><span>مبلغ نهایی</span><span class="num" id="sumTotal">۰ تومان</span></div>
+          <button class="btn btn-solid btn-block" style="margin-top:10px;" onclick="submitCartOrder()">🐾 ثبت سفارش</button>
+          <div class="success-panel" id="cartSuccess">سفارش شما ثبت شد! به‌زودی با شما تماس می‌گیریم 🎀</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="view" id="view-contact">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">در ارتباط باشید</div>
+        <h2>سوالی داری؟ بپرس 🐶</h2>
+      </div>
+      <div class="contact-grid">
+        <form class="form-shell" id="contactForm" onsubmit="submitContact(event)">
+          <input type="text" class="hp-field" tabindex="-1" autocomplete="off">
+          <div class="field"><label>نام شما</label><input type="text" required></div>
+          <div class="field"><label>ایمیل یا شماره تماس</label><input type="text" required></div>
+          <div class="field"><label>پیام شما</label><textarea rows="5" required placeholder="مثلاً درباره کدوم محصول سوال داری؟"></textarea></div>
+          <button type="submit" class="btn btn-solid btn-block">ارسال پیام 💌</button>
+          <div class="success-panel" id="contactSuccess">پیامت رسید! به‌زودی جواب می‌دیم 🎀</div>
+        </form>
+        <div class="contact-info-box">
+          <h3>راه‌های ارتباطی</h3>
+          <div class="row">📸 اینستاگرام: [آیدی اینستاگرام را وارد کنید]</div>
+          <div class="row">☎ [شماره تماس را وارد کنید]</div>
+          <div class="row">📍 [شهر / آدرس فروشگاه]</div>
+          <div class="row">🕐 هر روز، ۱۰ صبح تا ۹ شب</div>
+          <div class="note-box" style="border-color:rgba(255,255,255,.4); color:#fff;">این بخش‌ها placeholder هستن؛ اطلاعات واقعی رو جایگزین کن.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h5>شیبا کلاب 🐾</h5>
+        <p>پت‌شاپی که با الهام از شیبا، دختر کوچولوی شیه‌تزو تریرمون، برای سگ‌های کوچولو ساخته شده.</p>
+      </div>
+      <div>
+        <h5>دسترسی سریع</h5>
+        <a href="#" onclick="go('about'); return false;">داستان شیبا</a>
+        <a href="#" onclick="go('shop'); return false;">فروشگاه</a>
+        <a href="#" onclick="go('contact'); return false;">تماس با ما</a>
+      </div>
+      <div>
+        <h5>ارتباط با ما</h5>
+        <p>[ایمیل را وارد کنید]</p>
+        <p class="num" style="direction:ltr; text-align:right;">[شماره تماس]</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© تمامی حقوق برای شیبا کلاب محفوظ است 🐾</div>
+  </div>
+</footer>
+
+<script>
+  const products = [
+    {id:1, cat:'غذا', name:'غذای خشک نژاد کوچک', desc:'مخصوص سگ‌های کوچک‌جثه با پلت ریز', price:590000, featured:true},
+    {id:2, cat:'غذا', name:'کنسرو مرغ و برنج', desc:'کنسرو نرم و خوش‌طعم، مناسب دندان‌های حساس', price:245000},
+    {id:3, cat:'غذا', name:'تشویقی بیسکویتی', desc:'تشویقی کوچک، عالی برای آموزش', price:135000, featured:true},
+    {id:4, cat:'اسباب‌بازی', name:'توپ صدادار کوچولو', desc:'مقاوم و امن برای بازی روزانه', price:98000},
+    {id:5, cat:'اسباب‌بازی', name:'عروسک استخوانی جیرجیرکی', desc:'مناسب جویدن و بازی گروهی', price:165000, featured:true},
+    {id:6, cat:'اسباب‌بازی', name:'طناب کشتی نرم', desc:'برای کشتی‌گرفتن و بازی با صاحبش', price:120000},
+    {id:7, cat:'اکسسوری', name:'قلاده مخملی طلایی', desc:'نرم، شیک و راحت برای گردن حساس', price:280000, featured:true},
+    {id:8, cat:'اکسسوری', name:'پوشاک زمستانی کیوت', desc:'گرم و نرم برای روزهای سرد', price:340000},
+    {id:9, cat:'اکسسوری', name:'کیف حمل سفر', desc:'راحت برای حمل سگ‌های کوچک', price:520000},
+    {id:10, cat:'بهداشت', name:'شامپو نرم‌کننده موی بلند', desc:'مخصوص نژادهایی مثل شیه‌تزو', price:210000, featured:true},
+    {id:11, cat:'بهداشت', name:'برس ضدگره', desc:'برای موهای بلند و حساس', price:175000},
+    {id:12, cat:'بهداشت', name:'دستمال مرطوب پنجه', desc:'تمیزکننده سریع بعد از پیاده‌روی', price:95000},
+  ];
+
+  let cart = {};
+  let currentCat = 'all';
+  const catEmoji = {'غذا':'🍖','اسباب‌بازی':'🎾','اکسسوری':'🎀','بهداشت':'🛁'};
+
+  function fmt(n){ return new Intl.NumberFormat('en-US').format(Math.round(n)) + ' تومان'; }
+
+  function productCard(p){
+    return `<div class="card" onclick="addToCart(${p.id})">
+      ${p.featured ? '<span class="badge">پرطرفدار 🐾</span>' : ''}
+      <div class="thumb"><span style="font-size:54px;">${catEmoji[p.cat]}</span></div>
+      <div class="body">
+        <span class="cat">${p.cat}</span>
+        <h3>${p.name}</h3>
+        <div class="desc">${p.desc}</div>
+        <div class="foot">
+          <div class="price num">${new Intl.NumberFormat('en-US').format(p.price)}<small> تومان</small></div>
+          <button class="add-btn" onclick="event.stopPropagation(); addToCart(${p.id})">افزودن</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  function renderFeatured(){ document.getElementById('featuredGrid').innerHTML = products.filter(p=>p.featured).map(productCard).join(''); }
+  function renderShop(){
+    const list = products.filter(p => currentCat==='all' || p.cat===currentCat);
+    document.getElementById('shopGrid').innerHTML = list.map(productCard).join('');
+  }
+  function filterCat(cat, el){
+    currentCat = cat;
+    document.querySelectorAll('.filter-bar button').forEach(b=>b.classList.remove('active'));
+    el.classList.add('active');
+    renderShop();
+  }
+
+  function addToCart(id){ cart[id]=(cart[id]||0)+1; updateCartBadge(); renderCart(); }
+  function changeQty(id, delta){ cart[id]=(cart[id]||0)+delta; if(cart[id]<=0) delete cart[id]; updateCartBadge(); renderCart(); }
+  function removeItem(id){ delete cart[id]; updateCartBadge(); renderCart(); }
+  function cartCount(){ return Object.values(cart).reduce((a,b)=>a+b,0); }
+  function cartSubtotal(){ return Object.entries(cart).reduce((s,[id,qty])=>{ const p=products.find(x=>x.id==id); return s+(p?p.price*qty:0); },0); }
+  function updateCartBadge(){ document.getElementById('cartBadge').textContent = cartCount(); }
+
+  function renderCart(){
+    const box = document.getElementById('cartItemsBox');
+    const ids = Object.keys(cart);
+    if(ids.length===0){
+      box.innerHTML = `<div class="empty-state"><p>سبد خریدت هنوز خالیه 🐾</p><button class="btn btn-solid" style="margin-top:14px;" onclick="go('shop')">برو فروشگاه</button></div>`;
+    } else {
+      box.innerHTML = ids.map(id=>{
+        const p = products.find(x=>x.id==id); const qty = cart[id];
+        return `<div class="cart-item">
+          <div class="ic">${catEmoji[p.cat]}</div>
+          <div class="info"><h4>${p.name}</h4><span class="num">${fmt(p.price)} × ${qty}</span></div>
+          <div class="qty-control"><button onclick="changeQty(${p.id},-1)">−</button><span>${qty}</span><button onclick="changeQty(${p.id},1)">+</button></div>
+          <span class="remove-link" role="button" onclick="removeItem(${p.id})">حذف</span>
+        </div>`;
+      }).join('');
+    }
+    const subtotal = cartSubtotal();
+    const shipping = subtotal>0 ? 55000 : 0;
+    document.getElementById('sumSubtotal').textContent = fmt(subtotal);
+    document.getElementById('sumShip').textContent = fmt(shipping);
+    document.getElementById('sumTotal').textContent = fmt(subtotal+shipping);
+  }
+  function submitCartOrder(){
+    if(cartCount()===0) return;
+    document.getElementById('cartSuccess').classList.add('show');
+  }
+  function submitContact(e){
+    e.preventDefault();
+    document.getElementById('contactForm').querySelectorAll('.field, button[type=submit]').forEach(el=>el.style.display='none');
+    document.getElementById('contactSuccess').classList.add('show');
+  }
+
+  function go(view){
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+    document.getElementById('view-'+view).classList.add('active');
+    document.querySelectorAll('nav.links button').forEach(b=>b.classList.remove('active'));
+    const btn = document.querySelector('nav.links button[data-view="'+view+'"]');
+    if(btn) btn.classList.add('active');
+    document.getElementById('navLinks').classList.remove('open');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  function toggleMenu(){ document.getElementById('navLinks').classList.toggle('open'); }
+
+  renderFeatured();
+  renderShop();
+  renderCart();
+</script>
+</body>
+</html>

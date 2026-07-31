@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فرانس بانو | سالن زیبایی</title>
+<meta name="description" content="فرانس بانو؛ سالن زیبایی تخصصی بانوان با خدمات مو، پوست، ناخن و میکاپ عروس، الهام‌گرفته از ظرافت پاریسی.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blush:#E8C9C4; --blush-deep:#D9A9A2; --gold:#C6A15B; --gold-deep:#AD8843; --ivory:#FBF6EF;
+    --charcoal:#2A2420; --wine:#8C4B52; --line:rgba(198,161,91,.32); --shadow:0 18px 42px rgba(140,75,82,.14);
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--ivory); color:var(--charcoal); font-family:'Vazirmatn',sans-serif; line-height:1.9; font-size:16px;}
+  img,svg{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer; border:none; background:none;}
+  h1,h2,h3,h4{font-weight:700; line-height:1.5; margin:0 0 16px; color:var(--charcoal);}
+  .latin{font-family:'Playfair Display', serif; direction:ltr; unicode-bidi:isolate; letter-spacing:2px;}
+  .num{direction:ltr; unicode-bidi:isolate;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 24px;}
+  .view{display:none;} .view.active{display:block; animation:fadeIn .45s ease;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+
+  .eyebrow{display:inline-flex; align-items:center; gap:12px; font-size:11.5px; letter-spacing:3px; color:var(--gold-deep); text-transform:uppercase; font-weight:700; margin-bottom:16px;}
+  .eyebrow::before, .eyebrow::after{content:''; width:22px; height:1px; background:var(--gold);}
+  .center{text-align:center; justify-content:center;}
+
+  .flourish{display:flex; align-items:center; justify-content:center; gap:14px; margin:0 0 40px;}
+  .flourish span{width:50px; height:1px; background:var(--gold);}
+  .flourish svg{width:18px; height:18px;}
+
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:15px 32px; font-size:13px; letter-spacing:1.5px; font-weight:600; transition:.3s; border:1px solid var(--gold);}
+  .btn-solid{background:var(--gold); color:#fff;}
+  .btn-solid:hover{background:var(--charcoal); border-color:var(--charcoal);}
+  .btn-outline{color:var(--charcoal); border-color:var(--gold);}
+  .btn-outline:hover{background:var(--gold); color:#fff;}
+  .btn-block{width:100%; justify-content:center;}
+
+  /* NAV */
+  header.nav{position:sticky; top:0; z-index:200; background:rgba(251,246,239,.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:1140px; margin:0 auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand .emblem{width:44px; height:44px;}
+  .brand-text b{display:block; font-size:18px; letter-spacing:.5px;}
+  .brand-text span{display:block; font-family:'Playfair Display',serif; font-size:10px; letter-spacing:3px; color:var(--gold-deep); direction:ltr;}
+  nav.links{display:flex; align-items:center; gap:2px; flex-wrap:wrap;}
+  nav.links button{color:var(--charcoal); font-size:13.5px; font-weight:600; padding:10px 15px; transition:.2s; border-bottom:1px solid transparent;}
+  nav.links button:hover{color:var(--wine);}
+  nav.links button.active{color:var(--gold-deep); border-bottom-color:var(--gold);}
+  .hamburger{display:none; font-size:22px; color:var(--charcoal);}
+
+  /* HERO */
+  .hero{position:relative; padding:80px 0 60px; overflow:hidden; background:linear-gradient(180deg, var(--blush) 0%, var(--ivory) 100%);}
+  .hero-grid{position:relative; display:grid; grid-template-columns:1.05fr .95fr; gap:50px; align-items:center;}
+  .hero-grid h1{font-size:40px; margin-bottom:18px;}
+  .hero-grid h1 em{font-style:normal; color:var(--wine); font-family:'Playfair Display',serif;}
+  .hero-grid p{color:#5c5148; font-size:15.5px; max-width:460px; margin-bottom:30px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .hero-visual{display:flex; justify-content:center;}
+  .hero-emblem{width:260px;}
+
+  .section{padding:80px 0;}
+  .section.alt{background:#fff;}
+  .section-head{max-width:640px; margin:0 auto 20px; text-align:center;}
+  .section-head p{color:#5c5148; font-size:15px;}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+  .about-frame{background:var(--blush); padding:40px; position:relative;}
+  .about-frame::before{content:''; position:absolute; inset:14px; border:1px solid var(--gold);}
+  .about-frame blockquote{position:relative; z-index:1; font-family:'Playfair Display',serif; font-style:italic; font-size:19px; line-height:1.8; color:var(--charcoal);}
+  .about-frame .sig{position:relative; z-index:1; margin-top:16px; font-size:13px; color:var(--wine); font-weight:600;}
+  .values-row{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:30px;}
+  .value-box{border-right:2px solid var(--gold); padding-right:16px;}
+  .value-box h4{font-size:15.5px; margin-bottom:6px;}
+  .value-box p{font-size:13px; color:#5c5148; margin:0;}
+
+  /* SERVICES */
+  .services-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;}
+  .service-card{background:#fff; border:1px solid var(--line); padding:30px 26px; transition:.3s; text-align:center;}
+  .service-card:hover{border-color:var(--gold); box-shadow:var(--shadow); transform:translateY(-4px);}
+  .service-card .ic{width:52px; height:52px; margin:0 auto 18px; border:1px solid var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold-deep);}
+  .service-card h3{font-size:16.5px; margin-bottom:8px;}
+  .service-card p.desc{font-size:13px; color:#5c5148; margin-bottom:16px; min-height:38px;}
+  .service-price{font-family:'Playfair Display',serif; font-size:15px; color:var(--wine); direction:ltr; display:inline-block;}
+
+  /* BOOKING */
+  .form-shell{max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line); padding:38px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-size:12.5px; font-weight:700; margin-bottom:7px; color:#5c5148; letter-spacing:.3px;}
+  .field input, .field select, .field textarea{width:100%; border:1px solid var(--line); padding:12px 15px; font-family:inherit; font-size:14px; background:var(--ivory);}
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--gold);}
+  .row-2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .hp-field{position:absolute; left:-9999px;}
+  .success-panel{display:none; text-align:center; padding:44px 24px; background:#fff; border:1px solid var(--line);}
+  .success-panel.show{display:block;}
+  .success-icon{width:56px; height:56px; border-radius:50%; border:1px solid var(--gold); margin:0 auto 16px; display:flex; align-items:center; justify-content:center; color:var(--gold-deep); font-size:22px;}
+  .note-box{border:1px dashed var(--line); padding:13px 16px; font-size:12px; color:#8a7d70; margin-top:16px;}
+
+  /* CONTACT */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  .contact-info-box{background:var(--charcoal); color:var(--blush); padding:38px; height:100%;}
+  .contact-info-box h3{color:var(--gold);}
+  .contact-info-box .row{margin-bottom:18px; font-size:14px; display:flex; gap:10px;}
+
+  /* FOOTER */
+  footer{background:var(--charcoal); color:var(--blush); padding:48px 0 24px; margin-top:20px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:32px;}
+  .footer-grid h5{color:var(--gold); font-size:13px; letter-spacing:1px; margin-bottom:14px;}
+  .footer-grid p, .footer-grid a{font-size:13px; display:block; margin-bottom:9px;}
+  .footer-bottom{border-top:1px solid rgba(198,161,91,.2); padding-top:20px; text-align:center; font-size:12px; color:#a99a8c;}
+
+  @media(max-width:900px){
+    .hero-grid, .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .values-row{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    nav.links{position:fixed; top:73px; right:0; left:0; background:#fff; flex-direction:column; padding:8px 20px; display:none; border-top:1px solid var(--line);}
+    nav.links.open{display:flex;}
+    nav.links button{text-align:right; padding:12px 6px;}
+    .hamburger{display:block;}
+    .hero-grid h1{font-size:28px;}
+  }
+  @media(max-width:560px){
+    .services-grid{grid-template-columns:1fr;}
+    .row-2{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){*{animation-duration:.001ms !important; transition-duration:.001ms !important;}}
+  :focus-visible{outline:2px solid var(--gold-deep); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#" onclick="go('home'); return false;">
+      <svg class="emblem" viewBox="0 0 60 60">
+        <circle cx="30" cy="30" r="28" fill="none" stroke="#C6A15B" stroke-width="1"/>
+        <path d="M30 16 C24 22 24 30 30 36 C36 30 36 22 30 16 Z" fill="none" stroke="#8C4B52" stroke-width="1.4"/>
+        <path d="M30 36 C30 42 26 45 22 46" fill="none" stroke="#8C4B52" stroke-width="1.2"/>
+        <path d="M30 36 C30 42 34 45 38 46" fill="none" stroke="#8C4B52" stroke-width="1.2"/>
+        <circle cx="30" cy="24" r="2" fill="#C6A15B"/>
+      </svg>
+      <div class="brand-text"><b>فرانس بانو</b><span>FRANCE BANOU</span></div>
+    </a>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav class="links" id="navLinks">
+      <button data-view="home" onclick="go('home')">خانه</button>
+      <button data-view="about" onclick="go('about')">درباره ما</button>
+      <button data-view="services" onclick="go('services')">خدمات</button>
+      <button data-view="booking" onclick="go('booking')">رزرو نوبت</button>
+      <button data-view="contact" onclick="go('contact')">تماس با ما</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section class="view active" id="view-home">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Maison de Beauté · سالن زیبایی بانوان</div>
+          <h1>ظرافتی به سبک <em>پاریس</em>، در دل شهر شما</h1>
+          <p>فرانس بانو، سالن زیبایی تخصصی بانوان با خدمات مو، پوست، ناخن و میکاپ عروس؛ جایی که هر بازدید، یک تجربه‌ی آرامش‌بخش و لوکس است.</p>
+          <div class="hero-actions">
+            <button class="btn btn-solid" onclick="go('booking')">رزرو نوبت</button>
+            <button class="btn btn-outline" onclick="go('services')">مشاهده خدمات</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <svg class="hero-emblem" viewBox="0 0 240 240">
+            <circle cx="120" cy="120" r="110" fill="none" stroke="#C6A15B" stroke-width="1"/>
+            <circle cx="120" cy="120" r="96" fill="none" stroke="#C6A15B" stroke-width="1" opacity=".5"/>
+            <path d="M120 70 C104 84 104 104 120 120 C136 104 136 84 120 70 Z" fill="none" stroke="#8C4B52" stroke-width="1.6"/>
+            <path d="M120 120 C120 140 108 150 96 154" fill="none" stroke="#8C4B52" stroke-width="1.4"/>
+            <path d="M120 120 C120 140 132 150 144 154" fill="none" stroke="#8C4B52" stroke-width="1.4"/>
+            <path d="M96 154 C86 156 78 164 74 172" fill="none" stroke="#8C4B52" stroke-width="1.2"/>
+            <path d="M144 154 C154 156 162 164 166 172" fill="none" stroke="#8C4B52" stroke-width="1.2"/>
+            <circle cx="120" cy="94" r="3" fill="#C6A15B"/>
+            <path d="M70 60 L70 40 M60 50 L80 50" stroke="#C6A15B" stroke-width="1"/>
+            <path d="M172 190 L172 174 M164 182 L180 182" stroke="#C6A15B" stroke-width="1"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">تخصص ما</div>
+        <h2>خدماتی برای هر لحظه از زیبایی شما</h2>
+      </div>
+      <div class="flourish"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="#C6A15B"><path d="M12 4c-3 3-3 7 0 10 3-3 3-7 0-10Z"/></svg><span></span></div>
+      <div class="services-grid">
+        <div class="service-card"><div class="ic">✂</div><h3>مو و رنگ</h3><p class="desc">کوتاهی، رنگ، های‌لایت و احیای مو با محصولات حرفه‌ای.</p></div>
+        <div class="service-card"><div class="ic">💄</div><h3>میکاپ عروس</h3><p class="desc">آرایش عروس و مجلسی با ماندگاری بالا و ظاهری طبیعی.</p></div>
+        <div class="service-card"><div class="ic">✨</div><h3>پوست و اسپا</h3><p class="desc">پاکسازی، مراقبت پوست صورت و ماساژ آرامش‌بخش.</p></div>
+      </div>
+      <div style="text-align:center; margin-top:36px;"><button class="btn btn-outline" onclick="go('services')">مشاهده همه خدمات</button></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="view" id="view-about">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">درباره فرانس بانو</div>
+        <h2>سالنی برای بانوانی که ظرافت را دوست دارند</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p style="font-size:15.5px; color:#5c5148;">فرانس بانو با الهام از ظرافت و شیک‌پوشی سبک پاریسی شکل گرفته؛ جایی که تیم متخصص ما با استفاده از جدیدترین تکنیک‌ها و محصولات باکیفیت، تجربه‌ای آرام و لوکس را برای شما رقم می‌زنند.</p>
+          <p style="font-size:15.5px; color:#5c5148; margin-top:14px;">از یک کوتاهی ساده تا آماده‌سازی کامل عروس، هر خدمت را با دقت، سلیقه و احترام به سبک شخصی شما انجام می‌دهیم.</p>
+          <div class="values-row">
+            <div class="value-box"><h4>دقت و ظرافت</h4><p>هر خدمت با توجه به جزئیات و سلیقه شما.</p></div>
+            <div class="value-box"><h4>بهداشت کامل</h4><p>استانداردهای بهداشتی در تمام مراحل کار.</p></div>
+            <div class="value-box"><h4>محصولات حرفه‌ای</h4><p>استفاده از برندهای معتبر و باکیفیت.</p></div>
+            <div class="value-box"><h4>فضایی آرام</h4><p>محیطی دنج برای لحظه‌ای استراحت واقعی.</p></div>
+          </div>
+        </div>
+        <div class="about-frame">
+          <blockquote>«زیبایی، جزئیاتی است که با عشق به آن‌ها توجه می‌کنیم.»</blockquote>
+          <div class="sig">— تیم فرانس بانو</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="view" id="view-services">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">خدمات فرانس بانو</div>
+        <h2>لیست کامل خدمات</h2>
+        <p>قیمت‌های ذکرشده شروع قیمت هستند و بسته به طول مو و نوع خدمت، در جلسه مشاوره دقیق اعلام می‌شوند.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card"><div class="ic">✂</div><h3>کوتاهی و مدل مو</h3><p class="desc">کوتاهی، فر و شینیون متناسب با فرم صورت.</p><span class="service-price">از ۴۵۰,۰۰۰ <span style="font-family:'Vazirmatn'; font-size:12px;">تومان</span></span></div>
+        <div class="service-card"><div class="ic">🎨</div><h3>رنگ و های‌لایت مو</h3><p class="desc">رنگ کامل، های‌لایت و بالیاژ با محصولات حرفه‌ای.</p><span class="service-price">از ۱,۲۰۰,۰۰۰ <span style="font-family:'Vazirmatn'; font-size:12px;">تومان</span></span></div>
+        <div class="service-card"><div class="ic">💧</div><h3>کراتینه و احیا مو</h3><p class="desc">صافی و ترمیم مو برای مویی سالم و درخشان.</p><span class="service-price">از ۱,۸۰۰,۰۰۰ <span style="font-family:'Vazirmatn'; font-size:12px;">تومان</span></span></div>
+        <div class="service-card"><div class="ic">💄</div><h3>میکاپ عروس و مجلسی</h3><p class="desc">آرایش کامل با تست رایگان پیش از مراسم.</p><span class="service-price">از ۲,۵۰۰,۰۰۰ <span style="font-family:'Vazirmatn'; font-size:12px;">تومان</span></span></div>
+        <div class="service-card"><div class="ic">👁</div><h3>اکستنشن و لیفت مژه</h3><p class="desc">حجم و فر طبیعی مژه‌ها با ماندگاری بالا.</p><span class="service-price">از ۹۵۰,۰۰۰ <span style="font-family:'Vazirmatn'; font-size:12px;">تومان</span></span></div>
+        <div class="service-card"><div class="ic">💅</div><h3>کاشت و طراحی ناخن</h3><p class="desc">کاشت، ژلیش و طراحی اختصاصی ناخن.</p><span class="service-price">از ۷۵۰,۰۰۰ <span style="font-family:'Vazirmatn'; font-size:12px;">تومان</span></span></div>
+        <div class="service-card"><div class="ic">🌸</div><h3>اپیلاسیون با وکس</h3><p class="desc">اپیلاسیون بدن و صورت با وکس گرم مرغوب.</p><span class="service-price">از ۳۵۰,۰۰۰ <span style="font-family:'Vazirmatn'; font-size:12px;">تومان</span></span></div>
+        <div class="service-card"><div class="ic">✨</div><h3>پاکسازی پوست صورت</h3><p class="desc">پاکسازی عمقی و مراقبت اختصاصی پوست.</p><span class="service-price">از ۸۵۰,۰۰۰ <span style="font-family:'Vazirmatn'; font-size:12px;">تومان</span></span></div>
+        <div class="service-card"><div class="ic">🕊</div><h3>اسپا و ماساژ آرامش‌بخش</h3><p class="desc">ماساژ ریلکسی برای رهایی از استرس روزانه.</p><span class="service-price">از ۱,۱۰۰,۰۰۰ <span style="font-family:'Vazirmatn'; font-size:12px;">تومان</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="view" id="view-booking">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">رزرو نوبت</div>
+        <h2>وقت خود را رزرو کنید</h2>
+        <p>فرم زیر را تکمیل کنید؛ همکاران ما برای تأیید نهایی زمان، با شما تماس می‌گیرند.</p>
+      </div>
+      <form class="form-shell" id="bookingForm" onsubmit="submitBooking(event)">
+        <div class="row-2">
+          <div class="field"><label>نام و نام‌خانوادگی</label><input type="text" required></div>
+          <div class="field"><label>شماره تماس</label><input type="tel" required placeholder="09xxxxxxxxx" pattern="09[0-9]{9}"></div>
+        </div>
+        <div class="field">
+          <label>نوع خدمت</label>
+          <select required>
+            <option value="">انتخاب کنید</option>
+            <option>کوتاهی و مدل مو</option>
+            <option>رنگ و های‌لایت مو</option>
+            <option>کراتینه و احیا مو</option>
+            <option>میکاپ عروس و مجلسی</option>
+            <option>اکستنشن و لیفت مژه</option>
+            <option>کاشت و طراحی ناخن</option>
+            <option>اپیلاسیون با وکس</option>
+            <option>پاکسازی پوست صورت</option>
+            <option>اسپا و ماساژ</option>
+          </select>
+        </div>
+        <div class="row-2">
+          <div class="field"><label>تاریخ ترجیحی</label><input type="date" required></div>
+          <div class="field"><label>ساعت ترجیحی</label><input type="time" required></div>
+        </div>
+        <div class="field"><label>توضیحات (اختیاری)</label><textarea rows="3"></textarea></div>
+        <button type="submit" class="btn btn-solid btn-block">ثبت درخواست نوبت</button>
+        <div class="note-box">این فرم فقط نمایشی است؛ برای دریافت واقعی نوبت‌ها به یک سامانه رزرو یا شماره تماس واقعی نیاز دارید.</div>
+      </form>
+      <div class="success-panel" id="bookingSuccess">
+        <div class="success-icon">✓</div>
+        <h3>درخواست شما ثبت شد</h3>
+        <p style="color:#5c5148; margin-top:10px;">همکاران فرانس بانو به‌زودی برای تأیید نهایی زمان، با شما تماس می‌گیرند.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="view" id="view-contact">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">در ارتباط باشید</div>
+        <h2>تماس با فرانس بانو</h2>
+      </div>
+      <div class="contact-grid">
+        <form class="form-shell" id="contactForm" onsubmit="submitContact(event)" style="max-width:none;">
+          <input type="text" class="hp-field" tabindex="-1" autocomplete="off">
+          <div class="field"><label>نام شما</label><input type="text" required></div>
+          <div class="field"><label>ایمیل یا شماره تماس</label><input type="text" required></div>
+          <div class="field"><label>پیام شما</label><textarea rows="5" required></textarea></div>
+          <button type="submit" class="btn btn-solid btn-block">ارسال پیام</button>
+          <div class="success-panel" id="contactSuccess" style="margin-top:16px; padding:24px;">پیام شما دریافت شد؛ به‌زودی پاسخ داده می‌شود.</div>
+        </form>
+        <div class="contact-info-box">
+          <h3>اطلاعات تماس</h3>
+          <div class="row">📍 [آدرس سالن را وارد کنید]</div>
+          <div class="row">☎ [شماره تماس را وارد کنید]</div>
+          <div class="row">📸 اینستاگرام: [آیدی اینستاگرام]</div>
+          <div class="row">🕐 شنبه تا پنجشنبه، ۱۰ تا ۲۰</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h5>فرانس بانو</h5>
+        <p>سالن زیبایی تخصصی بانوان؛ ظرافتی به سبک پاریسی برای هر لحظه از روز شما.</p>
+      </div>
+      <div>
+        <h5>دسترسی سریع</h5>
+        <a href="#" onclick="go('about'); return false;">درباره ما</a>
+        <a href="#" onclick="go('services'); return false;">خدمات</a>
+        <a href="#" onclick="go('booking'); return false;">رزرو نوبت</a>
+      </div>
+      <div>
+        <h5>ارتباط با ما</h5>
+        <p>[شماره تماس را وارد کنید]</p>
+        <p>[آدرس را وارد کنید]</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© تمامی حقوق برای فرانس بانو محفوظ است.</div>
+  </div>
+</footer>
+
+<script>
+  function submitBooking(e){
+    e.preventDefault();
+    document.getElementById('bookingForm').style.display='none';
+    document.getElementById('bookingSuccess').classList.add('show');
+  }
+  function submitContact(e){
+    e.preventDefault();
+    document.getElementById('contactForm').querySelectorAll('.field, button[type=submit]').forEach(el=>el.style.display='none');
+    document.getElementById('contactSuccess').classList.add('show');
+  }
+  function go(view){
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+    document.getElementById('view-'+view).classList.add('active');
+    document.querySelectorAll('nav.links button').forEach(b=>b.classList.remove('active'));
+    const btn = document.querySelector('nav.links button[data-view="'+view+'"]');
+    if(btn) btn.classList.add('active');
+    document.getElementById('navLinks').classList.remove('open');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  function toggleMenu(){ document.getElementById('navLinks').classList.toggle('open'); }
+</script>
+</body>
+</html>

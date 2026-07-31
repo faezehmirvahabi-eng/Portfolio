@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آموزش جودو | مجموعه ورزشی سیماری - رشت</title>
+<meta name="description" content="آموزش جودو در مجموعه ورزشی سیماری، رشت. زیر نظر مربی دان ۳ جودو، دارای کارت مربی‌گری رسمی و ملی‌پوش اسبق بزرگسالان. کلاس کودکان، نوجوانان، بزرگسالان و تیم قهرمانی.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;700&family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15181c;
+    --panel:#1d2126;
+    --line:#2c3238;
+    --gi:#f2f0e8;
+    --red:#d62828;
+    --judo-blue:#2c5f7c;
+    --muted:#9aa0a6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--ink);color:var(--gi);font-family:'Vazirmatn',sans-serif;line-height:1.8;}
+  .naskh{font-family:'Noto Naskh Arabic',serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px;}
+
+  header{position:sticky;top:0;z-index:30;background:rgba(21,24,28,0.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;max-width:1000px;margin:0 auto;}
+  .nav .brand{font-weight:800;font-size:1.2rem;color:var(--gi);}
+  .nav .brand span{color:var(--red);}
+  .nav ul{list-style:none;display:flex;gap:24px;}
+  .nav a{font-size:0.92rem;color:var(--muted);}
+  .nav a:hover{color:var(--gi);}
+  .nav .cta-mini{background:var(--red);color:#fff;padding:8px 18px;border-radius:6px;font-weight:700;font-size:0.85rem;}
+  .burger{display:none;background:none;border:none;color:var(--gi);font-size:1.4rem;}
+  @media(max-width:760px){
+    .nav ul{position:fixed;top:60px;right:0;left:0;background:var(--panel);flex-direction:column;
+      padding:18px 24px;gap:16px;transform:translateY(-120%);transition:transform .25s;border-bottom:1px solid var(--line);z-index:20;}
+    .nav ul.open{transform:translateY(0);}
+    .burger{display:block;}
+  }
+
+  /* tatami danger-zone stripe divider — signature element */
+  .mat-strip{width:100%;height:14px;background:linear-gradient(90deg,#3a4d3f,#3a4d3f);position:relative;overflow:hidden;}
+  .mat-strip::before{content:"";position:absolute;top:0;right:0;bottom:0;width:26px;background:var(--red);}
+  .mat-strip::after{content:"";position:absolute;top:0;left:0;bottom:0;width:26px;background:var(--red);}
+
+  .hero{padding:64px 0 46px;text-align:center;}
+  .hero .eyebrow{font-family:'Noto Naskh Arabic',serif;color:var(--red);font-size:0.95rem;margin-bottom:16px;letter-spacing:0.02em;}
+  .hero h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:900;line-height:1.4;}
+  .hero h1 span{color:var(--red);}
+  .hero p{color:var(--muted);max-width:520px;margin:20px auto 30px;font-size:1.02rem;}
+  .cta{display:inline-block;padding:14px 30px;border-radius:8px;font-weight:700;background:var(--red);color:#fff;transition:transform .15s;}
+  .cta:hover{transform:translateY(-2px);}
+  .cta.ghost{background:transparent;border:1px solid var(--line);color:var(--gi);margin-left:12px;}
+
+  .credential-strip{
+    display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:40px;
+  }
+  .credential{
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 22px;text-align:center;min-width:150px;
+  }
+  .credential .big{font-weight:900;font-size:1.5rem;color:var(--red);}
+  .credential .small{color:var(--muted);font-size:0.8rem;margin-top:4px;}
+
+  section{padding:56px 0;}
+  .section-head{text-align:center;margin-bottom:38px;}
+  .section-head .eyebrow{font-family:'Noto Naskh Arabic',serif;color:var(--red);font-size:0.9rem;margin-bottom:8px;}
+  .section-head h2{font-size:1.8rem;font-weight:800;}
+
+  .coach{display:flex;gap:34px;align-items:center;flex-wrap:wrap;}
+  .coach .badge{
+    width:150px;height:150px;border-radius:50%;flex-shrink:0;
+    background:radial-gradient(circle at 30% 30%, #2a2e33, #0d0f11);
+    border:4px solid var(--ink);outline:3px solid var(--red);
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.8rem;color:var(--red);
+  }
+  .coach .txt{flex:1;min-width:260px;}
+  .coach .txt ul{padding-right:20px;color:var(--gi);}
+  .coach .txt li{margin-bottom:10px;}
+
+  .programs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .program{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;position:relative;}
+  .program .rank{
+    display:inline-block;font-family:'Noto Naskh Arabic',serif;font-size:0.78rem;color:var(--judo-blue);
+    background:rgba(44,95,124,0.15);padding:4px 12px;border-radius:20px;margin-bottom:12px;
+  }
+  .program h3{font-size:1.15rem;margin-bottom:10px;font-weight:800;}
+  .program p{color:var(--muted);font-size:0.9rem;line-height:1.8;}
+
+  .schedule{width:100%;border-collapse:collapse;background:var(--panel);border-radius:10px;overflow:hidden;}
+  .schedule th, .schedule td{padding:14px 16px;text-align:right;border-bottom:1px solid var(--line);font-size:0.92rem;}
+  .schedule th{color:var(--red);font-weight:700;}
+  .schedule tr:last-child td{border-bottom:none;}
+
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .contact-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center;}
+  .contact-card .icon{font-size:1.7rem;margin-bottom:10px;}
+  .contact-card a, .contact-card span{color:var(--gi);font-weight:600;}
+
+  footer{padding:26px 22px;text-align:center;color:var(--muted);font-size:0.85rem;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">مجموعه <span>سیماری</span></div>
+    <button class="burger" onclick="document.getElementById('navlist').classList.toggle('open')">☰</button>
+    <ul id="navlist">
+      <li><a href="#coach">مربی</a></li>
+      <li><a href="#programs">کلاس‌ها</a></li>
+      <li><a href="#schedule">برنامه</a></li>
+      <li><a href="#contact">تماس</a></li>
+    </ul>
+    <a class="cta-mini" href="#contact">ثبت‌نام</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="eyebrow naskh">بخش آموزش جودو</div>
+    <h1>جودو را <span>درست</span> یاد بگیرید</h1>
+    <p>آموزش جودو در مجموعه ورزشی سیماری، زیر نظر مربی دان ۳ جودو، دارای کارت مربی‌گری رسمی و ملی‌پوش اسبق بزرگسالان — برای همه‌ی سنین، از پایه تا قهرمانی.</p>
+    <div>
+      <a class="cta" href="#contact">ثبت‌نام کلاس</a>
+      <a class="cta ghost" href="#programs">مشاهده‌ی کلاس‌ها</a>
+    </div>
+
+    <div class="credential-strip">
+      <div class="credential"><div class="big">دان ۳</div><div class="small">درجه‌ی فنی جودو</div></div>
+      <div class="credential"><div class="big">✓</div><div class="small">کارت مربی‌گری رسمی</div></div>
+      <div class="credential"><div class="big">ملی‌پوش</div><div class="small">تیم ملی بزرگسالان</div></div>
+    </div>
+  </div>
+
+  <div class="mat-strip"></div>
+
+  <section id="coach">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow naskh">سرمربی</div>
+        <h2>زیر نظر یک مربی با تجربه‌ی میدانی واقعی</h2>
+      </div>
+      <div class="coach">
+        <div class="badge">judo</div>
+        <div class="txt">
+          <ul>
+            <li>دارنده‌ی دان ۳ جودو</li>
+            <li>دارای کارت مربی‌گری رسمی فدراسیون</li>
+            <li>ملی‌پوش اسبق تیم ملی جودو بزرگسالان</li>
+            <li>آموزش اصولی از پایه تا سطح رقابتی، با تمرکز بر تکنیک صحیح و ایمنی</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mat-strip"></div>
+
+  <section id="programs">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow naskh">کلاس‌ها</div>
+        <h2>برای هر سن و هدفی، یک مسیر</h2>
+      </div>
+      <div class="programs">
+        <div class="program">
+          <div class="rank naskh">زیر ۷ سال</div>
+          <h3>جودوی کودکان</h3>
+          <p>آموزش پایه، هماهنگی حرکتی، انضباط و احترام — در فضایی امن و شاد.</p>
+        </div>
+        <div class="program">
+          <div class="rank naskh">نوجوانان</div>
+          <h3>جودوی نوجوانان</h3>
+          <p>تقویت تکنیک، آمادگی جسمانی و آماده‌سازی برای مسابقات رده‌ی سنی.</p>
+        </div>
+        <div class="program">
+          <div class="rank naskh">بزرگسالان</div>
+          <h3>جودوی عمومی بزرگسالان</h3>
+          <p>مناسب علاقه‌مندان به یادگیری جودو از پایه، بدون سابقه‌ی قبلی.</p>
+        </div>
+        <div class="program">
+          <div class="rank naskh">حرفه‌ای</div>
+          <h3>تیم قهرمانی</h3>
+          <p>تمرین تخصصی و رقابتی برای ورزشکاران آماده‌ی حضور در مسابقات رسمی.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mat-strip"></div>
+
+  <section id="schedule">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow naskh">برنامه‌ی هفتگی</div>
+        <h2>زمان کلاس‌ها</h2>
+      </div>
+      <table class="schedule">
+        <tr><th>رده</th><th>روزها</th><th>ساعت</th></tr>
+        <tr><td>کودکان (زیر ۷ سال)</td><td>شنبه، دوشنبه، چهارشنبه</td><td>۱۶:۰۰ - ۱۷:۰۰</td></tr>
+        <tr><td>نوجوانان</td><td>شنبه تا چهارشنبه</td><td>۱۷:۰۰ - ۱۸:۳۰</td></tr>
+        <tr><td>بزرگسالان عمومی</td><td>یکشنبه، سه‌شنبه، پنجشنبه</td><td>۱۸:۳۰ - ۲۰:۰۰</td></tr>
+        <tr><td>تیم قهرمانی</td><td>هر روز</td><td>۲۰:۰۰ - ۲۲:۰۰</td></tr>
+      </table>
+      <p style="color:var(--muted);font-size:0.85rem;margin-top:14px;">* ساعات فوق نمونه است و پیش از ثبت‌نام از طریق تماس با ما تایید می‌شود.</p>
+    </div>
+  </section>
+
+  <div class="mat-strip"></div>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow naskh">ثبت‌نام و تماس</div>
+        <h2>همین حالا شروع کنید</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="icon">📞</div>
+          <a href="tel:+989019727255">۰۹۰۱۹۷۲۷۲۵۵</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon">💬</div>
+          <a href="https://wa.me/989019727255" target="_blank">واتساپ</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon">📍</div>
+          <span>رشت، بلوار مدرس، خیابان عابدین کاشفی، بلوار فجر آزادگان، نبش خیابان کلانتری ۱۵، مجموعه ورزشی سیماری</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© مجموعه ورزشی سیماری — بخش آموزش جودو</footer>
+
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-fa="آکادمی سگ‌یار | تربیت گرم و دوستانه سگ" data-en="Sagyar Academy | Warm, Friendly Dog Training">آکادمی سگ‌یار | تربیت گرم و دوستانه سگ</title>
+<meta name="description" data-fa="آکادمی سگ‌یار؛ آموزش تربیت سگ با روشی گرم و دوستانه، رفتارشناسی، دوره‌ها و پکیج‌ها، راهنمای انتخاب نژاد و مقالات تغذیه." data-en="Sagyar Academy: warm, friendly dog training, behavior coaching, courses & packages, breed guide and nutrition articles." content="آکادمی سگ‌یار؛ آموزش تربیت سگ با روشی گرم و دوستانه، رفتارشناسی، دوره‌ها و پکیج‌ها، راهنمای انتخاب نژاد و مقالات تغذیه.">
+<meta name="keywords" content="آموزش سگ, تربیت سگ, رفتارشناسی سگ, دوره تربیت سگ, انتخاب نژاد سگ, تغذیه سگ, dog training, dog behavior">
+<meta property="og:title" content="آکادمی سگ‌یار | تربیت گرم و دوستانه سگ">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example.com/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Sagyar Academy","description":"Warm, friendly dog training and behavior coaching.","priceRange":"$$","areaServed":"IR"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --ink:#3B2A1E;
+    --heading:#4A2F1C;
+    --sand:#F6EDDB;
+    --cream:#FFFCF5;
+    --clay:#B5652F;
+    --clay-deep:#8F4E23;
+    --honey:#E3A94C;
+    --denim:#4C6B7A;
+    --slate:#7A6A57;
+    --line:#E8DAC0;
+    --f-body:'Vazirmatn', sans-serif;
+    --f-head:'Vazirmatn', sans-serif;
+  }
+  html[lang="en"]{ --f-body:'Nunito', sans-serif; --f-head:'Baloo 2', sans-serif; }
+  html,body,button,input,select,textarea{ font-family: var(--f-body); }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--sand); color:var(--ink); }
+  h1,h2,h3,.heading-font{ font-family: var(--f-head); }
+
+  .paw-bg{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 24 24'%3E%3Cg fill='%23E8DAC0' transform='rotate(-14 12 12)'%3E%3Ccircle cx='12' cy='15.5' r='3'/%3E%3Ccircle cx='6.4' cy='10' r='1.5'/%3E%3Ccircle cx='17.6' cy='10' r='1.5'/%3E%3Ccircle cx='8.9' cy='6' r='1.25'/%3E%3Ccircle cx='15.1' cy='6' r='1.25'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:70px 70px;
+  }
+
+  .badge{ display:inline-flex; align-items:center; gap:6px; font-size:.72rem; padding:5px 14px; border-radius:999px; background:var(--honey); color:var(--heading); font-weight:800; }
+
+  .btn-clay{ background:var(--clay); color:var(--cream); box-shadow:0 4px 0 0 var(--clay-deep); transition:transform .15s ease, box-shadow .15s ease; }
+  .btn-clay:hover{ transform:translateY(2px); box-shadow:0 2px 0 0 var(--clay-deep); }
+  .btn-outline{ border:2.5px solid var(--clay); color:var(--clay-deep); transition:all .2s ease; }
+  .btn-outline:hover{ background:var(--clay); color:var(--cream); }
+
+  .card{ background:var(--cream); border:1px solid var(--line); border-radius:26px; box-shadow:0 1px 2px rgba(74,47,28,.05), 0 12px 26px -16px rgba(74,47,28,.22); transition:transform .25s ease, box-shadow .25s ease; }
+  .card:hover{ transform:translateY(-4px) rotate(-.3deg); box-shadow:0 1px 2px rgba(74,47,28,.06), 0 20px 36px -18px rgba(74,47,28,.3); }
+
+  .blob{ border-radius:63% 37% 54% 46% / 55% 45% 62% 38%; }
+
+  header.site-header{ box-shadow:0 1px 0 var(--line), 0 8px 20px -18px rgba(74,47,28,.35); }
+
+  .tag-pill{ background:var(--sand); border:1px solid var(--line); border-radius:999px; padding:4px 12px; font-size:.75rem; color:var(--slate); font-weight:700; }
+
+  /* Polaroid photo frames */
+  .polaroid{ background:var(--cream); padding:10px 10px 26px; border-radius:14px; box-shadow:0 10px 24px -10px rgba(74,47,28,.35); }
+  .polaroid img{ display:block; width:100%; height:100%; object-fit:cover; border-radius:6px; }
+  .polaroid .frame{ position:relative; overflow:hidden; border-radius:6px; background:radial-gradient(120% 120% at 30% 20%, var(--honey), var(--clay) 75%); }
+  .polaroid .frame img{ position:absolute; inset:0; }
+  .polaroid .frame .fallback{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+
+  .tape{ position:absolute; width:70px; height:26px; background:rgba(227,169,76,.55); border:1px solid rgba(227,169,76,.7); }
+
+  /* Trail connector made of paw prints */
+  .trail{ position:relative; }
+  .trail::before{
+    content:""; position:absolute; top:0; bottom:0; right:23px; width:20px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='34' viewBox='0 0 24 24'%3E%3Cg fill='%23B5652F' opacity='.55'%3E%3Ccircle cx='12' cy='15.5' r='3'/%3E%3Ccircle cx='6.4' cy='10' r='1.5'/%3E%3Ccircle cx='17.6' cy='10' r='1.5'/%3E%3Ccircle cx='8.9' cy='6' r='1.25'/%3E%3Ccircle cx='15.1' cy='6' r='1.25'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat:repeat-y; background-size:20px 34px;
+  }
+  html[dir="ltr"] .trail::before{ right:auto; left:23px; }
+  .trail-dot{ width:48px; height:48px; border-radius:50%; background:var(--clay); color:var(--cream); display:flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0; z-index:1; box-shadow:0 0 0 6px var(--sand); font-family:var(--f-head); }
+
+  .paw-rating{ display:flex; gap:4px; align-items:center; }
+  .speech{ position:relative; border-radius:26px 26px 26px 6px; }
+  html[dir="ltr"] .speech{ border-radius:26px 26px 6px 26px; }
+
+  .wave{ display:block; width:100%; height:60px; }
+
+  [data-lang="en"]{ display:none; }
+  html[lang="en"] [data-lang="fa"]{ display:none; }
+  html[lang="en"] [data-lang="en"]{ display:inline; }
+
+  .fade-up{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+  .fade-up.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){ .fade-up{ opacity:1 !important; transform:none !important; transition:none !important; } }
+
+  input:focus, textarea:focus, select:focus, button:focus-visible, a:focus-visible{ outline:3px solid var(--clay); outline-offset:2px; }
+  input, select, textarea{ border-radius:999px !important; }
+  textarea{ border-radius:20px !important; }
+</style>
+</head>
+<body class="paw-bg">
+
+<!-- ===== Header ===== -->
+<header class="site-header sticky top-4 z-50 mx-4 md:mx-8 rounded-full" style="background-color:rgba(255,252,245,.94); backdrop-filter:blur(6px)">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-[68px]">
+    <a href="#home" class="flex items-center gap-2 font-black text-lg heading-font" style="color:var(--heading)">
+      <span class="w-9 h-9 rounded-full flex items-center justify-center" style="background:var(--honey)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="15" r="4.2" fill="var(--clay)"/><circle cx="5.5" cy="9" r="2.1" fill="var(--clay)"/><circle cx="18.5" cy="9" r="2.1" fill="var(--clay)"/><circle cx="8.3" cy="4.8" r="1.8" fill="var(--clay)"/><circle cx="15.7" cy="4.8" r="1.8" fill="var(--clay)"/>
+        </svg>
+      </span>
+      <span data-lang="fa">سگ‌یار</span><span data-lang="en">Sagyar</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-sm font-bold" style="color:var(--ink)">
+      <a href="#about" class="hover:opacity-70"><span data-lang="fa">درباره ما</span><span data-lang="en">About</span></a>
+      <a href="#courses" class="hover:opacity-70"><span data-lang="fa">دوره‌ها</span><span data-lang="en">Courses</span></a>
+      <a href="#breeds" class="hover:opacity-70"><span data-lang="fa">راهنمای نژاد</span><span data-lang="en">Breeds</span></a>
+      <a href="#articles" class="hover:opacity-70"><span data-lang="fa">مقالات</span><span data-lang="en">Articles</span></a>
+      <a href="#contact" class="hover:opacity-70"><span data-lang="fa">تماس</span><span data-lang="en">Contact</span></a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button id="langToggle" class="tag-pill font-black" style="cursor:pointer">FA / EN</button>
+      <a href="#contact" class="hidden md:inline-block px-5 py-2.5 rounded-full font-black text-sm btn-clay"><span data-lang="fa">مشاوره رایگان</span><span data-lang="en">Free Consult</span></a>
+      <button id="menuBtn" class="lg:hidden p-2" aria-label="menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+  <nav id="mobileNav" class="lg:hidden hidden flex-col gap-1 px-6 pb-5 text-sm font-bold" style="color:var(--ink)">
+    <a href="#about" class="py-2 border-b" style="border-color:var(--line)"><span data-lang="fa">درباره ما</span><span data-lang="en">About</span></a>
+    <a href="#courses" class="py-2 border-b" style="border-color:var(--line)"><span data-lang="fa">دوره‌ها</span><span data-lang="en">Courses</span></a>
+    <a href="#breeds" class="py-2 border-b" style="border-color:var(--line)"><span data-lang="fa">راهنمای نژاد</span><span data-lang="en">Breeds</span></a>
+    <a href="#articles" class="py-2 border-b" style="border-color:var(--line)"><span data-lang="fa">مقالات</span><span data-lang="en">Articles</span></a>
+    <a href="#contact" class="py-2"><span data-lang="fa">تماس</span><span data-lang="en">Contact</span></a>
+  </nav>
+</header>
+
+<!-- ===== Hero ===== -->
+<section id="home" class="max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-16 pb-20 grid md:grid-cols-2 gap-14 items-center">
+  <div class="fade-up order-2 md:order-1">
+    <span class="badge">🐾 <span data-lang="fa">۱۲ سال کنار سگ‌های تهران</span><span data-lang="en">12 years with Tehran's dogs</span></span>
+    <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.3] heading-font" style="color:var(--heading)">
+      <span data-lang="fa">بیایید با مهربانی، سگ‌تون رو تربیت کنیم</span>
+      <span data-lang="en">Let's train your dog — the kind way</span>
+    </h1>
+    <p class="mt-6 text-lg leading-8" style="color:var(--slate)">
+      <span data-lang="fa">بدون داد و فریاد، بدون ابزار آزاردهنده. فقط صبر، بازی و علم رفتارشناسی؛ تا سگ شما همراهی آروم و شاد بشه.</span>
+      <span data-lang="en">No yelling, no aversive tools. Just patience, play and real behavior science — so your dog becomes a calm, happy companion.</span>
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="#courses" class="px-7 py-3.5 rounded-full font-black btn-clay"><span data-lang="fa">مشاهده دوره‌ها</span><span data-lang="en">See courses</span></a>
+      <a href="#contact" class="px-7 py-3.5 rounded-full font-black btn-outline"><span data-lang="fa">مشاوره رایگان</span><span data-lang="en">Free consult</span></a>
+    </div>
+    <div class="mt-10 flex flex-wrap gap-3">
+      <div class="tag-pill">🐶 <span data-lang="fa">۸۰۰+ سگ آموزش‌دیده</span><span data-lang="en">800+ dogs trained</span></div>
+      <div class="tag-pill">😊 <span data-lang="fa">۹۷٪ رضایت</span><span data-lang="en">97% satisfaction</span></div>
+      <div class="tag-pill">💛 <span data-lang="fa">بدون خشونت</span><span data-lang="en">Force-free</span></div>
+    </div>
+  </div>
+
+  <div class="relative order-1 md:order-2 h-80 md:h-[440px] fade-up">
+    <div class="polaroid absolute w-[62%] top-2 right-6 md:right-10 rotate-[-6deg] z-10">
+      <div class="frame h-52 md:h-64">
+        <div class="fallback"><span class="paw-icon-lg"></span></div>
+        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80" alt="Happy dog" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.opacity='0'">
+      </div>
+      <div class="text-center mt-2 text-sm font-bold heading-font" style="color:var(--heading)" data-lang="fa">روزهای شاد تمرین 🐾</div>
+      <div class="text-center mt-2 text-sm font-bold heading-font" style="color:var(--heading)" data-lang="en">Happy training days 🐾</div>
+    </div>
+    <div class="polaroid absolute w-[52%] bottom-0 left-0 rotate-[5deg]">
+      <div class="frame h-44 md:h-52">
+        <div class="fallback"><span class="paw-icon-lg"></span></div>
+        <img src="https://images.unsplash.com/photo-1517849845537-4d257902861a?auto=format&fit=crop&w=800&q=80" alt="Golden retriever" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.opacity='0'">
+      </div>
+      <div class="text-center mt-2 text-sm font-bold heading-font" style="color:var(--heading)" data-lang="fa">اولین "بنشین" 🎉</div>
+      <div class="text-center mt-2 text-sm font-bold heading-font" style="color:var(--heading)" data-lang="en">First "sit" 🎉</div>
+    </div>
+    <div class="tape rotate-[-8deg]" style="top:-6px; right:14%;"></div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--cream)"/></svg>
+
+<!-- ===== About ===== -->
+<section id="about" class="py-16" style="background:var(--cream)">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl fade-up">
+      <span class="badge" data-lang="fa">چرا سگ‌یار</span><span class="badge" data-lang="en">Why Sagyar</span>
+      <h2 class="mt-4 text-3xl md:text-4xl font-extrabold heading-font" style="color:var(--heading)">
+        <span data-lang="fa">تربیتی که هم سگ‌تون دوست داره، هم شما</span>
+        <span data-lang="en">Training your dog loves — and so will you</span>
+      </h2>
+    </div>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="fade-up text-center px-2">
+        <div class="w-16 h-16 blob mx-auto flex items-center justify-center mb-4" style="background:rgba(227,169,76,.35)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1 3-6z" stroke="var(--clay-deep)" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-extrabold text-lg heading-font" data-lang="fa">مربیان با تجربه</h3>
+        <h3 class="font-extrabold text-lg heading-font" data-lang="en">Experienced trainers</h3>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="fa">گواهی بین‌المللی رفتارشناسی و سال‌ها کار با نژادهای مختلف.</p>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="en">Internationally certified, with years across every breed.</p>
+      </div>
+      <div class="fade-up text-center px-2">
+        <div class="w-16 h-16 blob mx-auto flex items-center justify-center mb-4" style="background:rgba(76,107,122,.18)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C.5 8 2 4 6 4c2 0 4 1.2 6 4 2-2.8 4-4 6-4 4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9z" stroke="var(--denim)" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-extrabold text-lg heading-font" data-lang="fa">روش بدون خشونت</h3>
+        <h3 class="font-extrabold text-lg heading-font" data-lang="en">Force-free method</h3>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="fa">تقویت مثبت متناسب با روان‌شناسی واقعی سگ.</p>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="en">Positive reinforcement grounded in real canine psychology.</p>
+      </div>
+      <div class="fade-up text-center px-2">
+        <div class="w-16 h-16 blob mx-auto flex items-center justify-center mb-4" style="background:rgba(181,101,47,.18)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 19V6a2 2 0 012-2h11l3 3v12" stroke="var(--clay-deep)" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 4v5l3-2 3 2V4" stroke="var(--clay-deep)" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-extrabold text-lg heading-font" data-lang="fa">برنامه اختصاصی</h3>
+        <h3 class="font-extrabold text-lg heading-font" data-lang="en">Custom program</h3>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="fa">ارزیابی رایگان بر اساس نژاد، سن و شخصیت سگ شما.</p>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="en">A free assessment built around your dog's breed, age and personality.</p>
+      </div>
+      <div class="fade-up text-center px-2">
+        <div class="w-16 h-16 blob mx-auto flex items-center justify-center mb-4" style="background:rgba(227,169,76,.35)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="var(--clay-deep)" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-extrabold text-lg heading-font" data-lang="fa">پشتیبانی گرم</h3>
+        <h3 class="font-extrabold text-lg heading-font" data-lang="en">Friendly support</h3>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="fa">۳۰ روز همراهی پیام‌رسان بعد از پایان هر دوره.</p>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="en">30 days of messaging support after every course.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Courses ===== -->
+<section id="courses" class="max-w-7xl mx-auto px-5 md:px-8 py-16">
+  <div class="max-w-2xl fade-up">
+    <span class="badge" data-lang="fa">مسیر آموزش</span><span class="badge" data-lang="en">Training path</span>
+    <h2 class="mt-4 text-3xl md:text-4xl font-extrabold heading-font" style="color:var(--heading)">
+      <span data-lang="fa">دوره‌ها و پکیج‌های تربیت سگ</span>
+      <span data-lang="en">Courses & training packages</span>
+    </h2>
+    <p class="mt-3" style="color:var(--slate)" data-lang="fa">قدم‌به‌قدم، متناسب با سطح سگ شما.</p>
+    <p class="mt-3" style="color:var(--slate)" data-lang="en">Step by step, matched to your dog's level.</p>
+  </div>
+
+  <div class="mt-12 trail flex flex-col gap-10">
+    <div class="flex gap-5 fade-up">
+      <div class="trail-dot">۱</div>
+      <div class="card p-6 flex-1 grid md:grid-cols-[1fr_auto] gap-5">
+        <div>
+          <span class="tag-pill" data-lang="fa">توله‌سگ · ۸ تا ۱۶ هفته</span><span class="tag-pill" data-lang="en">Puppy · 8–16 weeks</span>
+          <h3 class="mt-3 text-xl font-extrabold heading-font" data-lang="fa">پکیج پایه توله‌سگ</h3>
+          <h3 class="mt-3 text-xl font-extrabold heading-font" data-lang="en">Puppy Foundations</h3>
+          <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="fa">جامعه‌پذیری، توالت‌آموزی، کنترل گاز گرفتن و اولین فرمان‌ها در ۴ جلسه.</p>
+          <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="en">Socialization, house-training, bite inhibition and first cues in 4 sessions.</p>
+        </div>
+        <div class="flex md:flex-col items-center md:items-end justify-between gap-3 md:min-w-[160px]">
+          <div class="text-2xl font-extrabold heading-font" style="color:var(--clay-deep)"><span data-lang="fa">۲٬۹۰۰٬۰۰۰ ت</span><span data-lang="en">$79</span></div>
+          <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-black btn-clay whitespace-nowrap"><span data-lang="fa">خرید پکیج</span><span data-lang="en">Buy package</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="flex gap-5 fade-up">
+      <div class="trail-dot">۲</div>
+      <div class="card p-6 flex-1 grid md:grid-cols-[1fr_auto] gap-5">
+        <div>
+          <span class="tag-pill" data-lang="fa">اطاعت‌پذیری · تمام سنین</span><span class="tag-pill" data-lang="en">Obedience · all ages</span>
+          <h3 class="mt-3 text-xl font-extrabold heading-font" data-lang="fa">دوره اطاعت‌پذیری کامل</h3>
+          <h3 class="mt-3 text-xl font-extrabold heading-font" data-lang="en">Complete Obedience Course</h3>
+          <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="fa">بنشین، بمان، بیا، قدم‌زدن بدون کشیدن قلاده؛ ۸ جلسه حضوری یا آنلاین.</p>
+          <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="en">Sit, stay, recall, loose-leash walking; 8 sessions, in-person or online.</p>
+        </div>
+        <div class="flex md:flex-col items-center md:items-end justify-between gap-3 md:min-w-[160px]">
+          <div class="text-2xl font-extrabold heading-font" style="color:var(--clay-deep)"><span data-lang="fa">۵٬۴۰۰٬۰۰۰ ت</span><span data-lang="en">$149</span></div>
+          <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-black btn-clay whitespace-nowrap"><span data-lang="fa">خرید پکیج</span><span data-lang="en">Buy package</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="flex gap-5 fade-up">
+      <div class="trail-dot">۳</div>
+      <div class="card p-6 flex-1 grid md:grid-cols-[1fr_auto] gap-5">
+        <div>
+          <span class="tag-pill" data-lang="fa">رفتاردرمانی تخصصی</span><span class="tag-pill" data-lang="en">Behavior therapy</span>
+          <h3 class="mt-3 text-xl font-extrabold heading-font" data-lang="fa">اصلاح رفتارهای پرخطر</h3>
+          <h3 class="mt-3 text-xl font-extrabold heading-font" data-lang="en">High-Risk Behavior Correction</h3>
+          <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="fa">پرخاشگری، اضطراب جدایی، پارس بی‌دلیل و ترس؛ برنامه ۶ جلسه‌ای.</p>
+          <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="en">Aggression, separation anxiety, barking and fear; a 6-session plan.</p>
+        </div>
+        <div class="flex md:flex-col items-center md:items-end justify-between gap-3 md:min-w-[160px]">
+          <div class="text-2xl font-extrabold heading-font" style="color:var(--clay-deep)"><span data-lang="fa">۸٬۲۰۰٬۰۰۰ ت</span><span data-lang="en">$219</span></div>
+          <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-black btn-clay whitespace-nowrap"><span data-lang="fa">خرید پکیج</span><span data-lang="en">Buy package</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="flex gap-5 fade-up">
+      <div class="trail-dot">۴</div>
+      <div class="card p-6 flex-1 grid md:grid-cols-[1fr_auto] gap-5">
+        <div>
+          <span class="tag-pill" data-lang="fa">پیشرفته · نگهبانی و خدماتی</span><span class="tag-pill" data-lang="en">Advanced · guard & service</span>
+          <h3 class="mt-3 text-xl font-extrabold heading-font" data-lang="fa">پکیج ویژه نگهبانی و خدماتی</h3>
+          <h3 class="mt-3 text-xl font-extrabold heading-font" data-lang="en">Guard & Service Dog Package</h3>
+          <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="fa">آموزش پیشرفته حراست، اطاعت در محیط شلوغ و آماده‌سازی برای وظایف خدماتی.</p>
+          <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="en">Advanced protection training, public-access obedience and service prep.</p>
+        </div>
+        <div class="flex md:flex-col items-center md:items-end justify-between gap-3 md:min-w-[160px]">
+          <div class="text-2xl font-extrabold heading-font" style="color:var(--clay-deep)"><span data-lang="fa">تماس بگیرید</span><span data-lang="en">Contact us</span></div>
+          <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-black btn-clay whitespace-nowrap"><span data-lang="fa">استعلام قیمت</span><span data-lang="en">Get a quote</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,0 1080,60 1440,30 L1440,60 L0,60 Z" fill="var(--cream)"/></svg>
+
+<!-- ===== Testimonials ===== -->
+<section class="py-16" style="background:var(--cream)">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl fade-up">
+      <span class="badge" data-lang="fa">حرف مالکان</span><span class="badge" data-lang="en">Owner stories</span>
+      <h2 class="mt-4 text-3xl md:text-4xl font-extrabold heading-font" style="color:var(--heading)">
+        <span data-lang="fa">تجربه‌ی خانواده‌هایی که همراه ما بودن</span>
+        <span data-lang="en">Stories from families we've worked with</span>
+      </h2>
+    </div>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <div class="speech card p-6 fade-up">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-10 h-10 rounded-full flex items-center justify-center font-extrabold heading-font" style="background:var(--honey); color:var(--heading)">م</span>
+          <div>
+            <div class="font-bold text-sm" data-lang="fa">مریم، صاحب لوکا (گلدن)</div>
+            <div class="font-bold text-sm" data-lang="en">Maryam, Luca's owner (Golden)</div>
+          </div>
+        </div>
+        <p class="text-sm leading-7" style="color:var(--slate)" data-lang="fa">لوکا از یه توله‌ی بیش‌فعال به سگی آروم و گوش‌به‌فرمان تبدیل شد؛ همه‌چیز با بازی پیش رفت.</p>
+        <p class="text-sm leading-7" style="color:var(--slate)" data-lang="en">Luca went from a hyper puppy to calm and obedient — and it all happened through play.</p>
+      </div>
+      <div class="speech card p-6 fade-up">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-10 h-10 rounded-full flex items-center justify-center font-extrabold heading-font" style="background:var(--denim); color:var(--cream)">ع</span>
+          <div>
+            <div class="font-bold text-sm" data-lang="fa">علی، صاحب رکس (ژرمن شپرد)</div>
+            <div class="font-bold text-sm" data-lang="en">Ali, Rex's owner (German Shepherd)</div>
+          </div>
+        </div>
+        <p class="text-sm leading-7" style="color:var(--slate)" data-lang="fa">دوره رفتاردرمانی واقعاً پرخاشگری رکس رو کم کرد؛ مربی‌ها صبور و دلسوز بودن.</p>
+        <p class="text-sm leading-7" style="color:var(--slate)" data-lang="en">The behavior course genuinely reduced Rex's aggression; the trainers were patient and caring.</p>
+      </div>
+      <div class="speech card p-6 fade-up">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-10 h-10 rounded-full flex items-center justify-center font-extrabold heading-font" style="background:var(--clay); color:var(--cream)">س</span>
+          <div>
+            <div class="font-bold text-sm" data-lang="fa">سارا، صاحب نوگا (پودل)</div>
+            <div class="font-bold text-sm" data-lang="en">Sara, Noga's owner (Poodle)</div>
+          </div>
+        </div>
+        <p class="text-sm leading-7" style="color:var(--slate)" data-lang="fa">راهنمای انتخاب نژاد کمکم کرد نوگا رو با شرایط زندگیم انتخاب کنم؛ انتخاب عالی‌ای بود.</p>
+        <p class="text-sm leading-7" style="color:var(--slate)" data-lang="en">The breed guide helped me choose Noga based on my lifestyle — it was the perfect match.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Breeds ===== -->
+<section id="breeds" class="max-w-7xl mx-auto px-5 md:px-8 py-16">
+  <div class="flex flex-wrap justify-between items-end gap-4 fade-up">
+    <div class="max-w-2xl">
+      <span class="badge" data-lang="fa">راهنمای انتخاب</span><span class="badge" data-lang="en">Selection guide</span>
+      <h2 class="mt-4 text-3xl md:text-4xl font-extrabold heading-font" style="color:var(--heading)">
+        <span data-lang="fa">معرفی نژادها و انتخاب سگ مناسب</span>
+        <span data-lang="en">Breed guide & choosing the right dog</span>
+      </h2>
+    </div>
+    <a href="#contact" class="px-6 py-3 rounded-full font-black btn-outline whitespace-nowrap"><span data-lang="fa">مشاوره انتخاب نژاد</span><span data-lang="en">Breed consult</span></a>
+  </div>
+
+  <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="fade-up">
+      <div class="polaroid rotate-[-3deg] mx-auto max-w-xs">
+        <div class="frame h-40"><div class="fallback"><span class="paw-icon-lg"></span></div>
+          <img src="https://images.unsplash.com/photo-1517849845537-4d257902861a?auto=format&fit=crop&w=700&q=80" alt="Golden Retriever" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.opacity='0'">
+        </div>
+        <div class="pt-3 px-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-extrabold heading-font" data-lang="fa">گلدن رتریور</h3><h3 class="font-extrabold heading-font" data-lang="en">Golden Retriever</h3>
+            <span class="tag-pill" data-lang="fa">بزرگ</span><span class="tag-pill" data-lang="en">Large</span>
+          </div>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="fa">آرام و خانواده‌دوست؛ عالی برای خانواده‌های با کودک.</p>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="en">Gentle and family-friendly; great with kids.</p>
+          <div class="paw-rating mt-3" data-rating="3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="polaroid rotate-[3deg] mx-auto max-w-xs">
+        <div class="frame h-40"><div class="fallback"><span class="paw-icon-lg"></span></div>
+          <img src="https://images.unsplash.com/photo-1547407139-3c921a71905c?auto=format&fit=crop&w=700&q=80" alt="Siberian Husky" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.opacity='0'">
+        </div>
+        <div class="pt-3 px-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-extrabold heading-font" data-lang="fa">هاسکی سیبری</h3><h3 class="font-extrabold heading-font" data-lang="en">Siberian Husky</h3>
+            <span class="tag-pill" data-lang="fa">متوسط</span><span class="tag-pill" data-lang="en">Medium</span>
+          </div>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="fa">پرانرژی و مستقل؛ برای صاحب باتجربه.</p>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="en">Energetic and independent; for experienced owners.</p>
+          <div class="paw-rating mt-3" data-rating="3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="polaroid rotate-[-2deg] mx-auto max-w-xs">
+        <div class="frame h-40"><div class="fallback"><span class="paw-icon-lg"></span></div>
+          <img src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?auto=format&fit=crop&w=700&q=80" alt="Poodle" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.opacity='0'">
+        </div>
+        <div class="pt-3 px-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-extrabold heading-font" data-lang="fa">پودل</h3><h3 class="font-extrabold heading-font" data-lang="en">Poodle</h3>
+            <span class="tag-pill" data-lang="fa">کوچک تا بزرگ</span><span class="tag-pill" data-lang="en">Small–Large</span>
+          </div>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="fa">هوشمند و کم‌ریزش؛ مناسب آپارتمان.</p>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="en">Smart, low-shedding; apartment-friendly.</p>
+          <div class="paw-rating mt-3" data-rating="2"></div>
+        </div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="polaroid rotate-[2deg] mx-auto max-w-xs">
+        <div class="frame h-40"><div class="fallback"><span class="paw-icon-lg"></span></div>
+          <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=700&q=80" alt="German Shepherd" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.opacity='0'">
+        </div>
+        <div class="pt-3 px-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-extrabold heading-font" data-lang="fa">ژرمن شپرد</h3><h3 class="font-extrabold heading-font" data-lang="en">German Shepherd</h3>
+            <span class="tag-pill" data-lang="fa">بزرگ</span><span class="tag-pill" data-lang="en">Large</span>
+          </div>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="fa">باهوش و وفادار؛ عالی برای نگهبانی.</p>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="en">Smart and loyal; excellent guard dog.</p>
+          <div class="paw-rating mt-3" data-rating="3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="polaroid rotate-[-4deg] mx-auto max-w-xs">
+        <div class="frame h-40"><div class="fallback"><span class="paw-icon-lg"></span></div>
+          <img src="https://images.unsplash.com/photo-1543071293-d91175a0f8f4?auto=format&fit=crop&w=700&q=80" alt="Shih Tzu" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.opacity='0'">
+        </div>
+        <div class="pt-3 px-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-extrabold heading-font" data-lang="fa">شیه‌تزو</h3><h3 class="font-extrabold heading-font" data-lang="en">Shih Tzu</h3>
+            <span class="tag-pill" data-lang="fa">کوچک</span><span class="tag-pill" data-lang="en">Small</span>
+          </div>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="fa">آرام و مهربان؛ مناسب سالمندان.</p>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="en">Calm and affectionate; suits seniors.</p>
+          <div class="paw-rating mt-3" data-rating="1"></div>
+        </div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="polaroid rotate-[4deg] mx-auto max-w-xs">
+        <div class="frame h-40"><div class="fallback"><span class="paw-icon-lg"></span></div>
+          <img src="https://images.unsplash.com/photo-1583512603806-077998240c7a?auto=format&fit=crop&w=700&q=80" alt="Border Collie" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.opacity='0'">
+        </div>
+        <div class="pt-3 px-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-extrabold heading-font" data-lang="fa">بوردر کولی</h3><h3 class="font-extrabold heading-font" data-lang="en">Border Collie</h3>
+            <span class="tag-pill" data-lang="fa">متوسط</span><span class="tag-pill" data-lang="en">Medium</span>
+          </div>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="fa">باهوش‌ترین نژاد؛ نیاز به فعالیت زیاد.</p>
+          <p class="text-sm mt-2 leading-6" style="color:var(--slate)" data-lang="en">The smartest breed; needs lots of activity.</p>
+          <div class="paw-rating mt-3" data-rating="3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--cream)"/></svg>
+
+<!-- ===== Articles ===== -->
+<section id="articles" class="py-16" style="background:var(--cream)">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl fade-up">
+      <span class="badge" data-lang="fa">مجله سگ‌یار</span><span class="badge" data-lang="en">Sagyar Journal</span>
+      <h2 class="mt-4 text-3xl md:text-4xl font-extrabold heading-font" style="color:var(--heading)">
+        <span data-lang="fa">مقالات رفتارشناسی و تغذیه</span>
+        <span data-lang="en">Behavior & nutrition articles</span>
+      </h2>
+    </div>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <article class="card p-6 fade-up relative overflow-hidden">
+        <span class="absolute top-0 right-0 px-4 py-1.5 text-xs font-black" style="background:var(--honey); color:var(--heading); border-radius:0 26px 0 16px" data-lang="fa">رفتارشناسی</span>
+        <span class="absolute top-0 right-0 px-4 py-1.5 text-xs font-black" style="background:var(--honey); color:var(--heading); border-radius:0 26px 0 16px" data-lang="en">Behavior</span>
+        <h3 class="mt-6 font-extrabold text-lg leading-8 heading-font" data-lang="fa">چرا سگ من پارس بی‌دلیل می‌کند؟</h3>
+        <h3 class="mt-6 font-extrabold text-lg leading-8 heading-font" data-lang="en">Why does my dog bark for no reason?</h3>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="fa">شناخت ریشه‌های پارس بیش‌ازحد و ۵ روش کاهش آن بدون سرکوب سگ.</p>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="en">Root causes of excessive barking and 5 humane ways to reduce it.</p>
+        <a href="#" class="inline-block mt-4 text-sm font-black" style="color:var(--clay-deep)"><span data-lang="fa">ادامه مطلب ←</span><span data-lang="en">Read more →</span></a>
+      </article>
+      <article class="card p-6 fade-up relative overflow-hidden">
+        <span class="absolute top-0 right-0 px-4 py-1.5 text-xs font-black" style="background:var(--denim); color:var(--cream); border-radius:0 26px 0 16px" data-lang="fa">تغذیه</span>
+        <span class="absolute top-0 right-0 px-4 py-1.5 text-xs font-black" style="background:var(--denim); color:var(--cream); border-radius:0 26px 0 16px" data-lang="en">Nutrition</span>
+        <h3 class="mt-6 font-extrabold text-lg leading-8 heading-font" data-lang="fa">راهنمای تغذیه توله‌سگ در سال اول</h3>
+        <h3 class="mt-6 font-extrabold text-lg leading-8 heading-font" data-lang="en">Puppy nutrition: the first year</h3>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="fa">میزان پروتئین، دفعات غذادهی و اشتباهات رایج مالکان جدید.</p>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="en">Protein levels, feeding frequency and common new-owner mistakes.</p>
+        <a href="#" class="inline-block mt-4 text-sm font-black" style="color:var(--clay-deep)"><span data-lang="fa">ادامه مطلب ←</span><span data-lang="en">Read more →</span></a>
+      </article>
+      <article class="card p-6 fade-up relative overflow-hidden">
+        <span class="absolute top-0 right-0 px-4 py-1.5 text-xs font-black" style="background:var(--honey); color:var(--heading); border-radius:0 26px 0 16px" data-lang="fa">رفتارشناسی</span>
+        <span class="absolute top-0 right-0 px-4 py-1.5 text-xs font-black" style="background:var(--honey); color:var(--heading); border-radius:0 26px 0 16px" data-lang="en">Behavior</span>
+        <h3 class="mt-6 font-extrabold text-lg leading-8 heading-font" data-lang="fa">اضطراب جدایی؛ علائم و راه‌حل</h3>
+        <h3 class="mt-6 font-extrabold text-lg leading-8 heading-font" data-lang="en">Separation anxiety: signs & solutions</h3>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="fa">چگونه بفهمیم سگ‌مان دچار اضطراب جدایی است و چه گام‌هایی برداریم.</p>
+        <p class="text-sm mt-2 leading-7" style="color:var(--slate)" data-lang="en">How to spot separation anxiety and the first steps to take.</p>
+        <a href="#" class="inline-block mt-4 text-sm font-black" style="color:var(--clay-deep)"><span data-lang="fa">ادامه مطلب ←</span><span data-lang="en">Read more →</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact" class="max-w-7xl mx-auto px-5 md:px-8 py-16 grid lg:grid-cols-2 gap-10">
+  <div class="fade-up">
+    <span class="badge" data-lang="fa">تماس با ما</span><span class="badge" data-lang="en">Contact us</span>
+    <h2 class="mt-4 text-3xl md:text-4xl font-extrabold heading-font" style="color:var(--heading)">
+      <span data-lang="fa">برای شروع، فرم زیر را پر کنید</span>
+      <span data-lang="en">Start with the form below</span>
+    </h2>
+    <p class="mt-3" style="color:var(--slate)" data-lang="fa">تیم ما ظرف کمتر از ۲۴ ساعت با شما تماس می‌گیرد.</p>
+    <p class="mt-3" style="color:var(--slate)" data-lang="en">Our team will reach out within 24 hours.</p>
+    <div class="mt-8 space-y-4 text-sm">
+      <div class="flex items-center gap-3"><span class="w-10 h-10 rounded-full flex items-center justify-center" style="background:var(--honey)">☎</span><span dir="ltr">+98 21 8888 4321</span></div>
+      <div class="flex items-center gap-3"><span class="w-10 h-10 rounded-full flex items-center justify-center" style="background:var(--honey)">✉</span><span dir="ltr">hello@sagyar-academy.com</span></div>
+      <div class="flex items-center gap-3"><span class="w-10 h-10 rounded-full flex items-center justify-center" style="background:var(--honey)">📍</span><span data-lang="fa">تهران، خیابان ولیعصر، پلاک ۱۲۰</span><span data-lang="en">Valiasr St, No. 120, Tehran</span></div>
+    </div>
+  </div>
+
+  <form class="card p-7 fade-up" onsubmit="event.preventDefault(); document.getElementById('formOk').classList.remove('hidden'); this.reset();">
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div>
+        <label class="text-sm font-bold block mb-1.5" data-lang="fa">نام و نام‌خانوادگی</label><label class="text-sm font-bold block mb-1.5" data-lang="en">Full name</label>
+        <input required type="text" class="w-full px-4 py-2.5 border bg-transparent" style="border-color:var(--line)">
+      </div>
+      <div>
+        <label class="text-sm font-bold block mb-1.5" data-lang="fa">شماره تماس</label><label class="text-sm font-bold block mb-1.5" data-lang="en">Phone</label>
+        <input required type="tel" class="w-full px-4 py-2.5 border bg-transparent" style="border-color:var(--line)" dir="ltr">
+      </div>
+    </div>
+    <div class="mt-4">
+      <label class="text-sm font-bold block mb-1.5" data-lang="fa">ایمیل</label><label class="text-sm font-bold block mb-1.5" data-lang="en">Email</label>
+      <input type="email" class="w-full px-4 py-2.5 border bg-transparent" style="border-color:var(--line)" dir="ltr">
+    </div>
+    <div class="mt-4">
+      <label class="text-sm font-bold block mb-1.5" data-lang="fa">خدمت موردنظر</label><label class="text-sm font-bold block mb-1.5" data-lang="en">Service of interest</label>
+      <select class="w-full px-4 py-2.5 border bg-transparent" style="border-color:var(--line)">
+        <option data-lang="fa">پکیج پایه توله‌سگ</option><option data-lang="en">Puppy Foundations</option>
+        <option data-lang="fa">اطاعت‌پذیری کامل</option><option data-lang="en">Complete Obedience</option>
+        <option data-lang="fa">رفتاردرمانی تخصصی</option><option data-lang="en">Behavior Therapy</option>
+        <option data-lang="fa">نگهبانی و خدماتی</option><option data-lang="en">Guard & Service</option>
+        <option data-lang="fa">مشاوره انتخاب نژاد</option><option data-lang="en">Breed Consult</option>
+      </select>
+    </div>
+    <div class="mt-4">
+      <label class="text-sm font-bold block mb-1.5" data-lang="fa">پیام شما</label><label class="text-sm font-bold block mb-1.5" data-lang="en">Your message</label>
+      <textarea rows="4" class="w-full px-4 py-2.5 border bg-transparent" style="border-color:var(--line)"></textarea>
+    </div>
+    <button type="submit" class="mt-5 w-full py-3.5 rounded-full font-black btn-clay">
+      <span data-lang="fa">ارسال درخواست</span><span data-lang="en">Send request</span>
+    </button>
+    <p id="formOk" class="hidden mt-3 text-sm font-bold" style="color:var(--clay-deep)">
+      <span data-lang="fa">پیام شما ارسال شد! به‌زودی تماس می‌گیریم. 🐾</span>
+      <span data-lang="en">Your message was sent! We'll be in touch soon. 🐾</span>
+    </p>
+  </form>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer style="background:var(--heading); color:var(--sand)">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 grid md:grid-cols-4 gap-8 text-sm">
+    <div>
+      <div class="font-extrabold text-lg heading-font" style="color:var(--sand)"><span data-lang="fa">سگ‌یار</span><span data-lang="en">Sagyar</span></div>
+      <p class="mt-3 leading-7 opacity-80" data-lang="fa">آکادمی گرم و دوستانه‌ی تربیت سگ.</p>
+      <p class="mt-3 leading-7 opacity-80" data-lang="en">A warm, friendly dog training academy.</p>
+    </div>
+    <div>
+      <div class="font-bold mb-3" data-lang="fa">لینک‌ها</div><div class="font-bold mb-3" data-lang="en">Links</div>
+      <div class="flex flex-col gap-2 opacity-80">
+        <a href="#courses"><span data-lang="fa">دوره‌ها</span><span data-lang="en">Courses</span></a>
+        <a href="#breeds"><span data-lang="fa">راهنمای نژاد</span><span data-lang="en">Breed guide</span></a>
+        <a href="#articles"><span data-lang="fa">مقالات</span><span data-lang="en">Articles</span></a>
+      </div>
+    </div>
+    <div>
+      <div class="font-bold mb-3" data-lang="fa">شبکه‌های اجتماعی</div><div class="font-bold mb-3" data-lang="en">Social</div>
+      <div class="flex flex-col gap-2 opacity-80"><span>Instagram</span><span>Telegram</span><span>YouTube</span></div>
+    </div>
+    <div>
+      <div class="font-bold mb-3" data-lang="fa">خبرنامه</div><div class="font-bold mb-3" data-lang="en">Newsletter</div>
+      <div class="flex gap-2">
+        <input type="email" placeholder="you@email.com" dir="ltr" class="min-w-0 flex-1 px-3 py-2 rounded-full text-sm" style="color:var(--ink)">
+        <button class="px-4 py-2 rounded-full font-black text-sm btn-clay shrink-0"><span data-lang="fa">عضویت</span><span data-lang="en">Join</span></button>
+      </div>
+    </div>
+  </div>
+  <div class="text-center text-xs opacity-70 pb-6" dir="ltr">© 2026 Sagyar Academy — All rights reserved.</div>
+</footer>
+
+<style>
+  .paw-icon-lg{ display:block; width:80px; height:80px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23FFFCF5' fill-opacity='0.95'%3E%3Ccircle cx='12' cy='15' r='4.2'/%3E%3Ccircle cx='5.5' cy='9' r='2.1'/%3E%3Ccircle cx='18.5' cy='9' r='2.1'/%3E%3Ccircle cx='8.3' cy='4.8' r='1.8'/%3E%3Ccircle cx='15.7' cy='4.8' r='1.8'/%3E%3C/g%3E%3C/svg%3E"); background-size:contain; background-repeat:no-repeat; background-position:center; }
+  .paw-rating .paw{ width:16px; height:16px; }
+</style>
+
+<script>
+  const html = document.documentElement;
+  document.getElementById('langToggle').addEventListener('click', () => {
+    const next = html.lang === 'fa' ? 'en' : 'fa';
+    html.lang = next; html.dir = next === 'fa' ? 'rtl' : 'ltr';
+  });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => { mobileNav.classList.toggle('hidden'); mobileNav.classList.toggle('flex'); });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileNav.classList.add('hidden'); mobileNav.classList.remove('flex'); }));
+
+  const pawSvg = (active) => `<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><g fill="${active ? 'var(--clay)' : 'var(--line)'}"><circle cx="12" cy="15" r="4.2"/><circle cx="5.5" cy="9" r="2.1"/><circle cx="18.5" cy="9" r="2.1"/><circle cx="8.3" cy="4.8" r="1.8"/><circle cx="15.7" cy="4.8" r="1.8"/></g></svg>`;
+  document.querySelectorAll('.paw-rating').forEach(el => {
+    const rating = parseInt(el.dataset.rating || '0', 10);
+    let out = '';
+    for (let i = 1; i <= 3; i++) out += `<span class="paw">${pawSvg(i <= rating)}</span>`;
+    el.innerHTML = out;
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>باشگاه پاک | مرکز آموزش ورزش‌های رزمی و تناسب اندام - رشت</title>
+<meta name="description" content="باشگاه پاک، رشت - مرکز آموزش جودو، جوجیتسو، BJJ، دفاع شخصی، کیوکوشین کاراته، تکواندو، آیکیدو، کیک‌بوکسینگ، TRX و پیلاتس برای تمام سنین.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0f1216;
+    --panel:#171b20;
+    --panel2:#1e242b;
+    --line:#262c33;
+    --teal:#1f8fb0;
+    --teal-light:#3db8dd;
+    --gold:#d4a544;
+    --white:#f5f6f7;
+    --muted:#8b9198;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--ink);color:var(--white);font-family:'Vazirmatn',sans-serif;line-height:1.8;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px;}
+
+  /* header */
+  header{position:sticky;top:0;z-index:40;background:rgba(15,18,22,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;max-width:1040px;margin:0 auto;}
+  .nav .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;}
+  .nav .brand .badge{width:34px;height:34px;border-radius:50%;background:conic-gradient(var(--teal),var(--gold),var(--teal));display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:900;color:#0f1216;}
+  .nav ul{list-style:none;display:flex;gap:24px;}
+  .nav a.nav-link{font-size:0.9rem;color:var(--muted);position:relative;padding:4px 0;transition:color .2s;}
+  .nav a.nav-link:hover, .nav a.nav-link.active{color:var(--white);}
+  .nav a.nav-link.active::after{content:"";position:absolute;bottom:-4px;right:0;left:0;height:2px;background:var(--teal);}
+  .cta-mini{background:var(--teal);color:#08141a;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.85rem;}
+  .burger{display:none;font-size:1.4rem;}
+  @media(max-width:780px){
+    .nav ul{position:fixed;top:60px;right:0;left:0;background:var(--panel);flex-direction:column;
+      padding:18px 24px;gap:16px;transform:translateY(-130%);transition:transform .25s;border-bottom:1px solid var(--line);z-index:30;}
+    .nav ul.open{transform:translateY(0);}
+    .burger{display:block;}
+  }
+
+  /* diagonal stripe divider — signature element */
+  .stripe-divider{width:100%;height:20px;background:repeating-linear-gradient(-45deg,var(--teal) 0 18px, var(--gold) 18px 36px);opacity:0.9;}
+
+  /* hero */
+  .hero{position:relative;padding:70px 0 50px;text-align:center;overflow:hidden;}
+  .hero::before{
+    content:"";position:absolute;inset:-20% -10%;
+    background:repeating-linear-gradient(-45deg, rgba(31,143,176,0.06) 0 40px, transparent 40px 80px);
+    z-index:0;
+  }
+  .hero > *{position:relative;z-index:1;}
+  .eyebrow{font-size:0.88rem;color:var(--teal-light);font-weight:700;letter-spacing:0.04em;margin-bottom:16px;}
+  .hero h1{font-size:clamp(2rem,6vw,3.1rem);font-weight:900;line-height:1.4;}
+  .hero h1 span{color:var(--gold);}
+  .hero p{color:var(--muted);max-width:540px;margin:20px auto 30px;font-size:1.02rem;}
+  .cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .cta{display:inline-block;padding:14px 30px;border-radius:8px;font-weight:700;background:var(--teal);color:#08141a;transition:transform .15s;}
+  .cta:hover{transform:translateY(-2px);}
+  .cta.ghost{background:transparent;border:1px solid var(--line);color:var(--white);}
+
+  .stat-row{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:44px;}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 24px;text-align:center;min-width:130px;}
+  .stat .num{font-weight:900;font-size:1.6rem;color:var(--teal-light);}
+  .stat .lbl{color:var(--muted);font-size:0.78rem;margin-top:4px;}
+
+  section{padding:60px 0;}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  .section-head{text-align:center;margin-bottom:34px;}
+  .section-head .eyebrow{margin-bottom:8px;}
+  .section-head h2{font-size:1.8rem;font-weight:800;}
+
+  /* filter tabs */
+  .filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:32px;}
+  .filter-btn{
+    padding:9px 20px;border-radius:20px;border:1px solid var(--line);color:var(--muted);font-size:0.88rem;font-weight:600;
+    transition:all .2s;
+  }
+  .filter-btn.active, .filter-btn:hover{background:var(--teal);border-color:var(--teal);color:#08141a;}
+
+  .programs{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;}
+  .program{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;
+    transition:transform .2s, border-color .2s;
+  }
+  .program:hover{transform:translateY(-4px);border-color:var(--teal);}
+  .program .icon{font-size:1.7rem;margin-bottom:10px;}
+  .program h3{font-size:1.05rem;font-weight:800;margin-bottom:6px;}
+  .program .cat{color:var(--gold);font-size:0.76rem;font-weight:700;}
+  .program.hidden{display:none;}
+
+  /* why us */
+  .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .feature{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center;}
+  .feature .icon{font-size:1.8rem;margin-bottom:12px;}
+  .feature h3{font-size:1.05rem;font-weight:800;margin-bottom:8px;}
+  .feature p{color:var(--muted);font-size:0.88rem;}
+
+  /* faq */
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%;text-align:right;padding:18px 4px;font-weight:700;font-size:0.98rem;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .faq-q .plus{color:var(--teal);font-size:1.3rem;transition:transform .2s;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:0.9rem;}
+  .faq-a p{padding:0 4px 18px;}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
+  .contact-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center;}
+  .contact-card .icon{font-size:1.7rem;margin-bottom:10px;}
+  .contact-card a, .contact-card span{color:var(--white);font-weight:600;font-size:0.92rem;}
+
+  footer{padding:28px 22px;text-align:center;color:var(--muted);font-size:0.85rem;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand"><span class="badge">پاک</span> باشگاه پاک</div>
+    <button class="burger" onclick="document.getElementById('navlist').classList.toggle('open')">☰</button>
+    <ul id="navlist">
+      <li><a class="nav-link" href="#programs" data-sec="programs">رشته‌ها</a></li>
+      <li><a class="nav-link" href="#why" data-sec="why">چرا پاک</a></li>
+      <li><a class="nav-link" href="#faq" data-sec="faq">سوالات</a></li>
+      <li><a class="nav-link" href="#contact" data-sec="contact">تماس</a></li>
+    </ul>
+    <a class="cta-mini" href="#contact">ثبت‌نام</a>
+  </div>
+</header>
+
+<div class="stripe-divider"></div>
+
+<main>
+  <div class="wrap hero">
+    <div class="eyebrow">مرکز آموزش ورزش‌های رزمی و تناسب اندام</div>
+    <h1>یک باشگاه، <span>۱۲ رشته‌ی</span> ورزشی</h1>
+    <p>از جودو و جوجیتسو تا کیک‌بوکسینگ و پیلاتس — باشگاه پاک در رشت، تحت آموزش مربیان رسمی، برای تمام سنین و سطوح.</p>
+    <div class="cta-row">
+      <a class="cta" href="#contact">ثبت‌نام کلاس</a>
+      <a class="cta ghost" href="#programs">مشاهده‌ی رشته‌ها</a>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><div class="num" id="count-disciplines">0</div><div class="lbl">رشته‌ی ورزشی</div></div>
+      <div class="stat"><div class="num">✓</div><div class="lbl">مربیان دارای مدرک رسمی</div></div>
+      <div class="stat"><div class="num">همه</div><div class="lbl">سنین و سطوح</div></div>
+    </div>
+  </div>
+
+  <div class="stripe-divider"></div>
+
+  <section id="programs">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">رشته‌های آموزشی</div>
+        <h2>رشته‌ی خودتون رو انتخاب کنید</h2>
+      </div>
+      <div class="filters reveal">
+        <button class="filter-btn active" data-filter="all">همه</button>
+        <button class="filter-btn" data-filter="combat">رزمی و دفاع شخصی</button>
+        <button class="filter-btn" data-filter="fitness">تناسب اندام</button>
+      </div>
+      <div class="programs" id="program-grid">
+        <div class="program reveal" data-cat="combat"><div class="icon">🥋</div><h3>جودو</h3><div class="cat">رزمی</div></div>
+        <div class="program reveal" data-cat="combat"><div class="icon">🥋</div><h3>جوجیتسو</h3><div class="cat">رزمی</div></div>
+        <div class="program reveal" data-cat="combat"><div class="icon">🥋</div><h3>BJJ</h3><div class="cat">رزمی</div></div>
+        <div class="program reveal" data-cat="combat"><div class="icon">🛡️</div><h3>دفاع شخصی</h3><div class="cat">رزمی</div></div>
+        <div class="program reveal" data-cat="combat"><div class="icon">🥋</div><h3>کیوکوشین کاراته</h3><div class="cat">رزمی</div></div>
+        <div class="program reveal" data-cat="combat"><div class="icon">🦵</div><h3>تکواندو</h3><div class="cat">رزمی</div></div>
+        <div class="program reveal" data-cat="combat"><div class="icon">🥋</div><h3>آیکیدو</h3><div class="cat">رزمی</div></div>
+        <div class="program reveal" data-cat="combat"><div class="icon">🥋</div><h3>EIDO</h3><div class="cat">رزمی</div></div>
+        <div class="program reveal" data-cat="combat"><div class="icon">🥊</div><h3>کیک‌بوکسینگ</h3><div class="cat">رزمی</div></div>
+        <div class="program reveal" data-cat="fitness"><div class="icon">🏋️</div><h3>آمادگی جسمانی</h3><div class="cat">تناسب اندام</div></div>
+        <div class="program reveal" data-cat="fitness"><div class="icon">🪢</div><h3>TRX</h3><div class="cat">تناسب اندام</div></div>
+        <div class="program reveal" data-cat="fitness"><div class="icon">🧘</div><h3>پیلاتس</h3><div class="cat">تناسب اندام</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe-divider"></div>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">چرا باشگاه پاک</div>
+        <h2>یک مرکز، همه‌ی نیازها</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature reveal"><div class="icon">🎓</div><h3>مربیان مجرب</h3><p>آموزش زیر نظر مربیان دارای مدرک رسمی در هر رشته.</p></div>
+        <div class="feature reveal"><div class="icon">👨‍👩‍👧‍👦</div><h3>برای تمام سنین</h3><p>از کودکان تا بزرگسالان، کلاس متناسب با هر سن و سطح.</p></div>
+        <div class="feature reveal"><div class="icon">🔀</div><h3>تنوع رشته‌ها</h3><p>۱۲ رشته‌ی رزمی و تناسب اندام، زیر یک سقف.</p></div>
+        <div class="feature reveal"><div class="icon">📍</div><h3>موقعیت مناسب</h3><p>دسترسی راحت در بلوار انصاری، رشت.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe-divider"></div>
+
+  <section id="faq">
+    <div class="wrap" style="max-width:720px;">
+      <div class="section-head reveal">
+        <div class="eyebrow">سوالات متداول</div>
+        <h2>قبل از ثبت‌نام بدونید</h2>
+      </div>
+      <div id="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-q">آیا کلاس‌ها برای مبتدیان هم مناسبه؟<span class="plus">+</span></button>
+          <div class="faq-a"><p>بله، در هر رشته کلاس‌های ویژه‌ی مبتدیان برگزار می‌شود و نیازی به سابقه‌ی قبلی نیست.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q">برای شروع به چه وسایلی نیاز دارم؟<span class="plus">+</span></button>
+          <div class="faq-a"><p>برای جلسه‌ی اول لباس راحت ورزشی کافیست؛ تجهیزات تخصصی هر رشته پس از ثبت‌نام معرفی می‌شود.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q">چطور می‌تونم ثبت‌نام کنم؟<span class="plus">+</span></button>
+          <div class="faq-a"><p>کافیست با شماره‌های تماس زیر در ارتباط باشید یا از طریق اینستاگرام باشگاه پیام بدید.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe-divider"></div>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">ثبت‌نام و تماس</div>
+        <h2>همین حالا با ما در ارتباط باشید</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <div class="icon">📞</div>
+          <a href="tel:+989111322403">۰۹۱۱۱۳۲۲۴۰۳</a>
+        </div>
+        <div class="contact-card reveal">
+          <div class="icon">📞</div>
+          <a href="tel:+989034518889">۰۹۰۳۴۵۱۸۸۸۹</a>
+        </div>
+        <div class="contact-card reveal">
+          <div class="icon">📷</div>
+          <a href="https://instagram.com/pak_gym" target="_blank">pak_gym@</a>
+        </div>
+        <div class="contact-card reveal">
+          <div class="icon">📍</div>
+          <span>رشت، بلوار انصاری، نرسیده به میدان انصاری، کوچه وحدت، انتهای کوچه سمت چپ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© باشگاه پاک — مرکز آموزش ورزش‌های رزمی و تناسب اندام</footer>
+
+<script>
+// nav active-state on scroll
+const sections = ['programs','why','faq','contact'].map(id => document.getElementById(id));
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if (sec && window.scrollY >= sec.offsetTop - 120) current = sec.id;
+  });
+  navLinks.forEach(l => l.classList.toggle('active', l.dataset.sec === current));
+});
+
+// scroll reveal
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealEls = document.querySelectorAll('.reveal');
+if (reduced) {
+  revealEls.forEach(el => el.classList.add('in'));
+} else {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:0.15});
+  revealEls.forEach(el => io.observe(el));
+}
+
+// discipline counter
+const disciplineCount = document.querySelectorAll('#program-grid .program').length;
+const counterEl = document.getElementById('count-disciplines');
+let n = 0;
+const step = () => {
+  n++;
+  counterEl.textContent = n;
+  if (n < disciplineCount) requestAnimationFrame(() => setTimeout(step, 70));
+};
+if (reduced) { counterEl.textContent = disciplineCount; } else { step(); }
+
+// filters
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('#program-grid .program').forEach(card => {
+      card.classList.toggle('hidden', f !== 'all' && card.dataset.cat !== f);
+    });
+  });
+});
+
+// faq accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+    if (!isOpen) {
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+</script>
+
+</body>
+</html>

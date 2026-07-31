@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دیوان | خانه شکلات و قهوه</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:#1c130c;
+    --cocoa:#33221a;
+    --cocoa-light:#4a3226;
+    --gold:#c9a15c;
+    --gold-soft:#e3c98a;
+    --cream:#f4ead9;
+    --cream-dim:#d9c9ae;
+    --burgundy:#7a2f2c;
+    --caramel:#b97a3d;
+    --line: rgba(201,161,92,.25);
+    --shadow: 0 20px 50px rgba(0,0,0,.45);
+    --radius: 18px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--espresso);
+    color:var(--cream);
+    font-family:'Vazirmatn', sans-serif;
+    line-height:1.9;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer; border:none;}
+  .num{font-family:'Playfair Display', serif; direction:ltr; unicode-bidi:isolate;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(28,19,12,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1180px; margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand .mark{
+    width:42px; height:42px; border-radius:50%;
+    border:1.5px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display', serif; font-weight:700; font-size:18px; color:var(--gold-soft);
+    position:relative;
+  }
+  .brand .mark::after{
+    content:''; position:absolute; inset:-6px; border-radius:50%;
+    border:1px solid var(--line);
+  }
+  .brand-text{display:flex; flex-direction:column; line-height:1.3;}
+  .brand-text b{font-size:20px; font-weight:800; letter-spacing:.5px;}
+  .brand-text span{font-size:11px; color:var(--cream-dim); letter-spacing:1px;}
+
+  nav.links{display:flex; align-items:center; gap:6px; flex-wrap:wrap;}
+  nav.links button{
+    background:none; color:var(--cream-dim); font-size:14.5px; padding:9px 14px;
+    border-radius:30px; transition:.25s;
+  }
+  nav.links button:hover{color:var(--cream);}
+  nav.links button.active{background:var(--cocoa-light); color:var(--gold-soft);}
+  .cart-btn{position:relative;}
+  .cart-badge{
+    position:absolute; top:1px; left:2px; background:var(--burgundy); color:var(--cream);
+    font-size:10px; width:17px; height:17px; border-radius:50%; display:flex;
+    align-items:center; justify-content:center; font-family:'Playfair Display',serif;
+  }
+  .hamburger{display:none; background:none; color:var(--cream); font-size:22px;}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:14px 28px; border-radius:40px; font-size:15px; font-weight:600;
+    transition:.3s; white-space:nowrap;
+  }
+  .btn-gold{background:linear-gradient(135deg, var(--gold-soft), var(--caramel)); color:var(--espresso);}
+  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 10px 25px rgba(201,161,92,.35);}
+  .btn-outline{border:1px solid var(--line); color:var(--cream);}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold-soft);}
+  .btn-block{width:100%;}
+  .btn:disabled{opacity:.45; cursor:not-allowed; transform:none !important;}
+
+  /* ---------- VIEWS ---------- */
+  .view{display:none; animation:fadeIn .5s ease;}
+  .view.active{display:block;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative; padding:100px 0 60px; overflow:hidden;}
+  .hero::before{
+    content:''; position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(201,161,92,.14), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(122,47,44,.18), transparent 40%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:50px; align-items:center; position:relative;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px; font-size:12.5px; letter-spacing:2px;
+    color:var(--gold-soft); border:1px solid var(--line); padding:7px 16px; border-radius:30px;
+    margin-bottom:22px;
+  }
+  .eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--gold);}
+  h1.display{font-size:52px; font-weight:800; line-height:1.35; margin-bottom:22px;}
+  h1.display .accent{color:var(--gold-soft); font-style:normal;}
+  .lead{font-size:17px; color:var(--cream-dim); max-width:480px; margin-bottom:34px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:34px;}
+  .hero-stats{display:flex; gap:34px; flex-wrap:wrap;}
+  .hero-stats div b{font-family:'Playfair Display', serif; font-size:26px; color:var(--gold-soft); display:block; direction:ltr;}
+  .hero-stats div span{font-size:12.5px; color:var(--cream-dim);}
+
+  .hero-visual{position:relative; height:420px; display:flex; align-items:center; justify-content:center;}
+  .cup-scene{position:relative; width:230px; height:280px;}
+  .cup-body{
+    position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+    width:170px; height:150px; border-radius:0 0 70px 70px;
+    background:linear-gradient(160deg, var(--cocoa-light), var(--cocoa));
+    border:1px solid var(--line); box-shadow:var(--shadow);
+  }
+  .cup-liquid{
+    position:absolute; top:0; left:14px; right:14px; height:22px; border-radius:50%;
+    background:radial-gradient(ellipse at center, #5c3419, #3a2113);
+  }
+  .cup-handle{
+    position:absolute; bottom:30px; right:-38px; width:55px; height:70px;
+    border:12px solid var(--cocoa-light); border-left:none; border-radius:0 40px 40px 0;
+  }
+  .steam{position:absolute; top:-90px; width:3px; height:80px; border-radius:3px;
+    background:linear-gradient(to top, rgba(244,234,217,.5), transparent);
+    animation:steam 3.2s ease-in-out infinite;}
+  .steam.s1{left:70px; animation-delay:0s;}
+  .steam.s2{left:100px; animation-delay:.7s;}
+  .steam.s3{left:130px; animation-delay:1.4s;}
+  @keyframes steam{
+    0%{transform:translateY(0) scaleY(.6); opacity:0;}
+    30%{opacity:.8;}
+    100%{transform:translateY(-60px) scaleY(1.3); opacity:0;}
+  }
+  .cacao-pod{
+    position:absolute; width:52px; height:78px; border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+    background:linear-gradient(160deg, var(--burgundy), #4a1c1a);
+    box-shadow:var(--shadow); transform:rotate(-18deg);
+  }
+  .cacao-pod::before{content:''; position:absolute; inset:6px; border:1px solid rgba(201,161,92,.25); border-radius:inherit;}
+  .cacao-pod.p1{top:10px; right:-10px;}
+  .cacao-pod.p2{top:60px; right:40px; transform:rotate(20deg) scale(.7); opacity:.8;}
+
+  /* melting divider */
+  .melt-divider{position:relative; height:70px; margin-top:20px;}
+  .melt-divider svg{width:100%; height:100%; display:block;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{padding:70px 0;}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:34px; font-weight:800; margin-bottom:14px;}
+  .section-head p{color:var(--cream-dim); font-size:15.5px;}
+  .section-head.center{margin:0 auto 44px; text-align:center;}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+  .about-values{display:grid; gap:22px; margin-top:26px;}
+  .value-row{display:flex; gap:16px; align-items:flex-start; padding-bottom:20px; border-bottom:1px solid var(--line);}
+  .value-row:last-child{border:none;}
+  .value-row .vnum{font-family:'Playfair Display', serif; color:var(--gold-soft); font-size:20px; width:34px; flex:none;}
+  .value-row h4{font-size:16.5px; margin-bottom:6px;}
+  .value-row p{color:var(--cream-dim); font-size:14.5px;}
+  .about-frame{
+    border:1px solid var(--line); border-radius:var(--radius); padding:34px;
+    background:linear-gradient(160deg, var(--cocoa), var(--espresso));
+    box-shadow:var(--shadow);
+  }
+  .about-frame blockquote{font-size:19px; font-style:normal; line-height:1.9; color:var(--cream); margin-bottom:18px;}
+  .about-frame .sig{color:var(--gold-soft); font-size:13.5px;}
+  .origin-tags{display:flex; gap:10px; flex-wrap:wrap; margin-top:24px;}
+  .origin-tags span{font-size:12.5px; border:1px solid var(--line); padding:6px 14px; border-radius:20px; color:var(--cream-dim);}
+
+  /* ---------- MENU / PRODUCTS ---------- */
+  .tabs{display:flex; gap:10px; margin-bottom:32px;}
+  .tab{padding:10px 22px; border-radius:30px; border:1px solid var(--line); color:var(--cream-dim); font-size:14px; font-weight:600;}
+  .tab.active{background:var(--gold-soft); color:var(--espresso); border-color:transparent;}
+  .grid-products{display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;}
+  .card{
+    position:relative; border:1px solid var(--line); border-radius:var(--radius);
+    background:var(--cocoa); padding:26px; overflow:hidden; transition:.35s;
+  }
+  .card::after{
+    content:''; position:absolute; width:160px; height:160px; border-radius:50%;
+    background:radial-gradient(circle, rgba(201,161,92,.16), transparent 70%);
+    top:-60px; left:-60px; opacity:0; transition:.5s;
+  }
+  .card:hover{transform:translateY(-6px); border-color:var(--gold); box-shadow:var(--shadow);}
+  .card:hover::after{opacity:1;}
+  .icon-badge{
+    width:58px; height:58px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; margin-bottom:18px;
+    background:var(--espresso); position:relative;
+  }
+  .card h3{font-size:18px; margin-bottom:8px;}
+  .card .desc{color:var(--cream-dim); font-size:13.5px; margin-bottom:18px; min-height:42px;}
+  .card-foot{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+  .price{font-size:17px; font-weight:700; color:var(--gold-soft);}
+  .price small{font-size:11.5px; color:var(--cream-dim); font-weight:400; margin-right:4px;}
+  .add-btn{
+    background:var(--cocoa-light); color:var(--cream); padding:9px 16px; border-radius:30px; font-size:13px; font-weight:600;
+    transition:.25s; border:1px solid transparent;
+  }
+  .add-btn:hover{background:var(--gold-soft); color:var(--espresso);}
+
+  /* ---------- FORMS ---------- */
+  .form-shell{
+    max-width:640px; border:1px solid var(--line); border-radius:var(--radius);
+    background:var(--cocoa); padding:40px; box-shadow:var(--shadow);
+  }
+  .form-shell.wide{max-width:820px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block; font-size:13.5px; color:var(--cream-dim); margin-bottom:8px;}
+  .field input, .field select, .field textarea{
+    width:100%; background:var(--espresso); border:1px solid var(--line); color:var(--cream);
+    padding:13px 16px; border-radius:10px; font-family:inherit; font-size:14.5px; transition:.2s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--gold);}
+  .row-2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .success-panel{
+    display:none; text-align:center; padding:44px 24px; border:1px solid var(--line); border-radius:var(--radius);
+    background:var(--cocoa);
+  }
+  .success-panel.show{display:block;}
+  .success-icon{
+    width:64px; height:64px; border-radius:50%; border:1.5px solid var(--gold); margin:0 auto 18px;
+    display:flex; align-items:center; justify-content:center; color:var(--gold-soft); font-size:26px;
+  }
+
+  /* ---------- CART ---------- */
+  .cart-layout{display:grid; grid-template-columns:1.6fr 1fr; gap:32px; align-items:start;}
+  .cart-item{
+    display:flex; align-items:center; gap:16px; padding:18px 0; border-bottom:1px solid var(--line);
+  }
+  .cart-item .icon-badge{width:48px; height:48px; margin:0; flex:none;}
+  .cart-item .info{flex:1;}
+  .cart-item .info h4{font-size:15.5px; margin-bottom:4px;}
+  .cart-item .info span{font-size:12.5px; color:var(--cream-dim);}
+  .qty-control{display:flex; align-items:center; gap:10px; border:1px solid var(--line); border-radius:30px; padding:4px 6px;}
+  .qty-control button{width:26px; height:26px; border-radius:50%; background:var(--cocoa-light); color:var(--cream); font-size:15px; display:flex; align-items:center; justify-content:center;}
+  .qty-control span{min-width:18px; text-align:center; font-family:'Playfair Display',serif;}
+  .remove-link{color:var(--burgundy); font-size:12.5px; margin-right:10px;}
+  .cart-summary{
+    border:1px solid var(--line); border-radius:var(--radius); background:var(--cocoa); padding:28px; position:sticky; top:100px;
+  }
+  .summary-row{display:flex; justify-content:space-between; font-size:14.5px; color:var(--cream-dim); margin-bottom:14px;}
+  .summary-row.total{color:var(--cream); font-size:19px; font-weight:700; border-top:1px solid var(--line); padding-top:16px; margin-top:6px;}
+  .empty-state{text-align:center; padding:60px 20px; color:var(--cream-dim);}
+
+  /* ---------- INSTALLMENT ---------- */
+  .plan-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; margin-bottom:28px;}
+  .plan-card{
+    border:1px solid var(--line); border-radius:14px; padding:22px; text-align:center; cursor:pointer; transition:.25s;
+    background:var(--cocoa);
+  }
+  .plan-card.selected{border-color:var(--gold); background:var(--cocoa-light);}
+  .plan-card b{display:block; font-family:'Playfair Display',serif; font-size:24px; color:var(--gold-soft); margin:8px 0;}
+  .plan-card span{font-size:12px; color:var(--cream-dim);}
+  .breakdown{border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:28px; background:var(--espresso);}
+  .breakdown .summary-row{margin-bottom:10px;}
+
+  /* ---------- PAYMENT ---------- */
+  .gateway-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-bottom:28px;}
+  .gateway-card{
+    display:flex; align-items:center; gap:14px; border:1px solid var(--line); border-radius:14px; padding:18px 20px;
+    cursor:pointer; background:var(--cocoa); transition:.25s;
+  }
+  .gateway-card.selected{border-color:var(--gold); background:var(--cocoa-light);}
+  .gateway-mark{
+    width:44px; height:44px; border-radius:10px; background:var(--espresso); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-weight:700; color:var(--gold-soft);
+  }
+  .gateway-card h5{font-size:15px; margin-bottom:3px;}
+  .gateway-card span{font-size:12px; color:var(--cream-dim);}
+  .note-box{
+    border:1px dashed var(--line); border-radius:12px; padding:16px 18px; font-size:13px; color:var(--cream-dim); margin-top:18px;
+  }
+  .modal-overlay{
+    display:none; position:fixed; inset:0; background:rgba(10,6,3,.7); z-index:1000; align-items:center; justify-content:center; padding:20px;
+  }
+  .modal-overlay.show{display:flex;}
+  .modal-box{
+    background:var(--cocoa); border:1px solid var(--gold); border-radius:var(--radius); padding:36px; max-width:420px; text-align:center; box-shadow:var(--shadow);
+  }
+  .modal-box .success-icon{margin-bottom:14px;}
+  .modal-box h3{margin-bottom:10px;}
+  .modal-box p{color:var(--cream-dim); font-size:13.5px; margin-bottom:22px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line); padding:50px 0 30px; margin-top:40px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:34px;}
+  .footer-grid h5{font-size:14px; margin-bottom:16px; color:var(--gold-soft);}
+  .footer-grid p, .footer-grid a{font-size:13.5px; color:var(--cream-dim); display:block; margin-bottom:10px;}
+  .footer-bottom{border-top:1px solid var(--line); padding-top:22px; text-align:center; font-size:12.5px; color:var(--cream-dim);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .hero-grid, .about-grid, .cart-layout{grid-template-columns:1fr;}
+    .hero-visual{height:280px;}
+    .grid-products{grid-template-columns:repeat(2,1fr);}
+    .plan-grid, .gateway-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    h1.display{font-size:36px;}
+    nav.links{
+      position:fixed; top:73px; right:0; left:0; background:var(--espresso); flex-direction:column;
+      align-items:stretch; padding:16px 20px; border-bottom:1px solid var(--line); display:none;
+    }
+    nav.links.open{display:flex;}
+    nav.links button{text-align:right; padding:12px 14px;}
+    .hamburger{display:block;}
+  }
+  @media(max-width:560px){
+    .grid-products, .plan-grid, .gateway-grid{grid-template-columns:1fr;}
+    .row-2{grid-template-columns:1fr;}
+    .form-shell{padding:26px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+  }
+  :focus-visible{outline:2px solid var(--gold-soft); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="mark">د</div>
+      <div class="brand-text"><b>دیوان</b><span>خانه شکلات و قهوه</span></div>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav class="links" id="navLinks">
+      <button data-view="home" onclick="go('home')">خانه</button>
+      <button data-view="about" onclick="go('about')">درباره ما</button>
+      <button data-view="menu" onclick="go('menu')">محصولات</button>
+      <button data-view="order" onclick="go('order')">ثبت سفارش</button>
+      <button data-view="installment" onclick="go('installment')">خرید اقساطی</button>
+      <button data-view="payment" onclick="go('payment')">پرداخت</button>
+      <button data-view="cart" class="cart-btn" onclick="go('cart')">سبد خرید<span class="cart-badge" id="cartBadge">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section class="view active" id="view-home">
+    <div class="wrap hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> از دانه تا فنجان، از لوبیا تا لوح شکلات</div>
+          <h1 class="display">شکلات و قهوه‌ای که <span class="accent">مثل شعر</span> در خاطر می‌ماند</h1>
+          <p class="lead">دیوان، کارگاهی کوچک در دل تهران است که دانه‌های کاکائو و قهوه را دست‌چین می‌کند، به‌آرامی برشته می‌کند و با ادویه‌های ایرانی—زعفران، هل، گلاب—به اثری تازه بدل می‌کند.</p>
+          <div class="hero-actions">
+            <button class="btn btn-gold" onclick="go('menu')">مشاهده محصولات</button>
+            <button class="btn btn-outline" onclick="go('order')">ثبت سفارش</button>
+          </div>
+          <div class="hero-stats">
+            <div><b class="num">12</b><span>سال تجربه برشته‌کاری</span></div>
+            <div><b class="num">48</b><span>طعم فصلی از ابتدای راه</span></div>
+            <div><b class="num">100%</b><span>کاکائوی تک‌مبدأ</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="cup-scene">
+            <div class="steam s1"></div><div class="steam s2"></div><div class="steam s3"></div>
+            <div class="cacao-pod p1"></div>
+            <div class="cacao-pod p2"></div>
+            <div class="cup-body"><div class="cup-liquid"></div></div>
+            <div class="cup-handle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="melt-divider">
+      <svg viewBox="0 0 1200 70" preserveAspectRatio="none">
+        <path d="M0,0 L1200,0 L1200,20 C1150,55 1100,10 1050,35 C1000,58 950,15 900,38 C850,60 800,12 750,34 C700,56 650,10 600,32 C550,55 500,14 450,36 C400,58 350,12 300,34 C250,56 200,15 150,38 C100,58 50,20 0,32 Z" fill="#33221a"/>
+      </svg>
+    </div>
+
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow"><span class="dot"></span> منتخب دیوان</div>
+        <h2>طعم‌هایی برای شروع</h2>
+        <p>چند مورد از محبوب‌ترین‌های کارگاه؛ فهرست کامل را در بخش محصولات ببینید.</p>
+      </div>
+      <div class="grid-products" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="view" id="view-about">
+    <div class="wrap section">
+      <div class="about-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> درباره دیوان</div>
+          <h2 style="font-size:32px; font-weight:800; margin-bottom:16px;">از یک میز کوچک در رشت، تا کارگاهی برای اهل ذوق</h2>
+          <p style="color:var(--cream-dim); font-size:15.5px;">دیوان در سال ۱۳۹۱ با یک کتری قدیمی و چند کیلو دانه قهوه شمال کشور آغاز شد. حالا تیمی کوچک از برشته‌کاران و شکلات‌سازان، هر بچ را دستی می‌سازند؛ بدون افزودنی مصنوعی و بدون عجله.</p>
+          <div class="about-values">
+            <div class="value-row"><span class="vnum">۰۱</span><div><h4>اصالت مواد اولیه</h4><p>کاکائوی تک‌مبدأ و دانه قهوه‌ی تازه، با گواهی مبدأ مشخص برای هر بچ.</p></div></div>
+            <div class="value-row"><span class="vnum">۰۲</span><div><h4>صنعت‌گری دستی</h4><p>هر تابلت و هر فنجان، توسط شکلات‌ساز و باریستای همان روز امضا می‌شود.</p></div></div>
+            <div class="value-row"><span class="vnum">۰۳</span><div><h4>هویت ایرانی</h4><p>زعفران کرمان، گلاب قمصر و پسته دامغان، در دل ترکیب‌های کلاسیک جهانی.</p></div></div>
+          </div>
+        </div>
+        <div class="about-frame">
+          <blockquote>«ما شکلات نمی‌فروشیم؛ یک وقفه‌ی کوچک می‌فروشیم. لحظه‌ای که دنیا آرام می‌شود.»</blockquote>
+          <div class="sig">— بنیان‌گذاران دیوان</div>
+          <div class="origin-tags">
+            <span>کاکائوی اکوادور</span><span>قهوه اتیوپی</span><span>زعفران کرمان</span><span>گلاب قمصر</span><span>پسته دامغان</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="view" id="view-menu">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow"><span class="dot"></span> فهرست کامل</div>
+        <h2>محصولات دیوان</h2>
+        <p>هر بار افزودن به سبد، یک قدم تا رسیدن طعم به در خانه‌تان است.</p>
+      </div>
+      <div class="tabs">
+        <button class="tab active" data-cat="all" onclick="filterCat('all', this)">همه</button>
+        <button class="tab" data-cat="coffee" onclick="filterCat('coffee', this)">قهوه</button>
+        <button class="tab" data-cat="chocolate" onclick="filterCat('chocolate', this)">شکلات</button>
+      </div>
+      <div class="grid-products" id="menuGrid"></div>
+    </div>
+  </section>
+
+  <!-- ORDER -->
+  <section class="view" id="view-order">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow"><span class="dot"></span> ثبت سفارش</div>
+        <h2>سفارش خود را ثبت کنید</h2>
+        <p>ابتدا محصول موردنظر را از سبد خرید انتخاب کرده باشید، سپس اطلاعات زیر را تکمیل کنید.</p>
+      </div>
+      <form class="form-shell wide" id="orderForm" onsubmit="submitOrder(event)">
+        <div class="row-2">
+          <div class="field"><label>نام و نام‌خانوادگی</label><input type="text" required placeholder="مثال: سارا محمدی"></div>
+          <div class="field"><label>شماره تماس</label><input type="tel" required placeholder="09xxxxxxxxx" pattern="09[0-9]{9}"></div>
+        </div>
+        <div class="field"><label>آدرس تحویل</label><textarea rows="3" required placeholder="استان، شهر، خیابان، پلاک..."></textarea></div>
+        <div class="row-2">
+          <div class="field"><label>شهر</label><input type="text" required placeholder="مثال: رشت"></div>
+          <div class="field"><label>زمان ترجیحی تحویل</label>
+            <select><option>هر زمان</option><option>صبح (۹ تا ۱۲)</option><option>عصر (۱۵ تا ۱۸)</option><option>شب (۱۸ تا ۲۱)</option></select>
+          </div>
+        </div>
+        <div class="field"><label>یادداشت سفارش (اختیاری)</label><textarea rows="2" placeholder="مثال: بدون شکر اضافه، بسته‌بندی هدیه و..."></textarea></div>
+        <div class="field">
+          <label>خلاصه سبد خرید</label>
+          <div id="orderCartSummary" style="border:1px solid var(--line); border-radius:10px; padding:14px 16px; font-size:14px; color:var(--cream-dim);"></div>
+        </div>
+        <button type="submit" class="btn btn-gold btn-block" id="orderSubmitBtn">ثبت نهایی سفارش</button>
+      </form>
+      <div class="success-panel form-shell wide" id="orderSuccess">
+        <div class="success-icon">✓</div>
+        <h3>سفارش شما ثبت شد</h3>
+        <p style="color:var(--cream-dim); margin-top:10px;">همکاران دیوان طی چند ساعت آینده برای هماهنگی نهایی تماس می‌گیرند. کد پیگیری: <span class="num" id="orderCode"></span></p>
+        <div style="margin-top:20px;"><button class="btn btn-outline" onclick="go('payment')">رفتن به پرداخت</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CART -->
+  <section class="view" id="view-cart">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow"><span class="dot"></span> سبد خرید</div>
+        <h2>سبد خرید شما</h2>
+      </div>
+      <div class="cart-layout" id="cartLayout">
+        <div id="cartItemsBox" class="form-shell wide" style="padding:30px;"></div>
+        <div class="cart-summary">
+          <h4 style="margin-bottom:18px;">خلاصه سفارش</h4>
+          <div class="summary-row"><span>جمع کالاها</span><span class="num" id="sumSubtotal">۰ تومان</span></div>
+          <div class="summary-row"><span>هزینه بسته‌بندی و ارسال</span><span class="num" id="sumShip">۰ تومان</span></div>
+          <div class="summary-row total"><span>مبلغ نهایی</span><span class="num" id="sumTotal">۰ تومان</span></div>
+          <button class="btn btn-gold btn-block" style="margin-top:10px;" onclick="go('order')">ادامه و ثبت سفارش</button>
+          <button class="btn btn-outline btn-block" style="margin-top:10px;" onclick="go('installment')">خرید اقساطی این سبد</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTALLMENT -->
+  <section class="view" id="view-installment">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow"><span class="dot"></span> خرید اقساطی</div>
+        <h2>خرید اقساطی دیوان</h2>
+        <p>مبلغ سبد خرید یا مبلغ دلخواه را وارد کنید و طرح اقساط مناسب خود را انتخاب کنید.</p>
+      </div>
+      <div class="form-shell wide" style="padding:36px;">
+        <div class="field">
+          <label>مبلغ مورد نظر برای تقسیط (تومان)</label>
+          <input type="number" id="installAmount" min="0" step="1000" oninput="calcInstallment()">
+        </div>
+        <div class="plan-grid" id="planGrid">
+          <div class="plan-card" data-m="3" data-fee="0" onclick="selectPlan(this)"><span>پرداخت سه‌ماهه</span><b>۳</b><span>بدون کارمزد</span></div>
+          <div class="plan-card selected" data-m="6" data-fee="4" onclick="selectPlan(this)"><span>پرداخت شش‌ماهه</span><b>۶</b><span>۴٪ کارمزد خدمات</span></div>
+          <div class="plan-card" data-m="12" data-fee="9" onclick="selectPlan(this)"><span>پرداخت دوازده‌ماهه</span><b>۱۲</b><span>۹٪ کارمزد خدمات</span></div>
+        </div>
+        <div class="breakdown">
+          <div class="summary-row"><span>مبلغ اصلی</span><span class="num" id="brBase">۰ تومان</span></div>
+          <div class="summary-row"><span>کارمزد خدمات</span><span class="num" id="brFee">۰ تومان</span></div>
+          <div class="summary-row total"><span>مبلغ هر قسط</span><span class="num" id="brMonthly">۰ تومان</span></div>
+        </div>
+        <form onsubmit="submitInstallment(event)">
+          <div class="row-2">
+            <div class="field"><label>نام و نام‌خانوادگی</label><input type="text" required></div>
+            <div class="field"><label>کد ملی</label><input type="text" required pattern="[0-9]{10}" maxlength="10"></div>
+          </div>
+          <div class="field"><label>شماره تماس</label><input type="tel" required placeholder="09xxxxxxxxx" pattern="09[0-9]{9}"></div>
+          <button type="submit" class="btn btn-gold btn-block">ثبت درخواست خرید اقساطی</button>
+        </form>
+        <div class="note-box">درخواست خرید اقساطی پس از ثبت، توسط تیم مالی دیوان بررسی و نتیجه از طریق پیامک اطلاع‌رسانی می‌شود.</div>
+      </div>
+      <div class="success-panel form-shell wide" id="installSuccess">
+        <div class="success-icon">✓</div>
+        <h3>درخواست اقساط ثبت شد</h3>
+        <p style="color:var(--cream-dim); margin-top:10px;">نتیجه بررسی حداکثر طی یک روز کاری اعلام می‌شود.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAYMENT -->
+  <section class="view" id="view-payment">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow"><span class="dot"></span> پرداخت</div>
+        <h2>اتصال به درگاه پرداخت</h2>
+        <p>یکی از درگاه‌های بانکی زیر را برای تسویه انتخاب کنید.</p>
+      </div>
+      <div class="form-shell wide" style="padding:36px;">
+        <div class="field">
+          <label>مبلغ قابل پرداخت (تومان)</label>
+          <input type="number" id="payAmount" min="0" step="1000">
+        </div>
+        <div class="gateway-grid" id="gatewayGrid">
+          <div class="gateway-card selected" data-g="زرین‌پال" onclick="selectGateway(this)"><div class="gateway-mark">ز</div><div><h5>زرین‌پال</h5><span>پرداخت آنلاین با همه کارت‌های بانکی</span></div></div>
+          <div class="gateway-card" data-g="آی‌دی‌پی" onclick="selectGateway(this)"><div class="gateway-mark">آ</div><div><h5>آی‌دی‌پی (IDPay)</h5><span>درگاه واسط چندبانکی</span></div></div>
+          <div class="gateway-card" data-g="به‌پرداخت ملت" onclick="selectGateway(this)"><div class="gateway-mark">م</div><div><h5>به‌پرداخت ملت</h5><span>درگاه مستقیم بانک ملت</span></div></div>
+          <div class="gateway-card" data-g="سامان (پرداخت الکترونیک)" onclick="selectGateway(this)"><div class="gateway-mark">س</div><div><h5>سامان</h5><span>درگاه بانک سامان</span></div></div>
+        </div>
+        <button class="btn btn-gold btn-block" onclick="startPayment()">اتصال به درگاه و پرداخت</button>
+        <div class="note-box">این بخش نمایی از رابط کاربری اتصال به درگاه‌های پرداخت است. برای فعال‌سازی واقعی، نیاز به توسعه سمت سرور، دریافت کد پذیرندگی از بانک/درگاه منتخب و اتصال امن (SSL) دارید.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h5>دیوان</h5>
+        <p>خانه شکلات و قهوه؛ کارگاهی برای دانه‌های اصیل و لحظه‌های آرام. رشت، ایران.</p>
+      </div>
+      <div>
+        <h5>دسترسی سریع</h5>
+        <a href="#" onclick="go('about')">درباره ما</a>
+        <a href="#" onclick="go('menu')">محصولات</a>
+        <a href="#" onclick="go('installment')">خرید اقساطی</a>
+      </div>
+      <div>
+        <h5>ارتباط با ما</h5>
+        <p class="num" style="direction:ltr; text-align:right;">021-XXXXXXX</p>
+        <p>info@divan-shop.example</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© تمامی حقوق برای دیوان محفوظ است.</div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="payModal">
+  <div class="modal-box">
+    <div class="success-icon">✓</div>
+    <h3>در حال انتقال به درگاه...</h3>
+    <p id="payModalText">در نسخه نهایی، این مرحله شما را به صفحه امن درگاه بانکی منتقل می‌کند.</p>
+    <button class="btn btn-outline" onclick="closeModal()">بستن</button>
+  </div>
+</div>
+
+<script>
+  // ---------- DATA ----------
+  const products = [
+    {id:1, cat:'coffee', name:'اسپرسو دیوان', desc:'بلند اکوادور و اتیوپی، بو دهی تلخ و کاراملی', price:145000, icon:'cup', featured:true},
+    {id:2, cat:'coffee', name:'قهوه ترک زعفرانی', desc:'دم‌کرده در دیگ مسی با هل و رشته‌های زعفران', price:165000, icon:'cup', featured:true},
+    {id:3, cat:'coffee', name:'لاته هل و دارچین', desc:'شیر بخارداده با طعم گرم ادویه‌های ایرانی', price:175000, icon:'cup'},
+    {id:4, cat:'coffee', name:'کلد برو کارامل', desc:'دم سرد ۱۸ ساعته، شیرین‌شده با کارامل خانگی', price:185000, icon:'cup'},
+    {id:5, cat:'coffee', name:'موکای شکلات تلخ', desc:'ترکیب اسپرسو و شکلات تلخ ۷۰٪ دیوان', price:195000, icon:'cup'},
+    {id:6, cat:'coffee', name:'فلت وایت', desc:'دو شات اسپرسو با میکروفوم مخملی', price:155000, icon:'cup'},
+    {id:7, cat:'chocolate', name:'شکلات تلخ ۷۰٪ کرمان', desc:'تک‌مبدأ، برشته‌کاری آرام، طعم میوه‌ای', price:210000, icon:'bar', featured:true},
+    {id:8, cat:'chocolate', name:'شکلات شیری فندق گیلان', desc:'فندق برشته محلی در دل شکلات شیری مخملی', price:198000, icon:'bar', featured:true},
+    {id:9, cat:'chocolate', name:'تابلت زعفران و پسته', desc:'شکلات سفید با رشته زعفران و پسته دامغان', price:235000, icon:'bar'},
+    {id:10, cat:'chocolate', name:'پرالین گل‌محمدی', desc:'گاناش گلاب قمصر در پوسته شکلات تلخ', price:220000, icon:'bar'},
+    {id:11, cat:'chocolate', name:'ترافل کارامل نمکی', desc:'مغز کارامل نرم با پودر کاکائوی تلخ', price:205000, icon:'bar'},
+    {id:12, cat:'chocolate', name:'شکلات نارگیل و زرشک', desc:'ترکیب ترش و شیرین با بافت نارگیل تازه', price:212000, icon:'bar'},
+  ];
+
+  let cart = {}; // id -> qty
+  let currentCat = 'all';
+  let selectedPlan = {m:6, fee:4};
+  let selectedGateway = 'زرین‌پال';
+
+  function fmt(n){ return new Intl.NumberFormat('en-US').format(Math.round(n)) + ' تومان'; }
+
+  function iconSvg(type){
+    if(type === 'cup'){
+      return `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a15c" stroke-width="1.4"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Z"/><path d="M17 9h1.5A2.5 2.5 0 0 1 21 11.5v0A2.5 2.5 0 0 1 18.5 14H17"/><path d="M7 4c.5 1 1.5 1 2 0M11 4c.5 1 1.5 1 2 0" stroke-linecap="round"/></svg>`;
+    }
+    return `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a15c" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 12h18M9 5v14M15 5v14"/></svg>`;
+  }
+
+  function productCard(p){
+    return `<div class="card">
+      <div class="icon-badge">${iconSvg(p.icon)}</div>
+      <h3>${p.name}</h3>
+      <div class="desc">${p.desc}</div>
+      <div class="card-foot">
+        <div class="price">${new Intl.NumberFormat('en-US').format(p.price)}<small>تومان</small></div>
+        <button class="add-btn" onclick="addToCart(${p.id})">افزودن به سبد</button>
+      </div>
+    </div>`;
+  }
+
+  function renderFeatured(){
+    document.getElementById('featuredGrid').innerHTML = products.filter(p=>p.featured).map(productCard).join('');
+  }
+  function renderMenu(){
+    const list = products.filter(p => currentCat==='all' || p.cat===currentCat);
+    document.getElementById('menuGrid').innerHTML = list.map(productCard).join('');
+  }
+  function filterCat(cat, el){
+    currentCat = cat;
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    el.classList.add('active');
+    renderMenu();
+  }
+
+  function addToCart(id){
+    cart[id] = (cart[id]||0) + 1;
+    updateCartBadge();
+    renderCart();
+  }
+  function changeQty(id, delta){
+    cart[id] = (cart[id]||0) + delta;
+    if(cart[id] <= 0) delete cart[id];
+    updateCartBadge();
+    renderCart();
+  }
+  function removeItem(id){
+    delete cart[id];
+    updateCartBadge();
+    renderCart();
+  }
+  function cartCount(){ return Object.values(cart).reduce((a,b)=>a+b,0); }
+  function cartSubtotal(){
+    return Object.entries(cart).reduce((sum,[id,qty])=>{
+      const p = products.find(x=>x.id==id);
+      return sum + (p ? p.price*qty : 0);
+    },0);
+  }
+  function updateCartBadge(){ document.getElementById('cartBadge').textContent = cartCount(); }
+
+  function renderCart(){
+    const box = document.getElementById('cartItemsBox');
+    const ids = Object.keys(cart);
+    if(ids.length === 0){
+      box.innerHTML = `<div class="empty-state"><p>سبد خرید شما هنوز خالی است.</p><button class="btn btn-gold" style="margin-top:16px;" onclick="go('menu')">مشاهده محصولات</button></div>`;
+    } else {
+      box.innerHTML = ids.map(id=>{
+        const p = products.find(x=>x.id==id);
+        const qty = cart[id];
+        return `<div class="cart-item">
+          <div class="icon-badge">${iconSvg(p.icon)}</div>
+          <div class="info"><h4>${p.name}</h4><span class="num">${fmt(p.price)} × ${qty}</span></div>
+          <div class="qty-control">
+            <button onclick="changeQty(${p.id},-1)">−</button><span>${qty}</span><button onclick="changeQty(${p.id},1)">+</button>
+          </div>
+          <span class="remove-link" role="button" tabindex="0" onclick="removeItem(${p.id})">حذف</span>
+        </div>`;
+      }).join('');
+    }
+    const subtotal = cartSubtotal();
+    const shipping = subtotal > 0 ? 45000 : 0;
+    document.getElementById('sumSubtotal').textContent = fmt(subtotal);
+    document.getElementById('sumShip').textContent = fmt(shipping);
+    document.getElementById('sumTotal').textContent = fmt(subtotal + shipping);
+
+    const orderSummary = document.getElementById('orderCartSummary');
+    if(orderSummary){
+      orderSummary.innerHTML = ids.length ? ids.map(id=>{
+        const p = products.find(x=>x.id==id);
+        return `${p.name} × ${cart[id]}`;
+      }).join('، ') + ` — مجموع: ${fmt(subtotal+shipping)}` : 'سبد خرید خالی است. ابتدا از بخش محصولات، موردی اضافه کنید.';
+    }
+    document.getElementById('orderSubmitBtn').disabled = ids.length === 0;
+
+    const installInput = document.getElementById('installAmount');
+    if(installInput && !installInput.dataset.touched){
+      installInput.value = subtotal + shipping || '';
+      calcInstallment();
+    }
+    const payInput = document.getElementById('payAmount');
+    if(payInput && !payInput.dataset.touched){
+      payInput.value = subtotal + shipping || '';
+    }
+  }
+
+  // ---------- ORDER ----------
+  function submitOrder(e){
+    e.preventDefault();
+    document.getElementById('orderForm').style.display = 'none';
+    const code = 'DVN-' + Math.floor(100000 + Math.random()*899999);
+    document.getElementById('orderCode').textContent = code;
+    document.getElementById('orderSuccess').classList.add('show');
+  }
+
+  // ---------- INSTALLMENT ----------
+  function selectPlan(el){
+    document.querySelectorAll('.plan-card').forEach(c=>c.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedPlan = {m: parseInt(el.dataset.m), fee: parseInt(el.dataset.fee)};
+    calcInstallment();
+  }
+  function calcInstallment(){
+    const inputEl = document.getElementById('installAmount');
+    const base = parseFloat(inputEl.value) || 0;
+    const feeAmount = base * (selectedPlan.fee/100);
+    const monthly = (base + feeAmount) / selectedPlan.m;
+    document.getElementById('brBase').textContent = fmt(base);
+    document.getElementById('brFee').textContent = fmt(feeAmount);
+    document.getElementById('brMonthly').textContent = fmt(monthly) + ' × ' + selectedPlan.m + ' ماه';
+  }
+  document.getElementById('installAmount').addEventListener('input', function(){ this.dataset.touched = '1'; });
+  function submitInstallment(e){
+    e.preventDefault();
+    e.target.closest('.form-shell').style.display = 'none';
+    document.getElementById('installSuccess').classList.add('show');
+  }
+
+  // ---------- PAYMENT ----------
+  document.getElementById('payAmount').addEventListener('input', function(){ this.dataset.touched = '1'; });
+  function selectGateway(el){
+    document.querySelectorAll('.gateway-card').forEach(c=>c.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedGateway = el.dataset.g;
+  }
+  function startPayment(){
+    const amt = parseFloat(document.getElementById('payAmount').value) || 0;
+    document.getElementById('payModalText').textContent =
+      amt > 0
+      ? `مبلغ ${fmt(amt)} برای اتصال به درگاه «${selectedGateway}» آماده است. در نسخه نهایی، این دکمه شما را به صفحه امن بانک منتقل می‌کند.`
+      : 'برای اتصال به درگاه، ابتدا مبلغ قابل پرداخت را وارد کنید.';
+    document.getElementById('payModal').classList.add('show');
+  }
+  function closeModal(){ document.getElementById('payModal').classList.remove('show'); }
+
+  // ---------- NAV ----------
+  function go(view){
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+    document.getElementById('view-'+view).classList.add('active');
+    document.querySelectorAll('nav.links button').forEach(b=>b.classList.remove('active'));
+    const btn = document.querySelector('nav.links button[data-view="'+view+'"]');
+    if(btn) btn.classList.add('active');
+    document.getElementById('navLinks').classList.remove('open');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  function toggleMenu(){ document.getElementById('navLinks').classList.toggle('open'); }
+
+  // ---------- INIT ----------
+  renderFeatured();
+  renderMenu();
+  renderCart();
+</script>
+</body>
+</html>

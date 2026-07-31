@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مهدی رستمی‌راد | کارشناس حسابداری و سرپرست مالی</title>
+<meta name="description" content="مهدی رستمی‌راد، کارشناس حسابداری و سرپرست مالی؛ ارائه کامل خدمات مالی و حسابداری با دقت، شفافیت و تعهد حرفه‌ای.">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E2A47; --navy-dark:#0A1F35; --gold:#A9822E; --gold-light:#C7A45C;
+    --slate:#4A5568; --bg:#F4F6F8; --white:#FFFFFF; --text:#1C2530; --line:rgba(169,130,46,.28);
+    --shadow:0 18px 40px rgba(14,42,71,.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--text); font-family:'Vazirmatn',sans-serif; line-height:1.9; font-size:16px;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer; border:none; background:none;}
+  h1,h2,h3,h4{font-weight:800; line-height:1.5; margin:0 0 16px;}
+  .num{direction:ltr; unicode-bidi:isolate;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 24px;}
+  .view{display:none;} .view.active{display:block; animation:fadeIn .45s ease;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+  .eyebrow{display:inline-flex; align-items:center; gap:10px; font-size:12px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; font-weight:700; margin-bottom:14px;}
+  .eyebrow::before{content:''; width:28px; height:2px; background:var(--gold);}
+  .center{text-align:center; justify-content:center;}
+
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:15px 32px; font-size:14.5px; font-weight:700; transition:.25s; border:2px solid var(--gold);}
+  .btn-solid{background:var(--gold); color:var(--white);}
+  .btn-solid:hover{background:var(--navy); border-color:var(--navy);}
+  .btn-outline{color:var(--white); border-color:var(--gold);}
+  .btn-outline:hover{background:var(--gold); color:var(--navy-dark);}
+  .btn-dark{color:var(--navy); border-color:var(--navy);}
+  .btn-dark:hover{background:var(--navy); color:#fff;}
+  .btn-block{width:100%; justify-content:center;}
+
+  /* NAV */
+  header.nav{position:sticky; top:0; z-index:200; background:var(--navy-dark); border-bottom:2px solid var(--gold);}
+  .nav-inner{max-width:1140px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand .monogram{width:44px; height:44px; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--gold); font-size:16px;}
+  .brand-text{line-height:1.3;}
+  .brand-text b{display:block; color:#fff; font-size:16px;}
+  .brand-text span{display:block; color:var(--gold-light); font-size:11px; letter-spacing:.5px;}
+  nav.links{display:flex; align-items:center; gap:2px; flex-wrap:wrap;}
+  nav.links button{color:#dfe3e8; font-size:14px; font-weight:600; padding:10px 14px; transition:.2s; border-bottom:2px solid transparent;}
+  nav.links button:hover{color:var(--gold-light);}
+  nav.links button.active{color:var(--gold); border-bottom-color:var(--gold);}
+  .hamburger{display:none; color:#fff; font-size:22px;}
+
+  /* HERO */
+  .hero{position:relative; background:var(--navy); color:#fff; padding:90px 0 70px; overflow:hidden;}
+  .ledger-lines{position:absolute; inset:0; opacity:.06;
+    background-image:repeating-linear-gradient(to bottom, #fff 0, #fff 1px, transparent 1px, transparent 42px);
+  }
+  .hero-grid{position:relative; display:grid; grid-template-columns:1.1fr .9fr; gap:50px; align-items:center;}
+  .hero-grid h1{font-size:38px; color:#fff; margin-bottom:18px;}
+  .hero-grid h1 span{color:var(--gold-light);}
+  .hero-grid p{color:#c7cdd6; font-size:15.5px; max-width:480px; margin-bottom:30px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .hero-badge-wrap{display:flex; justify-content:center;}
+  .id-card{background:#fff; color:var(--text); width:270px; padding:30px 24px; box-shadow:var(--shadow); border-top:4px solid var(--gold); text-align:center;}
+  .id-card .avatar{width:88px; height:88px; margin:0 auto 16px; border-radius:50%; background:var(--navy); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:26px; font-weight:800; border:3px solid var(--gold-light);}
+  .id-card h3{font-size:17px; margin-bottom:4px;}
+  .id-card .role{color:var(--gold); font-size:12.5px; font-weight:700; margin-bottom:16px;}
+  .id-card ul{list-style:none; text-align:right; font-size:12.5px; color:#555;}
+  .id-card li{padding:6px 0; border-top:1px dashed var(--line);}
+
+  .section{padding:80px 0;}
+  .section.alt{background:#fff;}
+  .section-head{max-width:640px; margin:0 auto 46px; text-align:center;}
+  .section-head p{color:var(--slate); font-size:15px;}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:flex-start;}
+  .quote-block{background:var(--navy); color:#fff; padding:34px; border-right:4px solid var(--gold); font-size:16px; line-height:2; margin-bottom:30px;}
+  .traits{display:grid; grid-template-columns:repeat(2, 1fr); gap:18px;}
+  .trait{background:var(--bg); padding:20px; border-right:3px solid var(--gold);}
+  .trait h4{font-size:15px; margin-bottom:6px;}
+  .trait p{font-size:13px; color:var(--slate); margin:0;}
+
+  /* SERVICES */
+  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .service-card{background:var(--bg); border-top:3px solid var(--gold); padding:30px 26px; transition:.3s;}
+  .service-card:hover{background:var(--navy); color:#fff; transform:translateY(-4px);}
+  .service-card:hover h3, .service-card:hover p{color:#fff;}
+  .service-card .ic{width:46px; height:46px; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; color:var(--gold); font-weight:800; margin-bottom:18px;}
+  .service-card h3{font-size:16.5px; margin-bottom:10px;}
+  .service-card p{font-size:13.5px; color:var(--slate); margin:0;}
+
+  /* EXPERTISE STRIP */
+  .expertise-strip{display:flex; flex-wrap:wrap; gap:12px; justify-content:center;}
+  .tag-pill{border:1.5px solid var(--gold); color:var(--navy); padding:9px 20px; font-size:13px; font-weight:600;}
+
+  /* CONTACT */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:44px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-size:13px; font-weight:600; margin-bottom:7px; color:var(--slate);}
+  .field input, .field textarea{width:100%; border:1.5px solid #dfe3e8; padding:13px 15px; font-family:inherit; font-size:14px; background:#fff;}
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--gold);}
+  .contact-info-box{background:var(--navy); color:#fff; padding:36px;}
+  .contact-info-box h3{color:var(--gold-light);}
+  .contact-info-box .row{margin-bottom:18px; font-size:14.5px; color:#dfe3e8; display:flex; gap:10px;}
+  .success-panel{display:none; margin-top:18px; padding:20px; background:#eef6ee; border:1px solid #bfe3bf; color:#2e6b2e; font-size:14px;}
+  .success-panel.show{display:block;}
+  .hp-field{position:absolute; left:-9999px;}
+  .note-box{border:1px dashed var(--line); padding:14px 16px; font-size:12.5px; color:var(--slate); margin-top:16px;}
+
+  /* FOOTER */
+  footer{background:var(--navy-dark); color:#c7cdd6; padding:44px 0 22px;}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:24px;}
+  .footer-inner .brand-text b{color:#fff;}
+  .footer-links{display:flex; gap:20px; flex-wrap:wrap; font-size:13.5px;}
+  .footer-bottom{border-top:1px solid rgba(169,130,46,.25); padding-top:18px; text-align:center; font-size:12px; color:#8f98a3;}
+
+  @media(max-width:900px){
+    .hero-grid, .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .traits{grid-template-columns:1fr;}
+    nav.links{position:fixed; top:73px; right:0; left:0; background:var(--navy-dark); flex-direction:column; padding:8px 20px; display:none; border-top:1px solid var(--line);}
+    nav.links.open{display:flex;}
+    nav.links button{text-align:right; padding:12px 6px;}
+    .hamburger{display:block;}
+    .hero-grid h1{font-size:28px;}
+  }
+  @media(max-width:560px){
+    .services-grid{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){*{animation-duration:.001ms !important; transition-duration:.001ms !important;}}
+  :focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#" onclick="go('home'); return false;">
+      <div class="monogram">م ر</div>
+      <div class="brand-text"><b>مهدی رستمی‌راد</b><span>کارشناس حسابداری و سرپرست مالی</span></div>
+    </a>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav class="links" id="navLinks">
+      <button data-view="home" onclick="go('home')">خانه</button>
+      <button data-view="about" onclick="go('about')">درباره من</button>
+      <button data-view="services" onclick="go('services')">خدمات</button>
+      <button data-view="contact" onclick="go('contact')">تماس با من</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section class="view active" id="view-home">
+    <div class="hero">
+      <div class="ledger-lines"></div>
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">حسابداری و مدیریت مالی</div>
+          <h1>دقت، شفافیت و <span>مسئولیت‌پذیری</span> در هر عدد</h1>
+          <p>مهدی رستمی‌راد، کارشناس حسابداری و سرپرست مالی؛ انجام کامل امور مالی و حسابداری کسب‌وکار شما، از دفترداری روزانه تا تصمیم‌های کلان مالی.</p>
+          <div class="hero-actions">
+            <button class="btn btn-solid" onclick="go('services')">مشاهده خدمات</button>
+            <button class="btn btn-outline" onclick="go('contact')">درخواست مشاوره</button>
+          </div>
+        </div>
+        <div class="hero-badge-wrap">
+          <div class="id-card">
+            <div class="avatar">م ر</div>
+            <h3>مهدی رستمی‌راد</h3>
+            <div class="role">کارشناس حسابداری و سرپرست مالی</div>
+            <ul>
+              <li>تهیه صورت‌های مالی</li>
+              <li>اظهارنامه مالیاتی و ارزش‌افزوده</li>
+              <li>حقوق و دستمزد و بیمه</li>
+              <li>مشاوره و تحلیل مالی</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">حوزه فعالیت</div>
+        <h2>پوشش کامل امور مالی و حسابداری</h2>
+        <p>از ثبت اسناد روزانه تا تحلیل و گزارش‌دهی مدیریتی؛ همه در یک مسیر منظم و قابل‌اتکا.</p>
+      </div>
+      <div class="expertise-strip">
+        <span class="tag-pill">حسابداری مالی</span>
+        <span class="tag-pill">حسابرسی داخلی</span>
+        <span class="tag-pill">امور مالیاتی</span>
+        <span class="tag-pill">حقوق و دستمزد</span>
+        <span class="tag-pill">بودجه‌بندی</span>
+        <span class="tag-pill">تحلیل صورت‌های مالی</span>
+        <span class="tag-pill">مشاوره مدیریت مالی</span>
+        <span class="tag-pill">نرم‌افزارهای حسابداری</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="view" id="view-about">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">درباره من</div>
+        <h2>مهدی رستمی‌راد</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <div class="quote-block">
+            «در حسابداری، هیچ عددی کوچک نیست. هر رقم، بخشی از تصمیمی بزرگ‌تر است؛ به همین دلیل کارم را با دقت، نظم و رازداری کامل انجام می‌دهم.»
+          </div>
+          <p style="color:var(--slate); font-size:15px;">
+            به‌عنوان کارشناس حسابداری و سرپرست مالی، مسئولیت من اطمینان از صحت، شفافیت و انطباق کامل رویه‌های مالی با قوانین و استانداردهای حسابداری است. رویکرد من ترکیبی از دقت فنی در ثبت و گزارش‌گیری، و نگاه تحلیلی برای کمک به تصمیم‌گیری مدیران است.
+          </p>
+        </div>
+        <div class="traits">
+          <div class="trait"><h4>دقت و نظم</h4><p>ثبت و بررسی اسناد مالی بدون کوچک‌ترین خطا.</p></div>
+          <div class="trait"><h4>رازداری حرفه‌ای</h4><p>حفظ محرمانگی کامل اطلاعات مالی کسب‌وکار شما.</p></div>
+          <div class="trait"><h4>پایبندی به قانون</h4><p>انطباق کامل با استانداردها و مقررات مالیاتی.</p></div>
+          <div class="trait"><h4>نگاه تحلیلی</h4><p>ارائه گزارش‌هایی که تصمیم‌گیری را ساده‌تر می‌کند.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="view" id="view-services">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">خدمات</div>
+        <h2>خدمات مالی و حسابداری</h2>
+        <p>مجموعه‌ای کامل از خدماتی که برای اداره منظم امور مالی کسب‌وکار شما نیاز دارید.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card"><div class="ic">۰۱</div><h3>تهیه صورت‌های مالی</h3><p>ترازنامه، سود و زیان و گردش وجوه نقد مطابق استانداردهای حسابداری.</p></div>
+        <div class="service-card"><div class="ic">۰۲</div><h3>حسابداری و دفترداری</h3><p>ثبت روزانه اسناد، تهیه دفاتر قانونی و کنترل حساب‌ها.</p></div>
+        <div class="service-card"><div class="ic">۰۳</div><h3>امور مالیاتی</h3><p>تنظیم و ارسال اظهارنامه عملکرد و ارزش‌افزوده، پیگیری پرونده مالیاتی.</p></div>
+        <div class="service-card"><div class="ic">۰۴</div><h3>حقوق، دستمزد و بیمه</h3><p>محاسبه دقیق حقوق، لیست بیمه تأمین اجتماعی و مالیات حقوق.</p></div>
+        <div class="service-card"><div class="ic">۰۵</div><h3>حسابرسی داخلی</h3><p>بررسی و کنترل فرآیندهای مالی برای کاهش ریسک و خطا.</p></div>
+        <div class="service-card"><div class="ic">۰۶</div><h3>بودجه‌بندی و تحلیل مالی</h3><p>تدوین بودجه سالانه و تحلیل انحرافات برای تصمیم‌گیری بهتر.</p></div>
+        <div class="service-card"><div class="ic">۰۷</div><h3>مشاوره مدیریت مالی</h3><p>راهنمایی مدیران در برنامه‌ریزی مالی و بهینه‌سازی هزینه‌ها.</p></div>
+        <div class="service-card"><div class="ic">۰۸</div><h3>پیاده‌سازی نرم‌افزار حسابداری</h3><p>راه‌اندازی، آموزش و پشتیبانی سیستم‌های مالی سازمان.</p></div>
+        <div class="service-card"><div class="ic">۰۹</div><h3>گزارش‌های مدیریتی</h3><p>تهیه گزارش‌های دوره‌ای برای هیئت‌مدیره و سهامداران.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="view" id="view-contact">
+    <div class="wrap section">
+      <div class="section-head">
+        <div class="eyebrow center">در ارتباط باشید</div>
+        <h2>درخواست مشاوره یا همکاری</h2>
+        <p>برای هماهنگی همکاری، فرم زیر را تکمیل کنید یا مستقیم تماس بگیرید.</p>
+      </div>
+      <div class="contact-grid">
+        <form id="contactForm" onsubmit="submitContact(event)">
+          <input type="text" class="hp-field" tabindex="-1" autocomplete="off">
+          <div class="field"><label>نام و نام‌خانوادگی</label><input type="text" required></div>
+          <div class="field"><label>ایمیل یا شماره تماس</label><input type="text" required></div>
+          <div class="field"><label>موضوع همکاری</label><input type="text" placeholder="مثال: تنظیم اظهارنامه مالیاتی شرکت"></div>
+          <div class="field"><label>توضیحات</label><textarea rows="5" required></textarea></div>
+          <button type="submit" class="btn btn-solid btn-block">ارسال درخواست</button>
+          <div class="success-panel" id="contactSuccess">درخواست شما ثبت شد. در اولین فرصت پاسخ داده می‌شود.</div>
+        </form>
+        <div class="contact-info-box">
+          <h3>راه‌های ارتباطی</h3>
+          <div class="row">☎ [شماره تماس را اینجا وارد کنید]</div>
+          <div class="row">✉ [ایمیل را اینجا وارد کنید]</div>
+          <div class="row">📍 [شهر / محل فعالیت]</div>
+          <div class="row">🕐 شنبه تا پنجشنبه، ساعات اداری</div>
+          <div class="note-box" style="border-color:rgba(255,255,255,.25); color:#c7cdd6;">این بخش‌ها placeholder هستند؛ اطلاعات تماس واقعی را جایگزین کنید.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="brand-text"><b>مهدی رستمی‌راد</b><span>کارشناس حسابداری و سرپرست مالی</span></div>
+      <div class="footer-links">
+        <a href="#" onclick="go('about'); return false;">درباره من</a>
+        <a href="#" onclick="go('services'); return false;">خدمات</a>
+        <a href="#" onclick="go('contact'); return false;">تماس</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© تمامی حقوق محفوظ است.</div>
+  </div>
+</footer>
+
+<script>
+  function go(view){
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+    document.getElementById('view-'+view).classList.add('active');
+    document.querySelectorAll('nav.links button').forEach(b=>b.classList.remove('active'));
+    const btn = document.querySelector('nav.links button[data-view="'+view+'"]');
+    if(btn) btn.classList.add('active');
+    document.getElementById('navLinks').classList.remove('open');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  function toggleMenu(){ document.getElementById('navLinks').classList.toggle('open'); }
+  function submitContact(e){
+    e.preventDefault();
+    document.getElementById('contactForm').querySelectorAll('.field, button[type=submit]').forEach(el=>el.style.display='none');
+    document.getElementById('contactSuccess').classList.add('show');
+  }
+</script>
+</body>
+</html>
