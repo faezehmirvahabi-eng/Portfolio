@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نمونه اولیه صفحه اول — استودیو عکاسی و فیلم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17181A;
+    --ink-soft:#232427;
+    --paper:#EFE9DF;
+    --paper-dim:#B9B2A3;
+    --amber:#D9A441;
+    --teal:#2B5850;
+    --line: rgba(239,233,223,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Vazirmatn', sans-serif;
+    display:flex;
+    flex-direction:column;
+    min-height:100dvh;
+    overflow-x:hidden;
+  }
+
+  /* ---- film sprocket strips (signature element) ---- */
+  .sprockets{
+    height:22px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:0 16px;
+    background:#0F1011;
+    overflow:hidden;
+  }
+  .sprockets span{
+    width:9px; height:9px;
+    border-radius:2px;
+    background:var(--ink);
+    border:1px solid rgba(239,233,223,0.18);
+    flex-shrink:0;
+  }
+
+  /* ---- header ---- */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px clamp(20px,5vw,56px) 0;
+  }
+  .mark{
+    width:30px; height:30px;
+    border-radius:50%;
+    border:2px solid var(--amber);
+    position:relative;
+    flex-shrink:0;
+  }
+  .mark::after{
+    content:"";
+    position:absolute; inset:7px;
+    border-radius:50%;
+    border:2px solid var(--amber);
+  }
+  .frame-counter{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    color:var(--paper-dim);
+    direction:ltr;
+  }
+
+  /* ---- main ---- */
+  main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:28px clamp(20px,5vw,56px) 40px;
+    text-align:center;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.12em;
+    color:var(--amber);
+    margin-bottom:14px;
+  }
+  h1{
+    font-size:clamp(22px,3.6vw,34px);
+    font-weight:700;
+    line-height:1.5;
+    max-width:640px;
+    margin-bottom:6px;
+  }
+  .sub{
+    color:var(--paper-dim);
+    font-size:14px;
+    margin-bottom:34px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    width:100%;
+    max-width:860px;
+  }
+  @media (max-width:620px){
+    .grid{grid-template-columns:1fr;}
+  }
+
+  .card{
+    position:relative;
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:6px;
+    padding:26px 22px 22px;
+    text-align:right;
+    cursor:pointer;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    outline:none;
+  }
+  .card::before{
+    content:attr(data-no);
+    position:absolute;
+    top:12px; left:14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--paper-dim);
+    direction:ltr;
+  }
+  .card .corner{
+    position:absolute;
+    width:16px; height:16px;
+    border:2px solid transparent;
+    transition:border-color .25s ease;
+  }
+  .card .corner.tl{top:8px; right:8px; border-top-color:transparent; border-right-color:transparent;}
+  .card .corner.br{bottom:8px; left:8px; border-bottom-color:transparent; border-left-color:transparent;}
+
+  .card:hover, .card:focus-visible{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.35);
+    background:#F6F1E8;
+  }
+  .card:hover .corner.tl, .card:focus-visible .corner.tl{ border-top-color:var(--amber); border-right-color:var(--amber); }
+  .card:hover .corner.br, .card:focus-visible .corner.br{ border-bottom-color:var(--amber); border-left-color:var(--amber); }
+
+  .icon{
+    width:34px; height:34px;
+    stroke:var(--teal);
+    fill:none;
+    stroke-width:1.6;
+  }
+  .card h3{
+    font-size:17px;
+    font-weight:700;
+  }
+  .card p{
+    font-size:13px;
+    color:#565048;
+    line-height:1.7;
+  }
+  .count{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--teal);
+    direction:ltr;
+    align-self:flex-start;
+  }
+
+  footer{
+    padding:16px clamp(20px,5vw,56px) 20px;
+    text-align:center;
+    font-size:12px;
+    color:var(--paper-dim);
+  }
+  footer b{color:var(--amber); font-weight:500;}
+
+  @media (prefers-reduced-motion: reduce){
+    .card{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="sprockets" id="sprocketsTop"></div>
+
+  <header>
+    <div class="mark" aria-hidden="true"></div>
+    <div class="frame-counter">CATEGORY&nbsp;SELECT&nbsp;/&nbsp;04</div>
+  </header>
+
+  <main>
+    <div class="eyebrow">صفحه اول — فقط یک وظیفه</div>
+    <h1>دنبال چه نوع کاری هستید؟</h1>
+    <div class="sub">یکی از دسته‌ها را انتخاب کنید تا مستقیم به خدمات مرتبط برسید</div>
+
+    <div class="grid">
+      <a class="card" href="#" data-no="01/04" tabindex="0">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/></svg>
+        <h3>تبلیغاتی و تجاری</h3>
+        <p>عکاسی و فیلم برای برند، محتوای شبکه‌های اجتماعی و کمپین تبلیغاتی</p>
+        <span class="count">۵ خدمت</span>
+      </a>
+
+      <a class="card" href="#" data-no="02/04" tabindex="0">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9c-1.3-3 1-6 4-6 2 0 3.5 1.5 5 3.5C13.5 7.5 15 6 17 6c3 0 5.3 3 4 6-2 4.5-9 9-9 9z"/></svg>
+        <h3>مراسم و رویداد</h3>
+        <p>عروسی، نامزدی، جشن تولد و مراسم خاص</p>
+        <span class="count">۶ خدمت</span>
+      </a>
+
+      <a class="card" href="#" data-no="03/04" tabindex="0">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <svg class="icon" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+        <h3>محصول و صنعتی</h3>
+        <p>عکاسی محصول، کاتالوگ فروشگاهی و فضای صنعتی</p>
+        <span class="count">۵ خدمت</span>
+      </a>
+
+      <a class="card" href="#" data-no="04/04" tabindex="0">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+        <h3>پرتره و خانوادگی</h3>
+        <p>عکاسی فردی، خانوادگی و کودک</p>
+        <span class="count">۴ خدمت</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    نمونه اولیه مفهومی — نام برند، رنگ و متن‌ها با هماهنگی شما نهایی می‌شود.
+    هر دسته یک صفحه <b>مجزا و بهینه‌شده برای سئو</b> خواهد داشت.
+  </footer>
+
+  <div class="sprockets" id="sprocketsBottom"></div>
+
+<script>
+  function fillSprockets(id){
+    const el = document.getElementById(id);
+    const count = Math.ceil(window.innerWidth / 30);
+    el.innerHTML = '<span></span>'.repeat(count);
+  }
+  fillSprockets('sprocketsTop');
+  fillSprockets('sprocketsBottom');
+  window.addEventListener('resize', ()=>{
+    fillSprockets('sprocketsTop');
+    fillSprockets('sprocketsBottom');
+  });
+</script>
+
+</body>
+</html>
