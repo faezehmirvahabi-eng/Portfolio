@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedEx Future — Personalized Genomic Medicine, Reimagined</title>
+<meta name="description" content="MedEx Future is a genomic and AI-powered healthcare ecosystem offering personalized medicine, longevity therapy, and elite medical tourism across the Middle East and Anatolia.">
+<link rel="canonical" href="https://medexfuture.com/">
+<meta property="og:title" content="MedEx Future — Personalized Genomic Medicine">
+<meta property="og:description" content="An AI and genomics-driven healthcare ecosystem: MyMedEx, GenEx, MedExTour, AgeX and MedExZone.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1B1424">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "MedEx Future",
+  "url": "https://medexfuture.com/",
+  "description": "Genomic and AI-powered personalized healthcare ecosystem.",
+  "areaServed": ["Middle East", "Anatolia"]
+}
+</script>
+<style>
+  :root{
+    --purple-deep:#3B1D63; --purple:#4A2574; --purple-light:#6C3FA6;
+    --teal:#0FBF9F; --teal-deep:#0A8F76; --ink:#1B1424; --paper:#FAF9FC;
+    --mauve:#B9AFC7; --line:#ece8f2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Manrope',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;}
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  section{padding:110px 24px;}
+  .wrap{max-width:1120px;margin:0 auto;}
+  h1,h2,h3{font-weight:800;line-height:1.15;}
+  .eyebrow{font-weight:700;letter-spacing:4px;font-size:11.5px;color:var(--teal);text-transform:uppercase;margin-bottom:14px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:100px;font-weight:700;font-size:14.5px;cursor:pointer;border:none;transition:transform .15s ease, box-shadow .15s ease;}
+  .btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px;}
+  .btn-teal{background:var(--teal);color:#06231d;}
+  .btn-teal:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(15,191,159,.35);}
+  .btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,.35);color:#fff;}
+  .btn-outline.on-light{border-color:var(--purple-deep);color:var(--purple-deep);}
+  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;}}
+
+  /* NAV */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(27,20,36,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);}
+  .nav{display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto;padding:14px 24px;}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:16px;}
+  .nav-links{display:flex;gap:28px;font-size:13.5px;font-weight:600;color:#d8d2e6;}
+  .nav-links a:hover{color:var(--teal);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:22px;cursor:pointer;}
+  @media (max-width:860px){.nav-links{display:none;}.nav-toggle{display:block;}}
+
+  /* HERO */
+  .hero{background:radial-gradient(circle at 20% 20%, #4A2574 0%, #1B1424 55%);color:#fff;padding:150px 24px 120px;position:relative;overflow:hidden;}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero h1{font-size:clamp(34px,5vw,58px);max-width:780px;}
+  .hero h1 .accent{color:var(--teal);}
+  .hero p.lead{font-size:17px;color:#cfc7e0;max-width:560px;margin:20px 0 36px;}
+  .hero .actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-badges{display:flex;gap:26px;margin-top:56px;flex-wrap:wrap;font-size:12.5px;color:#a99cc4;}
+  .hero-badges span{display:flex;align-items:center;gap:8px;}
+
+  /* PULSE DIVIDER */
+  .divider{padding:0;background:var(--paper);}
+  .divider.dark-to-light{background:linear-gradient(#1B1424, var(--paper) 85%);}
+  .divider svg{width:100%;height:70px;}
+
+  /* SECTION HEADS */
+  .head{max-width:640px;margin-bottom:56px;}
+  .head h2{font-size:clamp(26px,3.4vw,38px);color:var(--purple-deep);}
+  .on-dark .head h2{color:#fff;}
+  .head p{color:#6b6577;font-size:15px;margin-top:14px;}
+  .on-dark .head p{color:#c9c3d6;}
+
+  /* ABOUT */
+  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:20px;}
+  .pillar{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;}
+  .pillar .num{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:2px;}
+  .pillar h3{font-size:17px;margin:12px 0 8px;color:var(--purple-deep);}
+  .pillar p{font-size:13.8px;color:#6b6577;}
+
+  /* MYMEDEX / GENEX (clinical, light) */
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+  @media (max-width:860px){.split{grid-template-columns:1fr;}}
+  .feature-list{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:14px;}
+  .feature-list li{display:flex;gap:12px;font-size:14.5px;color:#3d3750;}
+  .feature-list li svg{flex-shrink:0;margin-top:2px;}
+
+  .mock-dashboard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 20px 50px rgba(59,29,99,.08);}
+  .mock-dashboard .bar{height:10px;border-radius:6px;background:var(--line);overflow:hidden;margin:8px 0 18px;}
+  .mock-dashboard .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--purple-light));}
+  .mock-row{display:flex;justify-content:space-between;font-size:12.5px;color:#8a839a;margin-bottom:4px;}
+
+  .genex-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:20px;}
+  .genex-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;}
+  .ring-row{display:flex;gap:16px;margin:16px 0;}
+  .ring-row .ring-label{font-size:11px;color:#8a839a;text-align:center;margin-top:6px;}
+
+  /* MEDEXTOUR (dark, timeline) */
+  .on-dark{background:var(--ink);color:#fff;}
+  .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:24px;position:relative;}
+  .tl-step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:26px;}
+  .tl-step .n{font-family:'Manrope';font-weight:800;font-size:26px;color:var(--teal);}
+  .tl-step h3{font-size:16px;margin:10px 0 8px;}
+  .tl-step p{font-size:13.5px;color:#c9c3d6;}
+
+  /* AGEX */
+  .agex-wrap{background:linear-gradient(160deg,#1B1424,#3B1D63);color:#fff;}
+  .agex-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin-top:24px;}
+  .agex-card{border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px;background:rgba(255,255,255,.03);}
+  .agex-card h3{font-size:16px;color:var(--teal);margin-bottom:8px;}
+  .agex-card p{font-size:13.5px;color:#d8d2e6;}
+
+  /* PARTNER */
+  .partner-note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:12px;padding:18px 22px;font-size:13px;color:#6b6577;margin-top:28px;}
+
+  /* SECURITY */
+  .sec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:24px;}
+  .sec-card{text-align:center;padding:26px 18px;}
+  .sec-card h3{font-size:14.5px;margin:14px 0 6px;color:var(--purple-deep);}
+  .sec-card p{font-size:12.8px;color:#6b6577;}
+
+  /* CONTACT */
+  .contact-box{background:linear-gradient(135deg,var(--purple-light),var(--purple-deep));border-radius:24px;padding:56px;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  @media (max-width:860px){.contact-box{grid-template-columns:1fr;padding:36px;}}
+  .contact-box h2{font-size:28px;}
+  .contact-box p{color:#e6dff2;font-size:14.5px;margin-top:10px;}
+  form.inline-form{display:flex;flex-direction:column;gap:12px;}
+  form.inline-form input{padding:14px 16px;border-radius:10px;border:none;font-family:'Manrope';font-size:13.5px;}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#a99cc4;padding:60px 24px 30px;font-size:13px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;max-width:1120px;margin:0 auto;}
+  @media (max-width:760px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  .footer-grid h4{color:#fff;font-size:13px;margin-bottom:14px;}
+  .footer-grid ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .footer-bottom{max-width:1120px;margin:40px auto 0;border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <div class="brand">
+      <svg width="30" height="30" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><linearGradient id="gpn" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6C3FA6"/><stop offset="100%" stop-color="#3B1D63"/></linearGradient></defs>
+        <path d="M14,54 L14,32 A18,18 0 0 1 32,14 L146,14" fill="none" stroke="#0FBF9F" stroke-width="9" stroke-linecap="round"/>
+        <rect x="30" y="30" width="140" height="140" rx="34" fill="url(#gpn)"/>
+        <path d="M52,100 L68,100 L76,76 L86,124 L94,100 L148,100" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      MEDEX <span style="color:var(--teal)">FUTURE</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#mymedex">MyMedEx</a>
+      <a href="#genex">GenEx</a>
+      <a href="#tour">MedExTour</a>
+      <a href="#agex">AgeX</a>
+      <a href="#security">Security</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-teal">Get Started</a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <div class="eyebrow">GENOMIC · AI · PERSONALIZED CARE</div>
+    <h1 id="hero-h">From vital monitoring today, to your <span class="accent">genomic future</span>.</h1>
+    <p class="lead">MedEx Future is a digital healthcare ecosystem across the Middle East and Anatolia — combining AI, genomic science, and elite clinical care into one personalized journey.</p>
+    <div class="actions">
+      <a href="#mymedex" class="btn btn-teal">Explore MyMedEx</a>
+      <a href="#contact" class="btn btn-outline">Talk to Our Team</a>
+    </div>
+    <div class="hero-badges">
+      <span>🔒 End-to-end encrypted records</span>
+      <span>🧬 Genomic-guided care</span>
+      <span>🌍 24/7 multilingual access</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER 1: pulse -->
+<div class="divider">
+  <svg viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,35 L500,35 L525,10 L555,60 L580,35 L1200,35" fill="none" stroke="#0FBF9F" stroke-width="2.5"/>
+  </svg>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">About MedEx Future</div>
+      <h2>A leader in personalized medicine across the region</h2>
+      <p>Built on genomic technology, artificial intelligence, and always-on digital health records — designed around each patient's unique biology, not a one-size-fits-all protocol.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><div class="num">01</div><h3>Genomic Foundation</h3><p>Every recommendation is grounded in your own genetic profile, not population averages.</p></div>
+      <div class="pillar"><div class="num">02</div><h3>AI-Guided Care</h3><p>Dr Bot and our clinical AI layer help interpret data faster, without replacing physician judgment.</p></div>
+      <div class="pillar"><div class="num">03</div><h3>Always Available</h3><p>24/7 multilingual consultations, from mental wellness to nutrition to follow-up care.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER 2: transitioning -->
+<div class="divider">
+  <svg viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,35 L400,35 L420,15 L445,55 L465,35 C520,15 545,55 580,35 C610,20 630,50 660,35 L1200,35" fill="none" stroke="#0FBF9F" stroke-width="2.5"/>
+  </svg>
+</div>
+
+<!-- MYMEDEX (clinical / light) -->
+<section id="mymedex" style="background:#fff;">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow">MyMedEx Platform</div>
+        <h2 style="font-size:32px;color:var(--purple-deep);">The region's first virtual smart-care hospital</h2>
+        <p style="color:#6b6577;margin-top:12px;font-size:14.5px;">One secure workspace for bookings, records, AI guidance, and follow-up — available in multiple languages, around the clock.</p>
+        <ul class="feature-list">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0FBF9F" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Advanced medical &amp; mental health consultations</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0FBF9F" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Personalized nutrition, fitness &amp; beauty coaching</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0FBF9F" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Secure data encryption &amp; privacy protection</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0FBF9F" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg> Genome-guided lifestyle consulting</li>
+        </ul>
+      </div>
+      <div class="mock-dashboard" role="img" aria-label="MyMedEx dashboard preview">
+        <div class="mock-row"><span>Care Plan Progress</span><span>72%</span></div>
+        <div class="bar"><i style="width:72%"></i></div>
+        <div class="mock-row"><span>Genomic Sync</span><span>Active</span></div>
+        <div class="bar"><i style="width:100%;background:var(--purple-light)"></i></div>
+        <div class="mock-row"><span>Next Consultation</span><span>Today, 5:30 PM</span></div>
+        <div class="bar"><i style="width:40%;background:var(--teal-deep)"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GENEX -->
+<section id="genex" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">GenEx Dashboard</div>
+      <h2>Interact with your personal genetic index</h2>
+      <p>From nutrition to athletic performance to biological aging — see how your genome shapes recommendations built specifically for you.</p>
+    </div>
+    <div class="genex-grid">
+      <div class="genex-card"><h3 style="color:var(--purple-deep);font-size:16px;">Personalized Nutrition</h3><p style="font-size:13.5px;color:#6b6577;margin-top:8px;">Your genetic relationship with carbohydrates, fats, and micronutrient absorption.</p></div>
+      <div class="genex-card"><h3 style="color:var(--purple-deep);font-size:16px;">Athletic Performance</h3><p style="font-size:13.5px;color:#6b6577;margin-top:8px;">Muscle composition, cardiovascular potential, and recovery rate insights.</p></div>
+      <div class="genex-card"><h3 style="color:var(--purple-deep);font-size:16px;">Aging &amp; Vitality</h3><p style="font-size:13.5px;color:#6b6577;margin-top:8px;">Oxidative stress handling, cellular detox, and cognitive preservation markers.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER 3: more helix -->
+<div class="divider">
+  <svg viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,35 C60,15 90,55 150,35 C210,15 240,55 300,35 C360,15 390,55 450,35 C510,15 540,55 600,35 C660,15 690,55 750,35 C810,15 840,55 900,35 L1200,35" fill="none" stroke="#0FBF9F" stroke-width="2.5"/>
+    <path d="M0,35 C60,55 90,15 150,35 C210,55 240,15 300,35 C360,55 390,15 450,35 C510,55 540,15 600,35 C660,55 690,15 750,35 C810,55 840,15 900,35 L1200,35" fill="none" stroke="#6C3FA6" stroke-width="1.5" opacity=".5"/>
+  </svg>
+</div>
+
+<!-- MEDEXTOUR (dark) -->
+<section id="tour" class="on-dark">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">MedExTour VIP</div>
+      <h2>Seamless global medical coordination</h2>
+      <p>From first consultation to recovery, every step is managed by our clinical concierge team.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-step"><div class="n">01</div><h3>Medical Consultation</h3><p>Genomic review and specialist allocation, from home.</p></div>
+      <div class="tl-step"><div class="n">02</div><h3>VIP Flight &amp; Reception</h3><p>Chartered flights, lounge access, and private clinic transfer.</p></div>
+      <div class="tl-step"><div class="n">03</div><h3>Elite Treatment</h3><p>Personalized care guided by multi-disciplinary specialists.</p></div>
+      <div class="tl-step"><div class="n">04</div><h3>Luxury Post-Care</h3><p>Continuous telemetry and local recovery assistance.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AGEX -->
+<section id="agex" class="agex-wrap">
+  <div class="wrap">
+    <div class="head on-dark">
+      <div class="eyebrow">AgeX Longevity</div>
+      <h2>Supporting the body at a cellular level</h2>
+      <p>AgeX focuses on cellular health markers — energy, tissue repair signals, and chromosomal protection — as part of a longevity-oriented care plan.</p>
+    </div>
+    <div class="agex-grid">
+      <div class="agex-card"><h3>DNA Cap Support</h3><p>Programs oriented around protecting chromosomal end-caps as part of cell longevity research.</p></div>
+      <div class="agex-card"><h3>Mitochondrial Health</h3><p>NAD+ and peptide-informed protocols designed with cellular energy in mind.</p></div>
+      <div class="agex-card"><h3>Stem Cell Protocols</h3><p>GMP-compliant, physician-supervised regenerative protocols.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section id="partner" style="background:#fff;">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Partner in Healthcare</div>
+      <h2>Join our clinical advisory network</h2>
+      <p>MedEx Future invites licensed physicians and clinical partners to contribute to protocol design and diagnostic review through our Physicians Portal.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><h3>Clinical Collaboration</h3><p style="font-size:13.8px;color:#6b6577;">Contribute to protocol design across MyMedEx and MedExZone.</p></div>
+      <div class="pillar"><h3>Board Advisory</h3><p style="font-size:13.8px;color:#6b6577;">Shape clinical standards as part of our medical advisory board.</p></div>
+      <div class="pillar"><h3>Transparent Reporting</h3><p style="font-size:13.8px;color:#6b6577;">Access activity and case reporting through a secure portal.</p></div>
+    </div>
+    <div class="partner-note">Note: any investment or equity-related offering must be reviewed by qualified legal and financial counsel and clearly disclosed under applicable securities regulations before publication — this section intentionally focuses on clinical partnership, not financial return claims.</div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section id="security" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Security &amp; Compliance</div>
+      <h2>Built for clinical-grade trust</h2>
+      <p>Every layer of MedEx Future is designed around protecting sensitive health data.</p>
+    </div>
+    <div class="sec-grid">
+      <div class="sec-card"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#3B1D63" stroke-width="1.8" style="margin:0 auto"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/></svg><h3>End-to-End Encryption</h3><p>Health records encrypted in transit and at rest.</p></div>
+      <div class="sec-card"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#3B1D63" stroke-width="1.8" style="margin:0 auto"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><h3>Two-Factor Access</h3><p>Mandatory 2FA for all patient and physician accounts.</p></div>
+      <div class="sec-card"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#3B1D63" stroke-width="1.8" style="margin:0 auto"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><h3>GDPR-Aligned Handling</h3><p>Data processing aligned with EU and regional privacy law.</p></div>
+      <div class="sec-card"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#3B1D63" stroke-width="1.8" style="margin:0 auto"><path d="M3 12h4l2 8 4-16 2 8h6"/></svg><h3>Independent Audits</h3><p>Regular third-party security and penetration testing.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <h2>Begin your personalized journey</h2>
+        <p>Reach our elite medical coordination team — available in English, Persian, Turkish and Arabic.</p>
+      </div>
+      <form class="inline-form" onsubmit="return false;">
+        <input type="text" placeholder="Full name" required>
+        <input type="email" placeholder="Email address" required>
+        <button class="btn btn-teal" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="brand" style="margin-bottom:14px;">MEDEX <span style="color:var(--teal)">FUTURE</span></div>
+      <p style="max-width:280px;font-size:13px;">A genomic and AI-powered healthcare ecosystem across the Middle East and Anatolia.</p>
+    </div>
+    <div><h4>Platform</h4><ul><li><a href="#mymedex">MyMedEx</a></li><li><a href="#genex">GenEx</a></li><li><a href="#agex">AgeX</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="#about">About</a></li><li><a href="#partner">Partners</a></li><li><a href="#security">Security</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>Tallinn, Estonia</li><li>+372 699 1515</li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MedExFuture OÜ. All rights reserved.</span>
+    <span>Privacy · Terms</span>
+  </div>
+</footer>
+
+</body>
+</html>
