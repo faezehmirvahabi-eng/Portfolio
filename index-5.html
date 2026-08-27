@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نمونه‌کارهای طراحی وب</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0d10;
+    --bg-soft:#131519;
+    --line:#212329;
+    --ink:#eeeeef;
+    --ink-dim:#9a9ca4;
+    --gold:#c9a24b;
+    --gold-soft:rgba(201,162,75,.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink); font-family:'Vazirmatn',sans-serif; line-height:1.9;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    border-bottom:1px solid var(--line);
+    padding:96px 0 64px;
+    background:
+      radial-gradient(600px 300px at 85% -10%, var(--gold-soft), transparent 60%),
+      radial-gradient(500px 260px at 10% 110%, rgba(201,162,75,.06), transparent 60%);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.3fr .7fr; gap:40px; align-items:end;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12.5px; letter-spacing:.5px; color:var(--gold);
+    background:var(--gold-soft); border:1px solid rgba(201,162,75,.35);
+    padding:6px 14px; border-radius:20px; margin-bottom:22px;
+  }
+  .eyebrow::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--gold); display:inline-block;}
+  .hero h1{
+    font-size:clamp(28px,4.2vw,44px); font-weight:800; letter-spacing:-.5px;
+    margin-bottom:18px; max-width:620px;
+  }
+  .hero h1 span{color:var(--gold);}
+  .hero p.lead{color:var(--ink-dim); font-size:16px; max-width:520px; margin-bottom:0;}
+  .hero-actions{display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;}
+  .btn{
+    font-size:14px; font-weight:600; padding:12px 22px; border-radius:9px;
+    display:inline-flex; align-items:center; gap:8px; transition:.2s;
+  }
+  .btn.primary{background:var(--gold); color:#131010;}
+  .btn.primary:hover{filter:brightness(1.08); transform:translateY(-1px);}
+  .btn.ghost{border:1px solid var(--line); color:var(--ink);}
+  .btn.ghost:hover{border-color:var(--gold); color:var(--gold);}
+
+  .stats{display:flex; flex-direction:column; gap:18px; border-right:1px solid var(--line); padding-right:28px;}
+  .stat b{display:block; font-size:30px; font-weight:800; color:var(--gold);}
+  .stat span{font-size:13px; color:var(--ink-dim);}
+  @media(max-width:760px){
+    .hero-grid{grid-template-columns:1fr;}
+    .stats{flex-direction:row; border-right:none; border-top:1px solid var(--line); padding-right:0; padding-top:20px; justify-content:space-between;}
+  }
+
+  /* ---------- FILTERS ---------- */
+  .filters{display:flex; gap:10px; flex-wrap:wrap; padding:36px 0 4px;}
+  .chip{
+    font-size:13px; color:var(--ink-dim); border:1px solid var(--line);
+    padding:8px 16px; border-radius:20px; cursor:pointer; transition:.2s; background:transparent;
+  }
+  .chip:hover{color:var(--ink); border-color:#3a3d46;}
+  .chip.active{background:var(--gold); border-color:var(--gold); color:#131010; font-weight:600;}
+
+  /* ---------- GRID / CARDS ---------- */
+  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; padding:36px 0 70px;}
+  .card{
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:12px;
+    padding:26px; transition:.25s; display:flex; flex-direction:column;
+  }
+  .card:hover{border-color:var(--gold); transform:translateY(-4px); box-shadow:0 12px 30px -14px rgba(201,162,75,.35);}
+  .card.hidden{display:none;}
+  .tag{
+    display:inline-block; align-self:flex-start; font-size:11px; letter-spacing:.5px; color:var(--gold);
+    background:var(--gold-soft); padding:4px 12px; border-radius:20px; margin-bottom:14px;
+  }
+  .card h3{font-size:18px; margin-bottom:8px;}
+  .card p{font-size:13.5px; color:var(--ink-dim); margin-bottom:18px; min-height:40px; flex-grow:1;}
+  .card .link{font-size:13.5px; color:#fff; font-weight:600; display:inline-flex; align-items:center; gap:6px; transition:.2s;}
+  .card:hover .link{color:var(--gold); gap:10px;}
+
+  footer{text-align:center; padding:40px 0; color:#6b6f79; font-size:12.5px; border-top:1px solid var(--line);}
+
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">در دسترس برای پروژه و همکاری</span>
+      <h1>طراحی وب اختصاصی، از <span>ایده تا آنلاین شدن</span></h1>
+      <p class="lead">مجموعه‌ای از سایت‌های اختصاصی که برای کسب‌وکارهای واقعی — از گلفروشی و کافه گرفته تا پلتفرم‌های آموزشی و اقامتگاهی — طراحی و توسعه داده‌ام.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">مشاهده نمونه‌کارها ↓</a>
+        <a class="btn ghost" href="mailto:Faezeh.mirvahabi@gmail.com">ایمیل</a>
+        <a class="btn ghost" href="tel:+989019727255">۰۹۰۱۹۷۲۷۲۵۵</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>16+</b><span>پروژه طراحی‌شده</span></div>
+      <div class="stat"><b>9</b><span>حوزه کسب‌وکار متفاوت</span></div>
+      <div class="stat"><b>+n8n</b><span>تجربه اتوماسیون هوشمند</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="projects">
+
+  <div class="filters" id="filters">
+    <button class="chip active" data-filter="all">همه</button>
+    <button class="chip" data-filter="فروشگاهی">فروشگاهی</button>
+    <button class="chip" data-filter="خدماتی">خدماتی</button>
+    <button class="chip" data-filter="آموزشی">آموزشی</button>
+    <button class="chip" data-filter="اقامتگاهی">اقامتگاهی</button>
+    <button class="chip" data-filter="برندینگ">برندینگ</button>
+  </div>
+
+  <div class="grid">
+
+    <div class="card" data-category="فروشگاهی">
+      <span class="tag">گلفروشی</span>
+      <h3>گل بَرین</h3>
+      <p>فروشگاه لوکس گل‌های مخملی دست‌ساز با پنل مدیریت اختصاصی مبتنی بر Firebase.</p>
+      <a class="link" href="golbarin-5.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="اقامتگاهی">
+      <span class="tag">اقامتگاه بوم‌گردی</span>
+      <h3>گیلانجا</h3>
+      <p>اقامتگاه بوم‌گردی گیلان با هویت بصری بومی، صفحه اصلی و لیستینگ اقامتگاه‌ها.</p>
+      <a class="link" href="gilanjaa-redesign.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="آموزشی">
+      <span class="tag">پلتفرم آموزشی</span>
+      <h3>ابداع‌گران X Lab</h3>
+      <p>پلتفرم آموزش رباتیک و هوش مصنوعی برای کودکان و نوجوانان؛ لندینگ لوکس، ورود، ثبت‌نام و اتاق فرمان کاربر.</p>
+      <a class="link" href="ebdagaran-fase1-1-luxury.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="برندینگ">
+      <span class="tag">هویت برند کاراکتر</span>
+      <h3>X · ROBO</h3>
+      <p>سند راهنمای برند یک کاراکتر رباتیک سه‌بعدی؛ گاید کامل رنگ، حالت‌ها و چرخش سه‌بعدی.</p>
+      <a class="link" href="X-ROBO-Character-Guideline-2.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="خدماتی">
+      <span class="tag">ورزشی</span>
+      <h3>آموزش جودو</h3>
+      <p>سایت مجموعه ورزشی سیماری، آموزش جودو در رشت.</p>
+      <a class="link" href="judo.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="خدماتی">
+      <span class="tag">باشگاه رزمی</span>
+      <h3>باشگاه پاک</h3>
+      <p>مرکز آموزش ورزش‌های رزمی و تناسب اندام در رشت.</p>
+      <a class="link" href="pakgym.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="خدماتی">
+      <span class="tag">آموزش سگ</span>
+      <h3>آکادمی سگ‌یار</h3>
+      <p>تربیت گرم و دوستانه سگ؛ طراحی با حس صمیمی و روستایی.</p>
+      <a class="link" href="sagyar-academy-warm.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="فروشگاهی">
+      <span class="tag">کافه و شکلات</span>
+      <h3>دیوان</h3>
+      <p>خانه شکلات و قهوه؛ فروشگاه با سبد خرید و خرید اقساطی.</p>
+      <a class="link" href="divan-chocolate-coffee.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="خدماتی">
+      <span class="tag">خدمات مالی</span>
+      <h3>مهدی رستمی‌راد</h3>
+      <p>سایت شخصی کارشناس حسابداری و سرپرست مالی.</p>
+      <a class="link" href="mehdi-rostamirad-site.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="فروشگاهی">
+      <span class="tag">عطرفروشی</span>
+      <h3>ادوپرفیوم</h3>
+      <p>خانه عطرهای لوکس با کاتالوگ محصول، سبد خرید و ثبت سفارش.</p>
+      <a class="link" href="eaudeparfum-perfume-site.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="خدماتی">
+      <span class="tag">سالن زیبایی</span>
+      <h3>فرانس بانو</h3>
+      <p>سالن زیبایی بانوان با خدمات، قیمت‌ها و رزرو نوبت آنلاین.</p>
+      <a class="link" href="france-banoo-salon.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="فروشگاهی">
+      <span class="tag">پت‌شاپ</span>
+      <h3>شیبا کلاب</h3>
+      <p>پت‌شاپ کیوت با طراحی طلایی و سفید، فروشگاه و سبد خرید.</p>
+      <a class="link" href="shiba-club-petshop.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="خدماتی">
+      <span class="tag">خدمات سازمانی</span>
+      <h3>آمواج سیستمز</h3>
+      <p>طراحی سایت شرکتی با تم مهندسی، چندزبانه (فارسی/انگلیسی/عربی).</p>
+      <a class="link" href="amvaj-enterprise.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="خدماتی">
+      <span class="tag">طراحی وب</span>
+      <h3>مدکس فیوچر</h3>
+      <p>پلتفرم پزشکی ژنومیک و هوش مصنوعی؛ طراحی سایت بین‌المللی چندبخشی.</p>
+      <a class="link" href="medex-future.html">مشاهده سایت ←</a>
+    </div>
+
+    <div class="card" data-category="برندینگ">
+      <span class="tag">لوگو و هویت بصری</span>
+      <h3>طراحی لوگو</h3>
+      <p>مجموعه‌ای از پروژه‌های برندینگ: کیان ران خودرو، ادوپرفیوم، تاکسان، آفتاب کافی، نان سام و الماس جولری.</p>
+      <a class="link" href="logo-design-portfolio.html">مشاهده نمونه‌کارها ←</a>
+    </div>
+
+    <div class="card" data-category="آموزشی">
+      <span class="tag">طراحی اپلیکیشن</span>
+      <h3>دیده‌بان</h3>
+      <p>اپلیکیشن سیگنال‌دهی بازار کریپتو با تحلیل شاخص‌های تکنیکال.</p>
+      <a class="link" href="dideban-app.html">مشاهده نمونه‌کار ←</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>این صفحه به‌عنوان فهرست نمونه‌کارها روی GitHub Pages میزبانی شده است.</footer>
+
+<script>
+  const chips = document.querySelectorAll('.chip');
+  const cards = document.querySelectorAll('.card');
+  chips.forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      chips.forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      const f = chip.dataset.filter;
+      cards.forEach(card=>{
+        card.classList.toggle('hidden', f!=='all' && card.dataset.category!==f);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
