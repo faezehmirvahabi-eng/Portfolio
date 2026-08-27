@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>گیلانجا | اقامتگاه‌های لوکس بوم‌گردی گیلان</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#141F17;
+    --forest:#22331F;
+    --forest-soft:#3A4F35;
+    --gold:#C9A667;
+    --gold-soft:#E4D3A9;
+    --cream:#F6F0E4;
+    --cream-2:#EFE6D2;
+    --ink:#211C16;
+    --mist:#9FB09A;
+    --line: rgba(201,166,103,.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Vazirmatn',sans-serif;
+    font-weight:400;
+    line-height:1.9;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Noto Serif','Vazirmatn',serif;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-size:13px; letter-spacing:.14em; color:var(--gold);
+    display:flex; align-items:center; gap:12px; font-weight:600;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);}
+
+  /* ===== NAV ===== */
+  header{
+    position:fixed; inset:0 0 auto 0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:22px 40px; color:var(--cream);
+    transition:background .4s ease, padding .4s ease, backdrop-filter .4s ease;
+  }
+  header.scrolled{
+    background:rgba(20,31,23,.86); backdrop-filter:blur(10px);
+    padding:14px 40px; box-shadow:0 1px 0 var(--line);
+  }
+  .logo{font-family:'Noto Serif',serif; font-size:22px; letter-spacing:.04em;}
+  .logo b{color:var(--gold); font-weight:700;}
+  nav ul{list-style:none; display:flex; gap:34px; font-size:14.5px;}
+  nav a{opacity:.88; transition:opacity .2s, color .2s;}
+  nav a:hover{opacity:1; color:var(--gold);}
+  .nav-cta{
+    border:1px solid var(--gold); color:var(--gold);
+    padding:9px 22px; border-radius:2px; font-size:13.5px; letter-spacing:.03em;
+    transition:.25s;
+  }
+  .nav-cta:hover{background:var(--gold); color:var(--forest-deep);}
+  .menu-btn{display:none; color:var(--cream); font-size:22px; background:none; border:none;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative; min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(ellipse at 50% 0%, #24351f 0%, var(--forest-deep) 68%);
+    color:var(--cream); text-align:center; overflow:hidden;
+    padding:120px 24px 80px;
+  }
+  .hero-content{position:relative; z-index:3; max-width:820px;}
+  .hero .eyebrow{justify-content:center; margin:0 auto 24px;}
+  .hero h1{
+    font-size:clamp(38px,6vw,68px); font-weight:600; line-height:1.28;
+    margin-bottom:26px; color:var(--cream);
+  }
+  .hero h1 em{font-style:normal; color:var(--gold);}
+  .hero p{
+    max-width:560px; margin:0 auto 40px; font-size:17px; color:var(--mist);
+  }
+  .btn-row{display:flex; gap:18px; justify-content:center; flex-wrap:wrap;}
+  .btn-gold{
+    background:var(--gold); color:var(--forest-deep); padding:15px 34px;
+    border-radius:2px; font-size:14.5px; font-weight:600; letter-spacing:.02em;
+    transition:.25s;
+  }
+  .btn-gold:hover{background:var(--gold-soft); transform:translateY(-1px);}
+  .btn-ghost{
+    border:1px solid rgba(246,240,228,.35); color:var(--cream);
+    padding:15px 34px; border-radius:2px; font-size:14.5px; transition:.25s;
+  }
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
+
+  .hero-svg{position:absolute; inset:0; z-index:1; opacity:.9;}
+  .hero::after{
+    content:""; position:absolute; inset:0; z-index:2;
+    background:linear-gradient(180deg, transparent 0%, var(--forest-deep) 96%);
+  }
+  .scroll-cue{
+    position:absolute; bottom:34px; left:50%; transform:translateX(-50%);
+    z-index:3; color:var(--mist); font-size:12px; letter-spacing:.15em;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+  }
+  .scroll-cue span{width:1px; height:34px; background:linear-gradient(var(--gold), transparent); animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+  /* ===== INTRO ===== */
+  .intro{padding:120px 0 90px; text-align:center;}
+  .intro .wrap{max-width:760px;}
+  .intro h2{font-size:clamp(28px,4vw,40px); font-weight:600; line-height:1.5; color:var(--forest-deep);}
+  .intro h2 span{color:var(--gold);}
+  .intro p{margin-top:26px; color:#5c5346; font-size:16px; max-width:600px; margin-left:auto; margin-right:auto;}
+
+  /* ===== STATS STRIP ===== */
+  .stats{background:var(--forest); color:var(--cream); padding:54px 0;}
+  .stats .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:36px; text-align:center;}
+  .stat b{display:block; font-family:'Noto Serif',serif; font-size:34px; color:var(--gold); font-weight:700;}
+  .stat span{font-size:13px; color:var(--mist); letter-spacing:.03em;}
+
+  /* ===== ROOMS ===== */
+  .section-head{text-align:center; max-width:640px; margin:0 auto 64px;}
+  .section-head h2{font-size:clamp(28px,4vw,38px); font-weight:600;}
+  .rooms{padding:120px 0;}
+  .room-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .room-card{
+    background:#fff; border:1px solid var(--line); border-radius:2px; overflow:hidden;
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .room-card:hover{transform:translateY(-6px); box-shadow:0 24px 48px -18px rgba(34,51,31,.28);}
+  .room-img{
+    height:230px; position:relative; overflow:hidden;
+  }
+  .room-img svg{width:100%; height:100%;}
+  .room-body{padding:28px 26px 30px;}
+  .room-tag{font-size:12px; letter-spacing:.1em; color:var(--gold); font-weight:600; margin-bottom:10px; display:block;}
+  .room-body h3{font-size:21px; font-weight:600; margin-bottom:10px;}
+  .room-body p{font-size:14.5px; color:#665f52; margin-bottom:20px;}
+  .room-foot{display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); padding-top:18px;}
+  .price{font-family:'Noto Serif',serif; font-weight:700; font-size:17px;}
+  .price small{font-family:'Vazirmatn'; font-weight:400; font-size:12.5px; color:#8a8072;}
+  .room-link{font-size:13.5px; color:var(--forest); font-weight:600; border-bottom:1px solid var(--forest-soft); padding-bottom:2px;}
+
+  /* ===== FEATURES ===== */
+  .features{background:var(--cream-2); padding:120px 0;}
+  .feat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
+  .feat{padding:34px 26px; border-inline-end:1px solid var(--line);}
+  .feat:last-child{border-inline-end:none;}
+  .feat svg{width:34px; height:34px; margin-bottom:20px; color:var(--gold);}
+  .feat h3{font-size:16.5px; font-weight:600; margin-bottom:10px;}
+  .feat p{font-size:13.8px; color:#6b6255;}
+
+  /* ===== GALLERY ===== */
+  .gallery{padding:120px 0;}
+  .gal-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; grid-template-rows:220px 220px; gap:14px;}
+  .gal-grid > div:nth-child(1){grid-row:1/3;}
+  .gal-item{border-radius:2px; overflow:hidden; position:relative;}
+  .gal-item svg{width:100%; height:100%;}
+
+  /* ===== TESTIMONIAL ===== */
+  .testi{background:var(--forest-deep); color:var(--cream); padding:130px 0; text-align:center; position:relative;}
+  .testi .wrap{max-width:720px;}
+  .testi svg{width:38px; margin:0 auto 30px; color:var(--gold);}
+  .testi p{font-family:'Noto Serif',serif; font-size:clamp(20px,2.6vw,27px); line-height:1.7; font-weight:400; color:var(--cream-2);}
+  .testi .who{margin-top:30px; font-size:13.5px; color:var(--mist); letter-spacing:.03em;}
+
+  /* ===== CTA ===== */
+  .cta{padding:110px 0; text-align:center;}
+  .cta h2{font-size:clamp(26px,3.6vw,36px); font-weight:600; margin-bottom:20px;}
+  .cta p{color:#6b6255; max-width:480px; margin:0 auto 34px;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--forest-deep); color:var(--mist); padding:70px 0 30px; font-size:14px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid rgba(246,240,228,.1);}
+  .foot-logo{font-family:'Noto Serif',serif; font-size:22px; color:var(--cream); margin-bottom:16px;}
+  .foot-logo b{color:var(--gold);}
+  footer h4{color:var(--cream); font-size:14px; margin-bottom:18px; font-weight:600;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;}
+  footer a:hover{color:var(--gold);}
+  .foot-bottom{padding-top:26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12.5px;}
+
+  @media (max-width:900px){
+    nav, .nav-cta{display:none;}
+    .menu-btn{display:block;}
+    .room-grid{grid-template-columns:1fr;}
+    .feat-grid{grid-template-columns:1fr 1fr;}
+    .feat{border-inline-end:none; border-bottom:1px solid var(--line);}
+    .gal-grid{grid-template-columns:1fr 1fr; grid-template-rows:auto;}
+    .gal-grid > div:nth-child(1){grid-row:auto; grid-column:1/3; height:260px;}
+    .stats .wrap{justify-content:center; gap:44px;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="logo">گیلان<b>جا</b></div>
+  <nav>
+    <ul>
+      <li><a href="#rooms">اقامتگاه‌ها</a></li>
+      <li><a href="#features">امکانات</a></li>
+      <li><a href="#gallery">گالری</a></li>
+      <li><a href="#story">درباره ما</a></li>
+      <li><a href="#contact">تماس</a></li>
+    </ul>
+  </nav>
+  <a href="#booking" class="nav-cta">رزرو اقامتگاه</a>
+  <button class="menu-btn">☰</button>
+</header>
+
+<section class="hero">
+  <svg class="hero-svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1c2b1a"/>
+        <stop offset="100%" stop-color="#141F17"/>
+      </linearGradient>
+    </defs>
+    <rect width="1400" height="900" fill="url(#sky)"/>
+    <circle cx="700" cy="230" r="90" fill="#C9A667" opacity="0.55"/>
+    <!-- misty mountain layers -->
+    <path d="M0 480 Q 200 400 420 460 T 900 440 T 1400 470 V900 H0 Z" fill="#22331F" opacity="0.55"/>
+    <path d="M0 560 Q 250 500 500 545 T 1000 530 T 1400 555 V900 H0 Z" fill="#22331F" opacity="0.75"/>
+    <path d="M0 640 Q 300 600 600 630 T 1100 615 T 1400 640 V900 H0 Z" fill="#141F17" opacity="0.95"/>
+    <!-- rice terraces -->
+    <path d="M0 700 H1400 V720 H0Z" fill="#0F1712"/>
+    <path d="M0 740 H1400 V760 H0Z" fill="#111a14"/>
+    <path d="M0 780 H1400 V800 H0Z" fill="#0d140f"/>
+    <!-- gaki traditional house silhouette, gold line -->
+    <g transform="translate(590,560)" stroke="#C9A667" stroke-width="2" fill="none" opacity="0.85">
+      <path d="M0 120 V60 H30 V30 L110 -30 L190 30 V60 H220 V120 Z"/>
+      <line x1="0" y1="120" x2="0" y2="150"/>
+      <line x1="220" y1="120" x2="220" y2="150"/>
+      <line x1="60" y1="150" x2="60" y2="90"/>
+      <line x1="160" y1="150" x2="160" y2="90"/>
+      <line x1="30" y1="60" x2="190" y2="60"/>
+    </g>
+  </svg>
+  <div class="hero-content">
+    <div class="eyebrow">اقامتگاه بوم‌گردی نیلوگشت &middot; گیلان</div>
+    <h1>سکوت جنگل، <em>میهمان‌نوازیِ</em><br>اصیل گیلان</h1>
+    <p>ویلاها و اقامتگاه‌های سنتی، در دل مه و شالیزار، برای مسافرانی که آرامش را با اصالت می‌خواهند.</p>
+    <div class="btn-row">
+      <a href="#booking" class="btn-gold">رزرو اقامتگاه</a>
+      <a href="#rooms" class="btn-ghost">مشاهده ویلاها</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span></span>پیمایش</div>
+</section>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;">داستان ما</div>
+    <h2>هر اقامتگاه، روایتی از <span>معماری گیلان</span> است؛<br>بازسازی‌شده برای زندگیِ امروز.</h2>
+    <p>نیلوگشت مجموعه‌ای محدود از ویلاها و اقامتگاه‌های بوم‌گردی است که با احترام به معماری سنتی گیلان و با استانداردهای اقامت لوکس، تجربه‌ای متفاوت از سفر به شمال را برای میهمانان خود می‌سازد.</p>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stat"><b>۱۲</b><span>اقامتگاه اختصاصی</span></div>
+    <div class="stat"><b>۴.۹</b><span>میانگین امتیاز میهمانان</span></div>
+    <div class="stat"><b>+۶۰۰</b><span>خانواده میزبانی‌شده</span></div>
+    <div class="stat"><b>۱۰۰٪</b><span>طبیعت‌گردی مسئولانه</span></div>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:center;">اقامتگاه‌ها</div>
+      <h2>ویلا و سوئیت‌های منتخب</h2>
+    </div>
+    <div class="room-grid">
+
+      <div class="room-card">
+        <div class="room-img">
+          <svg viewBox="0 0 400 230" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="230" fill="#3A4F35"/>
+            <path d="M0 150 Q120 110 250 140 T400 130 V230 H0Z" fill="#22331F"/>
+            <rect x="140" y="80" width="120" height="70" fill="#C9A667" opacity="0.15"/>
+          </svg>
+        </div>
+        <div class="room-body">
+          <span class="room-tag">ویلای جنگلی</span>
+          <h3>ویلای مه‌گیر</h3>
+          <p>دو خواب، تراس چوبی رو به جنگل، حمام بیرونی و نورگیر سقفی.</p>
+          <div class="room-foot">
+            <div class="price">۴٬۸۰۰٬۰۰۰<small> تومان / شب</small></div>
+            <a href="#" class="room-link">جزئیات</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <div class="room-img">
+          <svg viewBox="0 0 400 230" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="230" fill="#4a5c3f"/>
+            <path d="M0 170 H400 V190 H0Z" fill="#0F1712"/>
+            <path d="M0 195 H400 V210 H0Z" fill="#111a14"/>
+            <circle cx="320" cy="60" r="26" fill="#C9A667" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="room-body">
+          <span class="room-tag">اقامتگاه سنتی</span>
+          <h3>خانه‌باغِ شالیزار</h3>
+          <p>اتاق سنتی چوبی مشرف به شالیزار، صبحانه محلی و باغچه اختصاصی.</p>
+          <div class="room-foot">
+            <div class="price">۳٬۲۰۰٬۰۰۰<small> تومان / شب</small></div>
+            <a href="#" class="room-link">جزئیات</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <div class="room-img">
+          <svg viewBox="0 0 400 230" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="230" fill="#2c3f27"/>
+            <path d="M0 60 Q200 20 400 70 V230H0Z" fill="#22331F"/>
+            <rect x="60" y="120" width="90" height="60" fill="#C9A667" opacity="0.12"/>
+          </svg>
+        </div>
+        <div class="room-body">
+          <span class="room-tag">سوئیت خانوادگی</span>
+          <h3>سوئیت کوهستان</h3>
+          <p>مناسب خانواده، سه خواب، آشپزخانه کامل و چشم‌انداز کوهستان.</p>
+          <div class="room-foot">
+            <div class="price">۵٬۶۰۰٬۰۰۰<small> تومان / شب</small></div>
+            <a href="#" class="room-link">جزئیات</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:center;">تجربه اقامت</div>
+      <h2>امکانات و خدمات میهمان‌نوازی</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v20M4 12h16"/></svg>
+        <h3>پذیرش ۲۴ ساعته</h3>
+        <p>میزبان محلی همیشه در دسترس شماست.</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/></svg>
+        <h3>صبحانه محلی</h3>
+        <p>از محصولات تازه باغ و شالیزار.</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+        <h3>حمل و نقل اختصاصی</h3>
+        <p>سرویس رفت‌وآمد از فرودگاه رشت.</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12h18M12 3v18"/></svg>
+        <h3>تور طبیعت‌گردی</h3>
+        <p>پیاده‌روی راهنما در جنگل و شالیزار.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:center;">گالری</div>
+      <h2>نمایی از اقامتگاه‌ها</h2>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item"><svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice"><rect width="500" height="500" fill="#22331F"/><path d="M0 320 Q250 260 500 310V500H0Z" fill="#141F17"/></svg></div>
+      <div class="gal-item"><svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice"><rect width="300" height="220" fill="#3A4F35"/></svg></div>
+      <div class="gal-item"><svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice"><rect width="300" height="220" fill="#C9A667" opacity="0.5"/></svg></div>
+      <div class="gal-item"><svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice"><rect width="300" height="220" fill="#4a5c3f"/></svg></div>
+      <div class="gal-item"><svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice"><rect width="300" height="220" fill="#141F17"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<section class="testi">
+  <div class="wrap">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5C4 8 3 12 3 15c0 3 2 5 5 5s5-2 5-5c0-2-1-3-3-3-1 0-1-1 0-3 1-2 2-3 3-4L7 5zm10 0c-3 3-4 7-4 10 0 3 2 5 5 5s5-2 5-5c0-2-1-3-3-3-1 0-1-1 0-3 1-2 2-3 3-4l-6 0z"/></svg>
+    <p>«اقامت در گیلانجا مثل بازگشت به خانه‌ای بود که هرگز نداشتم؛ سکوت جنگل، عطر باران و مهربانی میزبان.»</p>
+    <div class="who">شیوا رضایی — تهران</div>
+  </div>
+</section>
+
+<section class="cta" id="booking">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;">رزرو</div>
+    <h2>اقامتگاه بعدی خود را همین امروز رزرو کنید</h2>
+    <p>ظرفیت محدود در فصل بهار — رزرو زودهنگام برای اطمینان از در دسترس بودن اقامتگاه دلخواه شما.</p>
+    <a href="#" class="btn-gold" style="background:var(--forest); color:var(--cream);">مشاهده تقویم رزرو</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">گیلان<b>جا</b></div>
+        <p style="max-width:260px; font-size:13.5px;">اقامتگاه‌های بوم‌گردی لوکس در دل جنگل و شالیزارهای گیلان.</p>
+      </div>
+      <div>
+        <h4>دسترسی سریع</h4>
+        <ul>
+          <li><a href="#rooms">اقامتگاه‌ها</a></li>
+          <li><a href="#gallery">گالری</a></li>
+          <li><a href="#story">درباره ما</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>پشتیبانی</h4>
+        <ul>
+          <li><a href="#">قوانین رزرو</a></li>
+          <li><a href="#">سوالات متداول</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تماس</h4>
+        <ul>
+          <li>رشت، گیلان</li>
+          <li>۰۱۳-XXXXXXX</li>
+          <li>info@gilanjaa.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© ۱۴۰۵ گیلانجا. تمامی حقوق محفوظ است.</span>
+      <span>طراحی و توسعه اختصاصی</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+</script>
+
+</body>
+</html>
